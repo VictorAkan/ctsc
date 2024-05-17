@@ -40,8 +40,8 @@ export default function MegaMenu3() {
                 <div className="flex flex-col items-start gap-[1.00rem]">
                     {/* <Text className="!font-['Open_Sans'] text-[1.13rem] font-bold !text-[#000000]">Title 3</Text>  */}
                     <div className="flex flex-col items-start gap-[0.75rem]">
-                        <Link to="/ibompartnersone">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">About Us</Text> </Link>
+                        {/* <Link to="/ibompartnersone">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">About Us</Text> </Link> */}
                         <a href="#" className="self-center">
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">CTSC Team</Text> </a>
                         <a href="#" className="self-center">

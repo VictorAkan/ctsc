@@ -35,19 +35,22 @@ export default function IbomServicesPage() {
                                 </div> */}
                             </div>
                             <div className="mt-[-0.56rem] flex flex-col items-center justify-center bg-[#d8d7ff] pb-[13.88rem] pt-[8.00rem] md:py-[1.25rem]">
-                                <div className="container-xs flex flex-col items-end pl-[3.50rem] pr-[26.06rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <div className="container-xs flex flex-col md:p-[1.25rem] md:px-[1.25rem]">
                                     <Text
                                         size="27xl"
                                         as="p"
-                                        className="mr-[3.56rem] !sm:text-[2.00rem] !font-medium !text-[#000000] md:mr-0 md:flex md:items-center md:justify-center"
+                                        className="sm:text-[2.00rem] text-center !font-medium !text-[#000000] md:mr-0 md:flex items-center md:justify-center"
                                     >
+                                        IBOM SERVICES
+                                    </Text>
+                                    <Text className="text-center text-black">
                                         Find Services Near You
                                     </Text>
                                 </div>
                             </div>
                         </div>
-                        <div className="container-xs relative mt-[-9.63rem] pl-[4.44rem] pr-[1.44rem] md:flex md:justify-center md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
-                            <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-[#d2d2d2] pb-[47.00rem] pl-[10.69rem] pr-[7.31rem] pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
+                        <div className="container-xs relative mt-[-9.63rem] md:flex md:justify-center md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
+                            <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-[#d2d2d2] pb-[47.00rem] px-32 pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
                                 {data.map((d, index) => (
                                     <a href="https://www.youtube.com/embed/bv8Fxkesz71" target="_blank">
                                         <div

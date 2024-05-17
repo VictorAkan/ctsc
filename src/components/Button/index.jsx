@@ -25,7 +25,7 @@ const variants = {
 const sizes = {
     "3xl": "h-[3.44rem] px-[1.81rem] text-[1.69rem]",
     "9xl": "h-[5.38rem] px-[2.19rem] text-[1.38rem]",
-    "7xl": "h-[5.06rem] pl-[1.44rem] pr-[1.13rem] text-[1.38rem]",
+    "7xl": "h-[5.06rem] sm:h-[4rem] pl-[1.44rem] pr-[1.13rem] text-[1.38rem]",
     "6xl": "h-[3.81rem] px-[2.00rem] text-[1.81rem]",
     "13xl": "h-[10.19rem] px-[2.94rem]",
     "8xl": "h-[5.13rem] px-[2.13rem] text-[3.13rem] md:text-[2rem]",
@@ -55,7 +55,7 @@ const Button = ({
 }) => {
     return (
         <button
-            className={`${className} flex flex-row items-center justify-center text-center !cursor-pointer s-center justify-center cursor-text ${(shape && shapes[shape]) || ""} ${(variant && variants[variant]?.[color]) || ""} ${(size && sizes[size]) || ""}`}
+            className={`${className} flex flex-row items-center justify-center text-center cursor-pointer s-center ${(shape && shapes[shape]) || ""} ${(variant && variants[variant]?.[color]) || ""} ${(size && sizes[size]) || ""}`}
             {...restProps}
         >
             {!!leftIcon && leftIcon}

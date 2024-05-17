@@ -33,7 +33,10 @@ export default function Header({ ...props }) {
                     }}
                 >
                     <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> Mkpo Nnyin
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
+                        <Link to="/mkponnyin">
+                            Mkpo Nnyin
+                        </Link>
                         </Text>
                         <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
                     </div>
@@ -48,9 +51,9 @@ export default function Header({ ...props }) {
                     }}
                 >
                     <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover: text-[#c2d7ff] hover:underline"> News & Stories
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> News & Stories
                         </Text>
-                        <img src="images/img_polygon_2.svg" alt="polygonone" className="mb-[0.50rem] h-[0.44rem] w-[0.50rem]" />
+                        <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" />
                     </div>
                     {menuOpen1 ? <MegaMenu2 /> : null}
                 </li>
@@ -63,7 +66,10 @@ export default function Header({ ...props }) {
                     }}
                 >
                     <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover: text-[#c2d7ff] hover:underline"> About CTSCode
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
+                        <Link to="/ibompartnersone">
+                            About CTSCode
+                        </Link>
                         </Text>
                         <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
                     </div>
@@ -98,7 +104,9 @@ export default function Header({ ...props }) {
                     >
                         <div className="flex cursor-pointer items-center">
                             <Text size="9xl" as="p" className="cursor-pointer mb-5 !font-['Inter'] hover:text-[#c2d7ff] hover:underline">
+                                <Link to="/mkponnyin">
                                 Mkpo Nnyin
+                                </Link>
                             </Text>
                             <img src="images/img_polygon_2.svg" alt="polygontwo" className="-mt-2 h-[0.44rem] w-[0.50rem]" />
                         </div>
@@ -112,7 +120,7 @@ export default function Header({ ...props }) {
                         }}
                     >
                         <div className="flex cursor-pointer mb-5 items-center">
-                            <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover: text-[#c2d7ff] hover:underline"> News & Stories
+                            <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> News & Stories
                             </Text>
                             <img src="images/img_polygon_2.svg" alt="polygonone" className="-mb-2 h-[0.44rem] w-[0.50rem]" />
                         </div>
@@ -126,7 +134,10 @@ export default function Header({ ...props }) {
                         }}
                     >
                         <div className="flex cursor-pointer mb-5 items-center">
-                            <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover: text-[#c2d7ff] hover:underline"> About CTSCode
+                            <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
+                            <Link to="/ibompartnersone">
+                                About CTSCode
+                            </Link>
                             </Text>
                             <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
                         </div>
