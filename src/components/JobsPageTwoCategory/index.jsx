@@ -19,17 +19,17 @@ export default function JobsPageTwoCategory({
                     </Text>
                 ) : null}
                 <div className="flex w-[88%] flex-wrap items-end md:w-full">
-                    {!!skillsimage ? <Img src={skillsimage} alt="457_skils" className="h-[1.63rem]" /> : null}
+                    {!!skillsimage ? <Img src={skillsimage} alt="457_skills" className="h-[1.63rem]" /> : null}
                     {!!skillscountertext ? (
                         <Text size="lg" as="p" className="!font-['Inter'] !text-[0.75rem]">
                             {skillscountertext}
                         </Text>
                     ) : null}
                     {!!starimage ? (
-                        <img src={starimage} alt="457_skils" className="nl-[2.00ren] h-[1.25rem] w-[1.25rem]" />
+                        <img src={starimage} alt="457_skills" className="ml-[2.00rem] h-[1.25rem] w-[1.25rem]" />
                     ) : null}
                     {!!ratingtext ? (
-                        <Text size="lg" as="p" className="! font-['Inter'] !text-[0.75rem]">
+                        <Text size="lg" as="p" className="!font-['Inter'] !text-[0.75rem]">
                             {ratingtext}
                         </Text>
                     ) : null}

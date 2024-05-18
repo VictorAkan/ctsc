@@ -30,7 +30,7 @@ export default function IbomEventsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="container-xs mt-[16.00rem] pl-[3.06rem] md:p-[1.25rem] md:pl-[1.25rem]">
+                <div className="container-xs mt-[16.00rem] sm:mt-[10rem] pl-[3.06rem] md:p-[1.25rem] md:pl-[1.25rem]">
                     <div className="flex flex-col gap-[3.81rem]">
                         <div className="flex flex-1 bg-[#d9d9d9]">
                             <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">

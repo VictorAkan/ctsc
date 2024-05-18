@@ -25,8 +25,8 @@ export default function MkpoNnyinPage() {
             <div className="w-full bg-[#ffffff]">
                 <Header />
                 <div className="flex flex-col items-center gap-[12.19rem] md:gap-[9.13rem] sm:gap-[6.06rem]">
-                    <div className="flex h-[31.19rem] items-center justify-center self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat pb-[11.69rem] pt-[9.25rem] md:h-auto md:py-[1.25rem]">
-                        <div className="container-xs flex justify-center pl-[22.06rem] pr-[22.56rem] md:p-[1.25rem] md:px-[1.25rem]">
+                    <div className="flex mt-10 h-[31.19rem] items-center justify-center self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat pb-[11.69rem] pt-[9.25rem] md:h-auto md:py-[1.25rem]">
+                        <div className="container-xs mt-10 flex justify-center pl-[22.06rem] pr-[22.56rem] md:p-[1.25rem] md:px-[1.25rem]">
                             <div className="flex flex-col items-center">
                                 <Text size="30xl" as="p" className="!font-['Inter'] !sm:text-[3rem] text-[6.50rem]">
                                     Mkpo Nnyin

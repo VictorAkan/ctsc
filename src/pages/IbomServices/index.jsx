@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Text } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
+import { Link } from "react-router-dom";
 
 const data = [
     { plumber: "Plumber" },
@@ -57,9 +57,11 @@ export default function IbomServicesPage() {
                                             key={"ibomservices" + index}
                                             className="flex w-full justify-center rounded-[37px] bg-[#fcf5f5] pb-[5.75rem] pl-[2.88rem] pr-[3.50rem] pt-[5.69rem] md:p-[1.25rem]"
                                         >
+                                            <Link to="/ibomservicesone">
                                             <Text size="19xl" as="p" className="text-[2.31rem] !text-[#000000]">
                                                 {d.plumber}
                                             </Text>
+                                            </Link>
                                         </div>
                                     </a>
                                 ))}

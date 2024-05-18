@@ -1,10 +1,89 @@
 import { Helmet } from "react-helmet";
-import { Img, Text, Button } from "../../components";
+import { Img, Text, Button, Input } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import JobsPageTwoCategory from "../../components/JobsPageTwoCategory";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { SignUpModal } from "../../modals/SignUpModal";
+
+const jobsData = [
+    {
+        designandtext: "Design and Creative",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_1.png"
+    },
+    {
+        designandtext: "Sales & Marketing",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_2.png"
+    },
+    {
+        designandtext: "Photography",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_3.png"
+    },
+    {
+        designandtext: "Development & IT",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "344 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_4.png"
+    },
+    {
+        designandtext: "Finance & Accounting",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "344 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_5.png"
+    },
+    {
+        designandtext: "Writing & Translation",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "344 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_6.png"
+    },
+    {
+        designandtext: "Legal",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_7.png"
+    },
+    {
+        designandtext: "Repairs & Engineering",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_8.png"
+    },
+    {
+        designandtext: "HR Personnel",
+        skillsimage: "images/people_rate.png",
+        skillscountertext: "457 skills",
+        starimage: "images/star_rate.png",
+        ratingtext: "5/5",
+        designandimage: "images/workimg_9.png"
+    },
+]
 
 export default function JobspageTwoPage() {
+    const [open, setOpen] = useState(false)
     return (
         <>
             <Helmet>
@@ -43,7 +122,7 @@ export default function JobspageTwoPage() {
                                     <Text
                                         size="5xl"
                                         as="p"
-                                        className="w-[77%] md:w-full text-center Ifont-['Inter'] !text-[1.13rem] leading-[1.38rem] !text-[#121316] md:w-full md:p-[0.25rem]"
+                                        className="w-[77%] text-center Ifont-['Inter'] !text-[1.13rem] leading-[1.38rem] !text-[#121316] md:w-full md:p-[0.25rem]"
                                     >
                                         <>
                                             Brush up on your skills and resume, before you apply.
@@ -51,23 +130,23 @@ export default function JobspageTwoPage() {
                                         </>
                                     </Text>
                                     <div className="my-auto flex md:flex-col h-[19.50rem] md:w-full -mt-48 md:-mt-0 w-[69%] items-center justify-end bg-[url(/public/images/group_me.png)] bg-cover bg-no-repeat px-[3.06rem] pb-[4.81rem] mr-[42rem] md:mr-0 pt-[12.06rem] md:h-auto md:p-[1.25rem]">
-                                    <Button
-                                        color="blue_gray_900"
-                                        size="md"
-                                        shape="round"
-                                        className="min-w-[9.00rem] md:w-full mr-10 md:mr-0 !rounded-[21px] !cursor-pointer font-['Inter'] font-medium sm:px-[1.25rem]"
-                                    >
-                                        Hire
-                                    </Button>
-                                    <Button
-                                        color="blue_gray_900"
-                                        size="md"
-                                        variant="outline"
-                                        shape="round"
-                                        className="min-w-[9.00rem] md:w-full mr-[-14.7rem] self-end md:self-center mt-0 md:mt-5 !rounded-[21px] font-['Inter'] font-semibold md:mr-0"
-                                    >
-                                        Post a Job
-                                    </Button>
+                                        <Button
+                                            color="blue_gray_900"
+                                            size="md"
+                                            shape="round"
+                                            className="min-w-[9.00rem] md:w-full mr-10 md:mr-0 !rounded-[21px] !cursor-pointer font-['Inter'] font-medium sm:px-[1.25rem]"
+                                        >
+                                            Hire
+                                        </Button>
+                                        <Button
+                                            color="blue_gray_900"
+                                            size="md"
+                                            variant="outline"
+                                            shape="round"
+                                            className="min-w-[9.00rem] md:w-full mr-[-14.7rem] self-end md:self-center mt-0 md:mt-5 !rounded-[21px] font-['Inter'] font-semibold md:mr-0"
+                                        >
+                                            Post a Job
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
@@ -92,9 +171,10 @@ export default function JobspageTwoPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-3 gap-[3.81rem] md:grid-cols-2 sm:grid-cols-1">
-                                {[...Array(9)].map((d, index) => (
-                                    <a href="https://www.youtube.com/embed/bv8Fxkøsz71" target="_blank">
+                                {jobsData.map((d, index) => (
+                                    <a href="https://www.youtube.com/embed/bv8Fxk0sz71" target="_blank">
                                         <JobsPageTwoCategory
+                                        {...d}
                                             key={"jobspagetwo" + index}
                                             className="pb-[2.38rem] pl-[1.38rem] pr-[0.75rem] pt-[2.44rem] hover:shadow-[-5px_6px_27px_0px_#25345142] sm:py-[1.25rem] sm:pl-[1.25rem]"
                                         />
@@ -137,7 +217,7 @@ export default function JobspageTwoPage() {
                                                         </div> </div>
                                                 </div>
                                                 <div className="h-[2.44rem] w-[2.44rem] rounded-[19px] bg-[#d9d9d9]" /> </div>
-                                            <div className="relative z-[1] mt-[1.88rem] flex flex-col items-start self-stretch">
+                                            <div className="mt-[1.88rem] flex flex-col items-start self-stretch">
                                                 <Text size="2xl" as="p" className="!text-[#626262]">
                                                     Requirements & Skills
                                                 </Text>
@@ -154,22 +234,22 @@ export default function JobspageTwoPage() {
                                                     </Text>
                                                 </div>
                                                 <div className="flex w-[68%] items-center gap-[0.75rem] md:w-full">
-                                                    <div className="h-[0.69rem] w-[0.75rem] rounded-md bg-[#253451]" /> 
+                                                    <div className="h-[0.69rem] w-[0.75rem] rounded-md bg-[#253451]" />
                                                     <Text size="2xl" as="p" className="!text-[#000000]">
                                                         Be able to work with teams
                                                     </Text>
                                                 </div>
                                                 <a href="#" className="mt-[0.31rem]">
-                                                    <Text size="md" as="p" className="!text-[#626262]"> 
-                                                    View all 
+                                                    <Text size="md" as="p" className="!text-[#626262]">
+                                                        View all
                                                     </Text>
                                                 </a>
                                             </div>
-                                            <div className="relative mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                            <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                                 <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
                                                     Apply
-                                                </Text> 
-                                                </div>
+                                                </Text>
+                                            </div>
                                         </div> </div>
                                     <div className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.63rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]">
                                         <div className="flex w-full flex-col items-end">
@@ -194,7 +274,7 @@ export default function JobspageTwoPage() {
                                                 </div>
                                                 <div className="mt-[0.31rem] h-[2.44rem] w-[2.44rem] rounded-[19px] bg-[#d9d9d9]" />
                                             </div>
-                                            <div className="relative z-[2] mt-[1.94rem] flex flex-col items-start self-stretch">
+                                            <div className="mt-[1.94rem] flex flex-col items-start self-stretch">
                                                 <Text size="2xl" as="p" className="!text-[#626262]">
                                                     Requirements & Skills
                                                 </Text>
@@ -222,23 +302,23 @@ export default function JobspageTwoPage() {
                                                     </Text>
                                                 </a>
                                             </div>
-                                            <div className="relative mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                            <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                                 <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
                                                     Apply
-                                                </Text> 
-                                                </div>
+                                                </Text>
+                                            </div>
                                         </div> </div>
                                     <div className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.81rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]"> <div className="flex w-full flex-col items-end">
                                         <div className="flex items-start justify-between gap-[1.25rem] self-stretch"> <div className="flex flex-col items-start">
                                             <div className="flex items-start gap-[0.50rem]">
-                                                <Img src="images/lil_bag.png" alt="bag" className="mt-[0.31rem] h-[1.19rem] w-[1.25rem]" /> 
-                                                <Text size="9xl" as="p" className="!text-[#000000]"> 
-                                                Graphic Designer
+                                                <Img src="images/lil_bag.png" alt="bag" className="mt-[0.31rem] h-[1.19rem] w-[1.25rem]" />
+                                                <Text size="9xl" as="p" className="!text-[#000000]">
+                                                    Graphic Designer
                                                 </Text>
                                             </div>
                                             <div className="flex items-center gap-[0.56rem]">
-                                                <Text size="5xl" as="p" className="!text-[#626262]"> 
-                                                Newtech
+                                                <Text size="5xl" as="p" className="!text-[#626262]">
+                                                    Newtech
                                                 </Text>
                                                 <div className="flex rounded-md bg-[#253451] pl-[0.19rem] pr-[0.13rem]">
                                                     <Text size="s" as="p" className="!text-[0.63rem] !font-medium">
@@ -249,16 +329,16 @@ export default function JobspageTwoPage() {
                                         </div>
                                             <div className="h-[2.44rem] w-[2.44rem] rounded-[19px] bg-[#d9d9d9]" />
                                         </div>
-                                        <div className="relative z-[3] mt-[1.88rem] flex flex-col items-start self-stretch">
+                                        <div className="mt-[1.88rem] flex flex-col items-start self-stretch">
                                             <Text size="2xl" as="p" className="!text-[#626262]">
                                                 Requirements & Skills
                                             </Text>
                                             <div className="mt-[0.38rem] flex items-center gap-[0.75rem] self-stretch">
-                                                    <div className="h-[0.69rem] w-[0.75rem] rounded-md bg-[#253451]" />
-                                                    <Text size="2xl" as="p" className="!text-[#000000]">
-                                                        Have years of experience in visual design
-                                                    </Text>
-                                                </div>
+                                                <div className="h-[0.69rem] w-[0.75rem] rounded-md bg-[#253451]" />
+                                                <Text size="2xl" as="p" className="!text-[#000000]">
+                                                    Have years of experience in visual design
+                                                </Text>
+                                            </div>
                                             <div className="mt-[0.38rem] flex w-[57%] items-center gap-[0.75rem] md:w-full">
                                                 <div className="h-[0.69rem] w-[0.75rem] rounded-md bg-[#253451]" />
                                                 <Text size="2xl" as="p" className="!text-[#000000]">
@@ -277,11 +357,11 @@ export default function JobspageTwoPage() {
                                                 </Text>
                                             </a>
                                         </div>
-                                        <div className="relative mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
-                                                <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
-                                                    Apply
-                                                </Text> 
-                                                </div>
+                                        <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                            <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
+                                                Apply
+                                            </Text>
+                                        </div>
                                     </div>
                                     </div>
                                 </div>
@@ -312,19 +392,19 @@ export default function JobspageTwoPage() {
                                 </Button>
                                 <Button className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[3.31rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
                                     <div className="flex w-full items-start justify-center gap-[2.00rem] sm:flex-col">
-                                    <Img
+                                        <Img
                                             src="images/suitcase_1.png"
                                             alt="image"
                                             className="h-[5.00rem] w-[5.00rem] object-cover"
                                         />
-                                    <div className="mt-[0.50rem] flex flex-col items-start">
-                                    <Text size="21xl" as="p" className="!text-[#000000]">
-                                        Post a Job
-                                    </Text>
-                                    <Text as="p" className="!font-medium !text-[#908f8f]">
-                                        Make a post of the vacancy or hire from our talent{" "}
-                                    </Text>
-                                    </div>
+                                        <div className="mt-[0.50rem] flex flex-col items-start">
+                                            <Text size="21xl" as="p" className="!text-[#000000]">
+                                                Post a Job
+                                            </Text>
+                                            <Text as="p" className="!font-medium !text-[#908f8f]">
+                                                Make a post of the vacancy or hire from our talent{" "}
+                                            </Text>
+                                        </div>
                                     </div>
                                 </Button>
                                 <Button className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
@@ -365,10 +445,50 @@ export default function JobspageTwoPage() {
                                 <Text size="21xl" as="p" className="!text-[#000000] ">
                                     Haven't sign up yet?{" "}
                                 </Text>
-                                <a href="#">
-                                    <Text size="21xl" as="p" className="!font-medium !text-[#253451]"> Sign up
-                                    </Text>
-                                </a>
+                                <Text onClick={() => setOpen(true)} size="21xl" as="p" className="!font-medium cursor-pointer !text-[#253451]">
+                                    Sign up
+                                </Text>
+
+                                <SignUpModal open={open} onClose={() => setOpen(false)}>
+                                    <div className="p-4 items-center justify-center">
+                                        <div className="p-8 sm:p-1 sm:space-y-4">
+                                            <Text size="22xl" as="p" className="!font-['Inter'] !text-[#000000] text-center">Create An Account</Text>
+                                            <p className="text-center sm:text-sm text-[#32403B]">Create an account to enjoy all the services <br /> without any ads for free!</p>
+                                        </div>
+                                        <div>
+                                            <form className="space-y-10" action="">
+                                                <Input
+                                                    shape="round"
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder={`Email Address`}
+                                                    className="w-full bg-white outline outline-gray-200"
+                                                />
+                                                <Input
+                                                    shape="round"
+                                                    type="password"
+                                                    name="password"
+                                                    placeholder={`Password`}
+                                                    className="w-full bg-white outline outline-gray-200"
+                                                />
+                                                <Button
+                                                    color="blue_gray_900"
+                                                    size="10xl"
+                                                    shape="round"
+                                                    className="min-w-[13.56rem] sm:text-[1.38rem] sm:px-[1.13rem] ml-[7rem] sm:ml-0 hover:bg-[#2d3f61] font-medium"
+                                                >
+                                                    Create Account
+                                                </Button>
+                                                <Text size="2xl" as="p" className="flex ml-[8rem] sm:ml-0 !text-[0.94rem] !text-center tracking-[0.00rem] !text-[#494759]">
+                                                    <span className="text-[#494759] capitalize">Already have an account?&nbsp;</span>
+                                                    <a href="#" className="font-semibold text-[#000000] underline">
+                                                        Sign In
+                                                    </a>
+                                                </Text>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </SignUpModal>
                             </div>
                         </div>
                     </div>

@@ -1,75 +1,123 @@
 import { useRoutes } from "react-router-dom";
-import Home from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
-import HomePage from "./pages/HomePage";
-import MkpoNnyin from "./pages/MkpoNnyin";
-import IbomEvents from "./pages/IbomEvents";
-import IbomServices from "./pages/IbomServices";
-import IbomServicesOne from "./pages/IbomServicesOne";
-import IbomServicesTwo from "./pages/IbomServicesTwo";
-import Jobspage from "./pages/Jobspage";
-import JobspageOne from "./pages/JobspageOne";
-import JobspageTwo from "./pages/JobspageTwo";
-import IbomPartners from "./pages/IbomPartners";
-import IbomPartnersOne from "./pages/IbomPartnersOne";
-import Signup from "./pages/Signup";
+import React, { Suspense } from "react";
+
+// Wrap components in lazy imports
+const HomePageLazy = React.lazy(() => import("./pages/HomePage"));
+const MkpoNnyinLazy = React.lazy(() => import("./pages/MkpoNnyin"));
+const IbomEventsLazy = React.lazy(() => import("./pages/IbomEvents"));
+const IbomServicesLazy = React.lazy(() => import("./pages/IbomServices"));
+const IbomServicesOneLazy = React.lazy(() => import("./pages/IbomServicesOne"));
+const IbomServicesTwoLazy = React.lazy(() => import("./pages/IbomServicesTwo"));
+const JobspageLazy = React.lazy(() => import("./pages/Jobspage"));
+const JobspageOneLazy = React.lazy(() => import("./pages/JobspageOne"));
+const JobspageTwoLazy = React.lazy(() => import("./pages/JobspageTwo"));
+const IbomPartnersLazy = React.lazy(() => import("./pages/IbomPartners"));
+const IbomPartnersOneLazy = React.lazy(() => import("./pages/IbomPartnersOne"));
+const SignupLazy = React.lazy(() => import("./pages/Signup"));
 
 const ProjectRoutes = () => {
     let element = useRoutes([
-        { path: "/", element: <HomePage /> },
+        {
+            path: "/",
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HomePageLazy />
+                </Suspense>
+            ),
+        }, // Home with Suspense
         { path: "*", element: <NotFound /> },
-        // {
-        //     path: "desktopone",
-        //     element: <HomePage />,
-        // },
         {
             path: "/mkponnyin",
-            element: <MkpoNnyin />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <MkpoNnyinLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibomevents",
-            element: <IbomEvents />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomEventsLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibomservices",
-            element: <IbomServices />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomServicesLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibomservicesone",
-            element: <IbomServicesOne />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomServicesOneLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibomservicestwo",
-            element: <IbomServicesTwo />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomServicesTwoLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/jobspage",
-            element: <Jobspage />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <JobspageLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/jobspageone",
-            element: <JobspageOne />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <JobspageOneLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/jobspagetwo",
-            element: <JobspageTwo />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <JobspageTwoLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibompartners",
-            element: <IbomPartners />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomPartnersLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/ibompartnersone",
-            element: <IbomPartnersOne />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <IbomPartnersOneLazy />
+                </Suspense>
+            ),
         },
         {
             path: "/signup",
-            element: <Signup />,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <SignupLazy />
+                </Suspense>
+            ),
         },
     ]);
 
     return element;
 };
-
 
 export default ProjectRoutes;

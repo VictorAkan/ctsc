@@ -17,7 +17,7 @@ export default function HomePage() {
                         <div className="h-[48.38rem] bg-[url(/public/images/mask_group.png)] bg-cover bg-no-repeat pb-[11.06rem] md:h-auto md:pb-[1.25rem]">
                             <div className="flex flex-col items-center gap-[7.81rem] md:gap-[5.81rem] sm:gap-[3.88rem]">
                                 <div className="h-[0.20rem] self-stretch bg-[#d9d9d9]" />
-                                <div className="container-xs flex flex-col items-center pl-[7.81rem] pr-[8.38rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <div className="container-xs mt-10 flex flex-col items-center pl-[7.81rem] pr-[8.38rem] md:p-[1.25rem] md:px-[1.25rem]">
                                     <Heading size="4xl" as="h1" className="!text-[#ffa14a] !font-['Poppins']">
                                         Ndito Eka
                                     </Heading>
@@ -69,7 +69,7 @@ export default function HomePage() {
                                     alt="image"
                                     className="mt-[2.19rem] h-[26.94rem] w-full rounded-tl-[44px] sm:rounded-b-none rounded-tr-[44px] object-cover md:h-auto"
                                 />
-                                <div className="relative mt-[-0.06rem] self-stretch rounded-bl-[44px] rounded-br-[44px] bg-[#ffffff] pb-[1.19rem] pl-[1.81rem] pr-[1.31rem] pt-[1.81rem] sm:px-[1.25rem] sm:pt-[1.25rem]">
+                                <div className="mt-[-0.06rem] self-stretch rounded-bl-[44px] rounded-br-[44px] bg-[#ffffff] pb-[1.19rem] pl-[1.81rem] pr-[1.31rem] pt-[1.81rem] sm:px-[1.25rem] sm:pt-[1.25rem]">
                                     <div className="flex flex-col items-start gap-[1.38rem]">
                                         <div className="flex w-[91%] items-center gap-[0rem] md:w-full md:flex-col">
                                             <Text
@@ -136,7 +136,7 @@ export default function HomePage() {
                                             Inspiring Lives, Defining Standards
                                         </Text> */}
                                     </div>
-                                    <div className="relative h-[8.44rem] md:h-auto">
+                                    <div className="h-[8.44rem] md:h-auto">
                                         <div className="mb-[1.56rem] flex w-full justify-center bg-[#253451] pb-[29px] pt-8 sm:py-[1.25rem]">
                                             <div className="container-xs flex pl-[4.00rem] pr-[3.50rem] md:p-[1.25rem] md:px-[1.25rem]">
                                                 <marquee behavior="" direction="left">

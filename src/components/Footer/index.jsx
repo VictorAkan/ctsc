@@ -126,7 +126,7 @@ export default function Footer({ ...props }) {
                                             </div>
                                         </div>
                                     </div> </div> </div> </div>
-                        <div className="relative z-[4] flex justify-center bg-[#3d547f]">
+                        <div className="flex justify-center bg-[#3d547f]">
                             <div className="container-xs flex justify-center pl-[20.00rem] pr-[20.13rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text size="12xl" as="p" className="!text-[#fffffff2]">
                                     <span className="text-[#fffffff2]">All Rights Reserved. ©2024</span>
