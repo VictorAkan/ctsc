@@ -14,8 +14,8 @@ export default function SignupPage() {
                 <div className="relative h-[125.00rem] md:h-auto">
                     <div className="flex w-full flex-col gap-[27.94rem] md:gap-[20.94rem] sm:gap-[13.94rem]">
                         <div className="flex justify-center bg-[#253451] pb-[18.00rem] pt-[8.94rem] md:py-[1.25rem]">
-                            <div className="container-xs flex justify-center pl-[19.06rem] pr-[19.44rem] md:p-[1.25rem] md:px-[1.25rem]">
-                                <Text size="26xl" as="p" className="tracking-[0.00rem]">
+                            <div className="container-xs mt-10 md:mt-24 flex justify-center pl-[19.06rem] pr-[19.44rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <Text size="26xl" as="p" className="tracking-[0.00rem] sm:text-center">
                                     Let's Get You On board
                                 </Text>
                             </div>

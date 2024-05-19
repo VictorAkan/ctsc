@@ -21,8 +21,8 @@ export default function IbomEventsPage() {
                                 </Text>
                             </div> */}
                         </div>
-                        <div className="relative mt-[-0.56rem] flex h-[28.94rem] items-center justify-center bg-[url(/public/images/mg.png)] bg-cover bg-no-repeat pb-[9.69rem] pt-[13.13rem] md:mt-[-50px] md:h-auto md:py-[1.25rem] sm:pb-[155px] sm:pt-[1.25rem]">
-                            <div className="container-xs flex justify-center pl-[27.50rem] pr-[28.06rem] md:p-[1.25rem] md:px-[1.25rem]">
+                        <div className="mt-[-0.56rem] flex h-[28.94rem] items-center justify-center bg-[url(/public/images/mg.png)] bg-cover bg-no-repeat pb-[9.69rem] pt-[13.13rem] md:h-auto md:py-[1.25rem] sm:pb-[155px] sm:pt-[1.25rem]">
+                            <div className="container-xs mt-10 md:mt-24 flex justify-center pl-[27.50rem] pr-[28.06rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text size="27xl" as="p" className="text-[4.00rem] sm:mt-10">
                                     IBOM EVENTS
                                 </Text>

@@ -26,9 +26,9 @@ export default function Footer({ ...props }) {
                             {/* <Heading as="h2" className="ml-[8.25rem] mt-[5.88rem] !text-[2.00rem] md:ml-0"> Our Socials
                             </Heading> */}
                             <div className="m-auto flex h-max w-full justify-center bg-[#192235] pb-[8.31rem] pt-[5.00rem] md:mt-[5px] md:py-[1.25rem]">
-                                <div className="container-xs flex items-center justify-center pl-[4.56rem] pr-[6.88rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <div className="container-xs flex items-center justify-center px-[2.3rem] md:p-[1.25rem] sm:px-[0.25rem]">
                                     <div className="flex w-full items-center justify-between gap-[1.25rem] md:flex-col">
-                                        <div className="flex pt-[5rem] md:pt-0 flex-col items-start gap-[1.81rem] self-end md:w-full">
+                                        <div className="flex pt-[5rem] md:pt-0 flex-col items-start gap-[1.81rem] md:w-full">
                                             <Text size="10xl" as="p" className="font-['Inter'] !text-[1.44rem]">
                                                 CRACKING THE STYLE CODE
                                             </Text>
@@ -38,7 +38,7 @@ export default function Footer({ ...props }) {
                                                     easily accessible to empower a diverse global <br /> audience.
                                                 </>
                                             </Text>
-                                            <div className="flex items-start space-x-0 justify-start w-full"> 
+                                            <div className="flex items-start justify-start w-[60%]"> 
                                         <Button shape="round" className="w-[5.69rem] h-[5.69rem]">
                                             <Img src="images/facebook.png" className="" />
                                         </Button>
@@ -66,15 +66,15 @@ export default function Footer({ ...props }) {
                                             </div> */}
                                         </div>
                                         <div className="flex w-[52%] items-start justify-between gap-[1.25rem] md:w-full sm:flex-col">
-                                            <div className="mt-[0.31rem] flex flex-col items-end">
+                                            <div className="flex flex-col items-end">
                                                 <div className="flex flex-col gap-[1.13rem]">
-                                                    <Heading as="h2" className="! text-[2.00rem]">
+                                                    <Heading as="h2" className="text-[2.00rem]">
                                                         Pages
                                                     </Heading>
                                                     <ul className="flex flex-col gap-[0.38rem]">
                                                         <li>
                                                             <a href="Home" target="_blank" rel="noreferrer">
-                                                                <Text as="p" className="!text-[1.25rem]">
+                                                                <Text as="p" className="text-[1.25rem]">
                                                                     Home
                                                                 </Text>
                                                             </a>
@@ -88,7 +88,7 @@ export default function Footer({ ...props }) {
                                                         </li>
                                                         <li>
                                                             <a href="#">
-                                                                <Text as="p" className="!text-[1.25rem]">
+                                                                <Text as="p" className="text-[1.25rem]">
                                                                     News & Stories
                                                                 </Text>
                                                             </a>
@@ -104,20 +104,20 @@ export default function Footer({ ...props }) {
                                                 </div>
                                             </div>
                                             <div className="flex flex-col items-start gap-[0.06rem]">
-                                                <Heading as="h2" className="!text-[2.00rem]">
+                                                <Heading as="h2" className="text-[2.00rem]">
                                                     Get in Touch
                                                 </Heading>
-                                                <ul className="!ml-[0.50rem] flex flex-col items-start gap-[0.38rem] md:ml-0">
+                                                <ul className="flex flex-col items-start gap-[0.38rem] md:ml-0">
                                                     <li>
                                                         <a href="#">
-                                                            <Text as="p" className="!text-[1.25rem]">
-                                                                Email: crackingthestyleco
+                                                            <Text as="p" className="text-[1.25rem]">
+                                                                Email: crackingthestyle.co
                                                             </Text>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
-                                                            <Text as="p" className="!text-[1.25rem]">
+                                                            <Text as="p" className="text-[1.25rem]">
                                                                 Phone: +2347080141538
                                                             </Text>
                                                         </a>

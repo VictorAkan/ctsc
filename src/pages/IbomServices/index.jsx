@@ -35,7 +35,7 @@ export default function IbomServicesPage() {
                                 </div> */}
                             </div>
                             <div className="mt-[-0.56rem] flex flex-col items-center justify-center bg-[#d8d7ff] pb-[13.88rem] pt-[8.00rem] md:py-[1.25rem]">
-                                <div className="container-xs flex flex-col md:p-[1.25rem] md:px-[1.25rem]">
+                                <div className="container-xs flex flex-col mt-24 md:p-[1.25rem] md:px-[1.25rem]">
                                     <Text
                                         size="27xl"
                                         as="p"

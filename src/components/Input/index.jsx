@@ -6,7 +6,7 @@ const shapes = {
 };
 const variants = {
     fill: {
-        blue_gray_100_03: "bg-[#d9d9d9] text-[#3a3a3a]",
+        blue_gray_100_03: "bg-[#d9d9d9] focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-[#3a3a3a]",
     },
     outline: {
         blue_gray_100: "border-[#cac9d6] border border-solid text-[#676576]",

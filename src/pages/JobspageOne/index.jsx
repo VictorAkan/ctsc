@@ -12,10 +12,11 @@ export default function JobspageOnePage() {
                 <title>CTSC</title>
                 <meta name="description" content="web site created using create-react-app" />
             </Helmet>
+            <Header />
             <div className="flex w-full flex-col items-center justify-center gap-[10.19rem] bg-[#ffffff] pb-[9.94rem] md:gap-[7.63rem] md:pb-[1.25rem] sm:gap-[5.06rem]">
                 <Header className="self-stretch" />
                 <div className="container-xs md:p-[1.25rem]">
-                    <div className="flex flex-col gap-[1.56rem]">
+                    <div className="flex mt-32 flex-col gap-[1.56rem]">
                         <div className="flex flex-col items-center">
                             <div className="relative z-[1] h-[5.94rem] self-stretch rounded-[25px] bg-[#d9d9d9]" />
                             <Text size="27xl" as="p" className="relative mt-[-2.94rem] !text-[4.00rem]">

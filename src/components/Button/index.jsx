@@ -15,7 +15,7 @@ const variants = {
         white_A700_01: "bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]",
     },
     gradient: {
-        indigo_800_indigo_800_00: "bg-gradient-to-1 from-[#10348f] to-[#10348f00]",
+        indigo_800_indigo_800_00: "!bg-gradient-to-1 !from-[#10348f] !to-[#10348f00]",
     },
     outline: {
         blue_gray_900: "border-[#253451] border-2 border-solid text-[#253451]",
@@ -27,7 +27,7 @@ const sizes = {
     "9xl": "h-[5.38rem] px-[2.19rem] text-[1.38rem]",
     "7xl": "h-[5.06rem] sm:h-[4rem] pl-[1.44rem] pr-[1.13rem] text-[1.38rem]",
     "6xl": "h-[3.81rem] px-[2.00rem] text-[1.81rem]",
-    "13xl": "h-[10.19rem] px-[2.94rem]",
+    "13xl": "h-[10.19rem] px-[2.94rem] sm!py-[1rem]",
     "8xl": "h-[5.13rem] px-[2.13rem] text-[3.13rem] md:text-[2rem]",
     xs: "h-[1.63rem] px-[0.81rem] text-[1.00rem]",
     "12xl": "h-[8.31rem] px-[2.06rem] sm:px-[2.06rem] text-[2.88rem] sm:text-[1.5rem]",
@@ -55,7 +55,7 @@ const Button = ({
 }) => {
     return (
         <button
-            className={`${className} flex flex-row items-center justify-center text-center cursor-pointer s-center ${(shape && shapes[shape]) || ""} ${(variant && variants[variant]?.[color]) || ""} ${(size && sizes[size]) || ""}`}
+            className={`${className} flex flex-row items-center hover:-translate-y-1 transition ease-in-out duration-100 justify-center text-center cursor-pointer s-center ${(shape && shapes[shape]) || ""} ${(variant && variants[variant]?.[color]) || ""} ${(size && sizes[size]) || ""}`}
             {...restProps}
         >
             {!!leftIcon && leftIcon}

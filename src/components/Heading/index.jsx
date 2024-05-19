@@ -1,6 +1,6 @@
 
 const sizes = {
-    "3xl": "text-[3.38rem] font-bold md:text-[2.88rem] sm:text-[2.5ørem]", 
+    "3xl": "text-[3.38rem] font-bold md:text-[2.88rem] sm:text-[2.50rem]", 
     "2xl": "text-[2.06rem] font-semibold md:text-[1.94rem] sm:text-[1.81rem]", 
     xl: "text-[2.00rem] font-semibold md:text-[1.88rem] sm:text-[1.75rem]", 
     "4xl": "text-[4.38rem] font-bold md:text-[3.00rem]",

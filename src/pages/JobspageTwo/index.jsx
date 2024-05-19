@@ -94,7 +94,7 @@ export default function JobspageTwoPage() {
                 <Header />
                 <div className="flex flex-col items-center">
                     <div className="h-[28.19rem] self-stretch md:h-auto">
-                        <div className="m-auto flex h-max w-full flex-col items-start gap-[1.00rem] bg-[#ffffff]">
+                        <div className="m-auto flex h-max mt-24 w-full flex-col items-start gap-[1.00rem] bg-[#ffffff]">
                             <div className="container-xs pl-[75.00rem] mt-10 pr-[1.88rem] md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
                                 <div className="flex flex-col items-center rounded-[38px] bg-[#cecece] p-[0.81rem]">
                                     <Img src="images/user.png" alt="lock" className="h-[3.06rem]" />
@@ -245,7 +245,7 @@ export default function JobspageTwoPage() {
                                                     </Text>
                                                 </a>
                                             </div>
-                                            <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                            <div className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                                 <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
                                                     Apply
                                                 </Text>
@@ -302,7 +302,7 @@ export default function JobspageTwoPage() {
                                                     </Text>
                                                 </a>
                                             </div>
-                                            <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                            <div className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                                 <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
                                                     Apply
                                                 </Text>
@@ -357,7 +357,7 @@ export default function JobspageTwoPage() {
                                                 </Text>
                                             </a>
                                         </div>
-                                        <div className="mr-[1.88rem] flex w-[25%] justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                        <div className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                             <Text size="3xl" as="p" className="!text-[1.00rem] cursor-pointer">
                                                 Apply
                                             </Text>

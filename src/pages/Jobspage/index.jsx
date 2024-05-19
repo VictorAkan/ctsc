@@ -40,7 +40,7 @@ export default function JobspagePage() {
                         >
                             Hire
                         </Text>
-                        <div className="nt-[2.69ren] grid grid-cols-3 justify-center gap-[9.19rem] self-stretch md:grid-cols-2 sm:grid-cols-1">
+                        <div className="mt-[2.69rem] grid grid-cols-3 justify-center gap-[9.19rem] self-stretch md:grid-cols-2 sm:grid-cols-1">
                             {data.map((d, index) => (
                                 <JobsPageStackgraphic {...d} key={"jobspage" + index} />
                             ))}
