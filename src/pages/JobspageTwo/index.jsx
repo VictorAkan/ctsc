@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { SignUpModal } from "../../modals/SignUpModal";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 const jobsData = [
     {
         designandtext: "Design and Creative",
@@ -83,6 +86,8 @@ const jobsData = [
 ]
 
 export default function JobspageTwoPage() {
+    useScrollToTop();
+
     const [open, setOpen] = useState(false)
     return (
         <>
@@ -131,6 +136,7 @@ export default function JobspageTwoPage() {
                                     </Text>
                                     <div className="my-auto flex md:flex-col h-[19.50rem] md:w-full -mt-48 md:-mt-0 w-[69%] items-center justify-end bg-[url(/public/images/group_me.png)] bg-cover bg-no-repeat px-[3.06rem] pb-[4.81rem] mr-[42rem] md:mr-0 pt-[12.06rem] md:h-auto md:p-[1.25rem]">
                                         <Button
+                                            onClick={() => setOpen(true)}
                                             color="blue_gray_900"
                                             size="md"
                                             shape="round"
@@ -139,6 +145,7 @@ export default function JobspageTwoPage() {
                                             Hire
                                         </Button>
                                         <Button
+                                            onClick={() => setOpen(true)}
                                             color="blue_gray_900"
                                             size="md"
                                             variant="outline"

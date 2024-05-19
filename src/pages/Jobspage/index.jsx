@@ -4,6 +4,9 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import JobsPageStackgraphic from "../../components/JobsPageStackgraphic";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 const data = [
     { Johnokon: "John Okon", graphic: "Graphic Designer", viewprofile: "View Profile" },
     { Johnokon: "John Okon", graphic: "Graphic Designer", viewprofile: "View Profile" },
@@ -14,6 +17,8 @@ const data = [
 ];
 
 export default function JobspagePage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

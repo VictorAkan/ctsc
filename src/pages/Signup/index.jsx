@@ -3,7 +3,12 @@ import { Img, Text, Button, Input, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 export default function SignupPage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

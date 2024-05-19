@@ -15,13 +15,18 @@ const JobspageTwoLazy = React.lazy(() => import("./pages/JobspageTwo"));
 const IbomPartnersLazy = React.lazy(() => import("./pages/IbomPartners"));
 const IbomPartnersOneLazy = React.lazy(() => import("./pages/IbomPartnersOne"));
 const SignupLazy = React.lazy(() => import("./pages/Signup"));
+const NewsSectionLazy = React.lazy(() => import("./pages/NewsAndStories"));
+
+// import general loader
+import { Loader } from "./Loader";
 
 const ProjectRoutes = () => {
+
     let element = useRoutes([
         {
             path: "/",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <HomePageLazy />
                 </Suspense>
             ),
@@ -30,7 +35,7 @@ const ProjectRoutes = () => {
         {
             path: "/mkponnyin",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <MkpoNnyinLazy />
                 </Suspense>
             ),
@@ -38,7 +43,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibomevents",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomEventsLazy />
                 </Suspense>
             ),
@@ -46,7 +51,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibomservices",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomServicesLazy />
                 </Suspense>
             ),
@@ -54,7 +59,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibomservicesone",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomServicesOneLazy />
                 </Suspense>
             ),
@@ -62,7 +67,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibomservicestwo",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomServicesTwoLazy />
                 </Suspense>
             ),
@@ -70,7 +75,7 @@ const ProjectRoutes = () => {
         {
             path: "/jobspage",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <JobspageLazy />
                 </Suspense>
             ),
@@ -78,7 +83,7 @@ const ProjectRoutes = () => {
         {
             path: "/jobspageone",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <JobspageOneLazy />
                 </Suspense>
             ),
@@ -86,7 +91,7 @@ const ProjectRoutes = () => {
         {
             path: "/jobspagetwo",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <JobspageTwoLazy />
                 </Suspense>
             ),
@@ -94,7 +99,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibompartners",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomPartnersLazy />
                 </Suspense>
             ),
@@ -102,7 +107,7 @@ const ProjectRoutes = () => {
         {
             path: "/ibompartnersone",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <IbomPartnersOneLazy />
                 </Suspense>
             ),
@@ -110,10 +115,18 @@ const ProjectRoutes = () => {
         {
             path: "/signup",
             element: (
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                     <SignupLazy />
                 </Suspense>
             ),
+        },
+        {
+            path: "/newssection",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <NewsSectionLazy />
+                </Suspense>
+            )
         },
     ]);
 

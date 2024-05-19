@@ -3,8 +3,12 @@ import { Img, Text, Button } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function IbomPartnersPage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

@@ -2,7 +2,10 @@ import { Helmet } from "react-helmet";
 import { Img, Text } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import MkpoNnyinIbomservices from "../../components/MkpoNnyinIbomservices";
+import { Link } from "react-router-dom";
+
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const serviceData = [
     {
@@ -16,6 +19,8 @@ const serviceData = [
 ]
 
 export default function MkpoNnyinPage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>
@@ -41,40 +46,40 @@ export default function MkpoNnyinPage() {
                         <div className="container mx-auto">
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="hover:scale-105 transition duration-300 ease-in-out">
-                                    <a href="/mkpo-nnyin/ibom-event/ibom-event.html">
+                                    <Link to="/ibomevents">
                                         <img
                                             src="images/img_subb1.png"
                                             alt=""
                                             className="w-full rounded-lg object-cover mkpo-nnyin-img"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="hover:scale-105 transition duration-300 ease-in-out">
-                                    <a href="/mkpo-nnyin/ibom-services/ibom-services.html">
+                                    <Link to="/ibomservices">
                                         <img
                                             src="images/img_subb.png"
                                             alt=""
                                             className="w-full rounded-lg object-cover mkpo-nnyin-img"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="hover:scale-105 transition duration-300 ease-in-out">
-                                    <a href="/mkpo-nnyin/ibom-jobs/ibom-jobs.html">
+                                    <Link to="/jobspagetwo">
                                         <img
                                             src="images/img_subb2.png"
                                             alt=""
                                             className="w-full rounded-lg object-cover mkpo-nnyin-img"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="hover:scale-105 transition duration-300 ease-in-out">
-                                    <a href="/mkpo-nnyin/ibom-partners.html">
+                                    <Link to="/ibompartners">
                                         <img
                                             src="images/img_subb3.png"
                                             alt=""
                                             className="w-full rounded-lg object-cover mkpo-nnyin-img"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="centered-div rounded-[3.5em] md:hidden bg-[#d9d9d9] h-[20%] w-[20%] top-[79rem] left-[38rem] absolute"></div>
                             </div>

@@ -51,7 +51,10 @@ export default function Header({ ...props }) {
                     }}
                 >
                     <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> News & Stories
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline">
+                        <Link to="/newssection">
+                        News & Stories
+                        </Link>
                         </Text>
                         <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" />
                     </div>

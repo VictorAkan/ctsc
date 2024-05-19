@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import IbomServicesOnePlum from "../../components/IbomServicesOnePlum";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const data = [
     {
@@ -31,6 +33,8 @@ const data = [
 
 
 export default function IbomServicesOnePage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

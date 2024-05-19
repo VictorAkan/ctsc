@@ -2,7 +2,12 @@ import Helmet from "react-helmet";
 import { Img, Text, Button, Input, Heading } from "../../components";
 import Header from "../../components/Header";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 export default function IbomServicesTwoPage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

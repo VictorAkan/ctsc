@@ -4,8 +4,12 @@ import Header from "../../components/Header";
 import JobsPageOneRowdescription from "../../components/JobsPageOneRowdescription";
 import Footer from "../../components/Footer";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function JobspageOnePage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

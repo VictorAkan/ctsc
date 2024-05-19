@@ -1,5 +1,5 @@
 import { Text, Heading, Button, Img } from "./..";
-
+import { Link } from "react-router-dom";
 
 export default function Footer({ ...props }) {
     return (
@@ -73,32 +73,32 @@ export default function Footer({ ...props }) {
                                                     </Heading>
                                                     <ul className="flex flex-col gap-[0.38rem]">
                                                         <li>
-                                                            <a href="Home" target="_blank" rel="noreferrer">
-                                                                <Text as="p" className="text-[1.25rem]">
+                                                            <Link to="/">
+                                                                <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
                                                                     Home
                                                                 </Text>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
-                                                                <Text size="9xl" as="p" className="!font-['Inter']">
+                                                            <Link to="/mkponnyin">
+                                                                <Text as="p" className="!font-['Inter'] hover:text-[#c2d7ff]">
                                                                     Mkpo Nnyin
                                                                 </Text>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
-                                                                <Text as="p" className="text-[1.25rem]">
+                                                            <Link to="/">
+                                                                <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
                                                                     News & Stories
                                                                 </Text>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
-                                                                <Text size="9xl" as="p" className="!font-['Inter']">
+                                                            <Link to="/ibompartnersone">
+                                                                <Text as="p" className="!font-['Inter'] hover:text-[#c2d7ff]">
                                                                     About CTSCode
                                                                 </Text>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -110,14 +110,14 @@ export default function Footer({ ...props }) {
                                                 <ul className="flex flex-col items-start gap-[0.38rem] md:ml-0">
                                                     <li>
                                                         <a href="#">
-                                                            <Text as="p" className="text-[1.25rem]">
+                                                            <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
                                                                 Email: crackingthestyle.co
                                                             </Text>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
-                                                            <Text as="p" className="text-[1.25rem]">
+                                                            <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
                                                                 Phone: +2347080141538
                                                             </Text>
                                                         </a>

@@ -2,8 +2,14 @@ import { Helmet } from "react-helmet";
 import { Img, Text, Button, Input, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { Link } from "react-router-dom";
+
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function HomePage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>
@@ -27,6 +33,7 @@ export default function HomePage() {
                                     <Text size="12xl" as="p" className="text-[1.63rem] sm:text-center sm:mt-5">
                                         Inspiring Lives, Defining Standards
                                     </Text>
+                                    <Link to="/ibompartnersone">
                                     <Button
                                         color="blue_gray_100_03"
                                         size="10xl"
@@ -34,6 +41,7 @@ export default function HomePage() {
                                     >
                                         Learn More
                                     </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

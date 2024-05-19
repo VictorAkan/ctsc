@@ -2,8 +2,11 @@ import { Helmet } from "react-helmet";
 import { Text, Img } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function IbomPartnersOnePage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>

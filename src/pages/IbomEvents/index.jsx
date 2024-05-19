@@ -3,7 +3,12 @@ import { Img, Text, Button, Heading } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+// import scrolltotop hook
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 export default function IbomEventsPage() {
+    useScrollToTop();
+    
     return (
         <>
             <Helmet>
@@ -154,103 +159,6 @@ export default function IbomEventsPage() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="relative mt-[5.31rem] h-[29.69rem] self-stretch md:h-auto"> */}
-                    {/* <div className="ml-[6.88rem] mt-[10.81rem] flex w-[13%] justify-between gap-[1.25rem] md:ml-0">
-                        <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                            <Img
-                                src="images/facebook.png"
-                                alt="facebook"
-                                className="h-[2.69rem] rounded-t1-[21px] rounded-tr-[21px]"
-                            />
-                        </div>
-                        <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                            <img src="images/twitter.png" alt="trash" className="h-[2.69rem] rounded-t1-[21px] rounded-tr-[21px]" />
-                        </div>
-                        <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                            <img src="images/instagram.png" alt="info" className="h-[2.69rem] rounded-tl-[21px] rounded-tr-[21px]" />
-                        </div>
-                    </div> */}
-                    {/* <div className="absolute bottom-0 left-0 right-0 top-0 m-auto h-max w-full">
-                        <div>
-                            <div className="relative h-[27.25rem] md:h-auto">
-                                <Heading as="h1" className="ml-[6.88rem] mt-[5.88rem] !text-[2.00rem] md:ml-0">
-                                    Our Socials
-                                </Heading>
-                                <div className="absolute bottom-◊ left-◊ right-◊ top-0 m-auto flex h-max w-full bg-[#192235] px-[3.38rem] pb-[2.19rem] pt-[10.38rem] md:mt-[100px] md:px-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
-                                    <div className="flex w-[86%] items-start justify-between gap-[1.25rem] md:w-full md:flex-col">
-                                        <div className="flex w-[36%] flex-col items-start gap-[2.25rem] md:w-full">
-                                            <Text size="10xl" as="p" className="!font-['Inter'] !text-[1.44rem]">
-                                                CRACKING THE STYLE CODE
-                                            </Text>
-                                            <Text size="4xl" as="p" className="ml-[0.31rem] w-full leading-[1.56rem] md:m1-0">
-                                                <>
-                                                    We believe that valuable content should be <br />
-                                                    easily accessible to empower a diverse global <br /> audience.
-                                                </>
-                                            </Text>
-                                            <div className="ml-[0.31rem] flex w-[46%] justify-between gap-[1.25rem] md:ml-0 md:w-full md:justify-start">
-                                                <Button shape="round" className="w-[2.69rem] !rounded-[21px]">
-                                                    <img src="images/facebook.png" />
-                                                </Button>
-                                                <Button shape="round" className="w-[2.69rem] !rounded-[21px]">
-                                                    <img src="images/twitter.png" />
-                                                </Button>
-                                                <Button shape="round" className="w-[2.69rem] !rounded-[21px]">
-                                                    <img src="images/instagram.png" />
-                                                </Button>
-                                            </div>
-                                        </div>
-                                        <div className="mb-[0.75rem] flex w-[52%] items-start justify-between gap-[1.25rem] md:w-full sm:flex-col"> <div className="mt-[0.31rem] flex flex-col items-start">
-                                            <Heading as="h2" className="!text-[2.00rem]">
-                                                Pages
-                                            </Heading>
-                                            <a href="Home" target="_blank" rel="noreferrer" className="m]-[0.44rem] mt-[1.13rem] md:m1-0">
-                                                <Text as="p" className="!text-[1.25rem]">
-                                                    Home
-                                                </Text>
-                                            </a>
-                                            <a href="#" className="ml-[0.44rem] mt-[0.50rem] md:ml-0">
-                                                <Text size="9xl" as="p" className="!font-['Inter']">
-                                                    Mkpo Nnyin
-                                                </Text>
-                                            </a>
-                                            <a href="#" className="ml-[0.44rem] mt-[0.81rem] md:ml-0">
-                                                <Text as="p" className="!text-[1.25rem]">
-                                                    News & Stories
-                                                </Text>
-                                            </a>
-                                            <a href="#" className="ml-[0.44rem] mt-[0.44rem] md:ml-0">
-                                                <Text size="9xl" as="p" className="!font-['Inter']">
-                                                    About CTSCode
-                                                </Text>
-                                            </a>
-                                        </div>
-                                            <div className="flex flex-col items-start">
-                                                <Heading as="h3" className="text-[2.00rem]">
-                                                    Get in Touch
-                                                </Heading>
-                                                <Text as="p" className="ml-[0.50rem] mt-[1.63rem] !text-[1.25rem] md:ml-0">
-                                                    Email: crackingthestyleco
-                                                </Text>
-                                                <Text as="p" className="ml-[0.50rem] mt-[0.38rem] !text-[1.25rem] md:m1-0">
-                                                    Phone: +2347080141538
-                                                </Text>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="relative z-[2] mt-[-10px] flex justify-center bg-[#3d547f] md:mt-[530px] sm:mt-[670px">
-                                <div className="container-xs flex justify-center pl-[19.63rem] pr-[21.50rem] md:p-[1.25rem] md:px-[1.25rem]">
-                                    <Text size="12xl" as="p" className="!text-[#fffffff2]">
-                                        <span className="text-[#fffffff2]">All Rights Reserved. ©2024</span>
-                                        <span className="lowercase text-[#fffffff2]">&nbsp;CRACKING THE STYLE CODE</span>
-                                    </Text>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-                {/* </div> */}
             </div>
             <Footer />
         </>

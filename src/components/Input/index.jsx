@@ -13,7 +13,7 @@ const variants = {
     },
 };
 const sizes = {
-    sm: "h-[5.56rem] px-[2.19rem] text-[1.38rem]",
+    sm: "h-[5.56rem] sm:h-[3.56rem] sm:text-[1rem] px-[1.19rem] text-[1.38rem]",
     xs: "h-[3.75rem] pl-[1.13rem] pr-[2.19rem] text-[0.94rem]",
 };
 
