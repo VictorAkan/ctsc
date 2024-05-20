@@ -16,6 +16,8 @@ const IbomPartnersLazy = React.lazy(() => import("./pages/IbomPartners"));
 const IbomPartnersOneLazy = React.lazy(() => import("./pages/IbomPartnersOne"));
 const SignupLazy = React.lazy(() => import("./pages/Signup"));
 const NewsSectionLazy = React.lazy(() => import("./pages/NewsAndStories"));
+const AutismLazy = React.lazy(() => import("./pages/FeatureStory"));
+const LoginLazy = React.lazy(() => import("./pages/Login"));
 
 // import general loader
 import { Loader } from "./Loader";
@@ -128,6 +130,22 @@ const ProjectRoutes = () => {
                 </Suspense>
             )
         },
+        {
+            path: "/featurestory",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <AutismLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/login",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <LoginLazy />
+                </Suspense>
+            )
+        }
     ]);
 
     return element;

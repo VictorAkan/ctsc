@@ -1,11 +1,16 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const NewsSection = () => {
+    useScrollToTop();
     return (
+        <>
+        <Header />
         <div className="container mx-auto px-4">
+            <Header />
             <div className="flex justify-center" id="feature-story">
-                <div className="w-full md:w-5/6 mt-4 mb-5 bg-white p-4 shadow-md">
+                <div className="w-full md:w-5/6 mt-24 md:mt-32 mb-5 news-blog bg-white p-4 shadow-md">
                     <a href="#">
                         <img
                             src="./img/news-and-stories-img/news-and-stories-img-1.jpg"
@@ -14,7 +19,7 @@ const NewsSection = () => {
                         />
                     </a>
                     <div className="mt-3 flex items-center font-bold mb-3">
-                        3/18/24 <span className="mx-2">•</span> Precious H
+                        3/18/24 <span className="mx-2 dot">•</span> Precious H
                     </div>
                     <a href="#">
                         <h4 className="text-lg font-semibold">
@@ -24,22 +29,22 @@ const NewsSection = () => {
                     <p className="mb-3">
                         In today’s feature story, we have decided to bring you a highly requested segment for our Foodie-readers. For our first recipe, we headed to a daughter of the soil who is an expert in this recipe.
                     </p>
-                    <a href="#" className="text-blue-500 hover:underline">
+                    <a href="#" className="read-more text-blue-500 hover:underline">
                         Read More
                     </a>
                 </div>
             </div>
 
             <div className="text-center my-8">
-                <h1 className="text-3xl font-bold">News & Stories of the Great People of Akwa Ibom, Nigeria</h1>
-                <div className="h-1 bg-gray-300 mt-2 mb-5"></div>
-                <div className="mb-5">
+                <h1 className="text-3xl big-header font-bold">News & Stories of the Great People of Akwa Ibom, Nigeria</h1>
+                <div className="h-1 line bg-gray-300 mt-2 mb-5"></div>
+                <div className="mb-5 donate">
                     <p>
                         CTSC is here to crack the style code to a successful life and serve the ordinary men & women of Akwa Abasi
                         Ibom state in Nigeria. We cannot do this alone. You may donate to support the work we do here and help pay our
                         journalists and writers.
                     </p>
-                    <a href="#" className="btn btn-primary bg-blue-500 text-white py-2 px-4 rounded-md mt-3 inline-block">
+                    <a href="#" className="btn btn-primary bg-[#253451] text-white py-2 px-4 rounded-md mt-3 inline-block">
                         Donate
                     </a>
                 </div>
@@ -47,8 +52,8 @@ const NewsSection = () => {
 
             <section>
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                    <div className="grid grid-cols-2 sm:grid-cols-1 justify-center gap-4">
+                        <div className="w-full news-card mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <h3 className="text-center mb-3 text-xl font-semibold">Feature Stories</h3>
                             </a>
@@ -70,12 +75,12 @@ const NewsSection = () => {
                                     <span className="flex mt-2 mb-3">Apr 8, 2024 -- Gloria J</span>
                                 </p>
                             </a>
-                            <a href="#" className="text-blue-500 hover:underline">
+                            <a href="#" className="text-blue-500 read-more hover:underline">
                                 Read More
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white news-card p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-6.jpg"
@@ -95,12 +100,12 @@ const NewsSection = () => {
                                     <span className="flex mt-2 mb-3">Apr 5, 2024 -- Precious H</span>
                                 </p>
                             </a>
-                            <a href="#" className="text-blue-500 hover:underline">
+                            <a href="#" className="text-blue-500 read-more hover:underline">
                                 Read More
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 news-card bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-10.jpg"
@@ -120,12 +125,12 @@ const NewsSection = () => {
                                     <span className="flex mt-2 mb-3">Apr 1, 2024 -- Udeme E</span>
                                 </p>
                             </a>
-                            <a href="#" className="text-blue-500 hover:underline">
+                            <a href="#" className="text-blue-500 read-more hover:underline">
                                 Read More
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white news-card p-4 shadow-md">
                             <a href="#">
                                 <h3 className="text-center mb-3 text-xl font-semibold">Personal Growth</h3>
                             </a>
@@ -147,12 +152,12 @@ const NewsSection = () => {
                                     <span className="flex mt-2 mb-2">Apr 10, 2024 -- Udeme E</span>
                                 </p>
                             </a>
-                            <a href="#" className="text-blue-500 hover:underline">
+                            <a href="#" className="text-blue-500 read-more hover:underline">
                                 Read More
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white news-card p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-7.jpg"
@@ -171,12 +176,12 @@ const NewsSection = () => {
                                     <span className="flex mt-2 mb-2">Mar 13, 2024 -- Amazing Oty</span>
                                 </p>
                             </a>
-                            <a href="#" className="text-blue-500 hover:underline">
+                            <a href="#" className="text-blue-500 read-more hover:underline">
                                 Read More
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 news-card bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-11.jpg"
@@ -196,7 +201,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <h3 className="text-center mb-3 text-xl font-semibold">Readers’ Corner</h3>
                             </a>
@@ -223,7 +228,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-8.jpg"
@@ -247,7 +252,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-12.jpg"
@@ -267,7 +272,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <h3 className="text-center mb-3 text-xl font-semibold">CTSC Interviews</h3>
                             </a>
@@ -295,7 +300,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-9.jpg"
@@ -316,7 +321,7 @@ const NewsSection = () => {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-5/12 mb-4 bg-white p-4 shadow-md">
+                        <div className="w-full mb-4 bg-white p-4 shadow-md">
                             <a href="#">
                                 <img
                                     src="./img/news-and-stories-img/news-and-stories-img-13.jpg"
@@ -339,6 +344,8 @@ const NewsSection = () => {
                 </div>
             </section>
         </div>
+        <Footer className="mt-24" />
+        </>
     );
 };
 

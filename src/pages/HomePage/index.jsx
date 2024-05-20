@@ -115,6 +115,7 @@ export default function HomePage() {
                                         </Button>
                                     </div>
                                 </div>
+                                <Link to="/newssection">
                                 <Button
                                     color="blue_gray_900"
                                     size="9xl"
@@ -122,6 +123,7 @@ export default function HomePage() {
                                 >
                                     EXPLORE ALL NEWS & STORIES
                                 </Button>
+                                </Link>
                             </div>
                         </div>
                         <div>

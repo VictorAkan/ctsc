@@ -486,12 +486,14 @@ export default function JobspageTwoPage() {
                                                 >
                                                     Create Account
                                                 </Button>
+                                                <Link to="/login">
                                                 <Text size="2xl" as="p" className="flex ml-[8rem] sm:ml-0 !text-[0.94rem] !text-center tracking-[0.00rem] !text-[#494759]">
                                                     <span className="text-[#494759] capitalize">Already have an account?&nbsp;</span>
                                                     <a href="#" className="font-semibold text-[#000000] underline">
                                                         Sign In
                                                     </a>
                                                 </Text>
+                                                </Link>
                                             </form>
                                         </div>
                                     </div>

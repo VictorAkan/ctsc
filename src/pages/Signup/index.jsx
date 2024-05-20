@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Img, Text, Button, Input, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { Link } from "react-router-dom";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
@@ -136,12 +137,14 @@ export default function SignupPage() {
                                         >
                                             Create an account
                                         </Button>
+                                        <Link to="/login">
                                         <Text size="2xl" as="p" className="flex !text-[0.94rem] tracking-[0.00rem] !text-[#494759]">
                                             <span className="text-[#494759]">Already have an account?&nbsp;</span>
                                             <a href="#" className="font-semibold text-[#6838ee] underline">
                                                 Login
                                             </a>
                                         </Text>
+                                        </Link>
                                     </div>
                                     <div className="flex w-[38%] justify-between gap-[1.25rem] md:w-full">
                                         <Img

@@ -87,7 +87,7 @@ export default function Footer({ ...props }) {
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link to="/">
+                                                            <Link to="/newssection">
                                                                 <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
                                                                     News & Stories
                                                                 </Text>
