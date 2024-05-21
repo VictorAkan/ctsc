@@ -44,14 +44,14 @@ export default function MegaMenu2() {
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">News & Stories</Text> </a> */}
                         <Link to="/featurestory" className="self-center">
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Feature Story</Text> </Link>
-                        <a href="#" className="self-center">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Personal Growth</Text> </a>
-                        <a href="#" className="self-center">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Reader's Corner</Text> </a>
-                        <a href="#" className="self-center">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">CTSC Interviews</Text> </a>
-                        <a href="#" className="self-center">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Our Culture</Text> </a>
+                        <Link to="/personalgrowth" className="self-center">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Personal Growth</Text> </Link>
+                        <Link to="/readerscorner" className="self-center">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Reader's Corner</Text> </Link>
+                        <Link to="/ctscinterviews" className="self-center">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">CTSC Interviews</Text> </Link>
+                        <Link to="/ourculture" className="self-center">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Our Culture</Text> </Link>
                     </div>
                 </div>
             </div>

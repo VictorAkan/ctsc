@@ -1,5 +1,5 @@
 import { Img, Text } from "./..";
-
+import { Link } from "react-router-dom";
 
 export default function JobsPageTwoCategory({
     designandtext,
@@ -8,6 +8,7 @@ export default function JobsPageTwoCategory({
     starimage,
     ratingtext,
     designandimage,
+    linkDest,
     ...props
 }) {
     return (<div {...props} className={`${props.className} flex justify-center hover:scale-105 transition duration-300 ease-in-out items-center w-full bg-[#253451] cursor-pointer rounded-[17px] hover: shadow-[-5px_6px_27px_0px_#25345142]`}>

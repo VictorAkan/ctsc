@@ -79,3 +79,99 @@
     width: 100%;
     height: auto;
 }
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e7e7e7;
+    border-radius: 2em;
+    padding: 4em 1.3em;
+}
+
+.growth span {
+    font-size: 1.2em;
+    border-bottom: 1px solid #202020;
+    color: #202220;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.blog-detail span {
+    color: #253451a8;
+    font-size: 0.9em;
+}
+
+.blog-detail h3 {
+    color: #253451;
+    font-size: 2.5em;
+}
+
+.blog-detail p {
+    color: #223f79;
+    font-size: 1.2em;
+}
+
+.blog-img {
+    position: relative;
+}
+
+.blog-img img {
+    display: block;
+    /* position: absolute; */
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+@media screen and (width:768px) {
+    .blog-img img {
+        position: static !important;
+    }
+}
+
+.read-more {
+    color: #223f79;
+    border-bottom: 1px solid #223f79;
+
+}
+
+.read-more:hover {
+    color: #223f79;
+
+}
+
+.dot {
+    margin: 0px 10px 3px;
+    height: 5px;
+    width: 5px;
+    background-color: #253451a8;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bg-aliceblue {
+    background-color: #f0f8ff;
+}
+
+.card img {
+    border-radius: 50%;
+}
+
+.blockquote {
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.blockquote-footer {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+em {
+    font-size: 0.7em;
+    color: #000;
+}

@@ -18,6 +18,12 @@ const SignupLazy = React.lazy(() => import("./pages/Signup"));
 const NewsSectionLazy = React.lazy(() => import("./pages/NewsAndStories"));
 const AutismLazy = React.lazy(() => import("./pages/FeatureStory"));
 const LoginLazy = React.lazy(() => import("./pages/Login"));
+const PersonalGrowthLazy = React.lazy(() => import("./pages/PersonalGrowth"));
+const ReadersCornerLazy = React.lazy(() => import("./pages/ReadersCorner"));
+const InterviewsLazy = React.lazy(() => import("./pages/CtscInterviews"));
+const OurCultureLazy = React.lazy(() => import("./pages/OurCulture"));
+const CtscTeamLazy = React.lazy(() => import("./pages/CtscTeams"));
+const ContactUsLazy = React.lazy(() => import("./pages/ContactUs"));
 
 // import general loader
 import { Loader } from "./Loader";
@@ -145,7 +151,55 @@ const ProjectRoutes = () => {
                     <LoginLazy />
                 </Suspense>
             )
-        }
+        },
+        {
+            path: "/personalgrowth",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <PersonalGrowthLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/readerscorner",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <ReadersCornerLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/ctscinterviews",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <InterviewsLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/ourculture",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <OurCultureLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/ctscteam",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <CtscTeamLazy />
+                </Suspense>
+            )
+        },
+        {
+            path: "/contactus",
+            element: (
+                <Suspense fallback={<Loader />}>
+                    <ContactUsLazy />
+                </Suspense>
+            )
+        },
     ]);
 
     return element;

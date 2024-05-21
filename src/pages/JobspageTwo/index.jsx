@@ -17,7 +17,8 @@ const jobsData = [
         skillscountertext: "457 skills",
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
-        designandimage: "images/workimg_1.png"
+        designandimage: "images/workimg_1.png",
+        linkDest: "/jobspage",
     },
     {
         designandtext: "Sales & Marketing",
@@ -179,13 +180,13 @@ export default function JobspageTwoPage() {
                             </div>
                             <div className="grid grid-cols-3 gap-[3.81rem] md:grid-cols-2 sm:grid-cols-1">
                                 {jobsData.map((d, index) => (
-                                    <a href="https://www.youtube.com/embed/bv8Fxk0sz71" target="_blank">
+                                    <Link to={d.linkDest}>
                                         <JobsPageTwoCategory
                                         {...d}
                                             key={"jobspagetwo" + index}
                                             className="pb-[2.38rem] pl-[1.38rem] pr-[0.75rem] pt-[2.44rem] hover:shadow-[-5px_6px_27px_0px_#25345142] sm:py-[1.25rem] sm:pl-[1.25rem]"
                                         />
-                                    </a>))}
+                                    </Link>))}
                             </div>
                         </div>
                     </div>
