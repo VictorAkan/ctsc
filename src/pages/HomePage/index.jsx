@@ -51,10 +51,10 @@ export default function HomePage() {
                             <Text size="28xl" as="p" className="self-center !text-[#253451] md:ml-0 sm:text-center">
                                 Digital Accessibility
                             </Text>
-                            <Text size="14xl" as="p" className="mt-[1.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
+                            <Text size="10xl" as="p" className="mt-[1.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
                                 <>
                                     Cracking The Style Code is accessible to everyone, ensuring a user-friendly <br />
-                                    experience across various devices. We believe that valuable content should be <br /> easily accessible to empower a diverse global audience.t
+                                    experience across various devices. We believe that valuable content should be <br /> easily accessible to empower a diverse global audience.
                                 </>
                             </Text>
                             <Button
@@ -69,7 +69,7 @@ export default function HomePage() {
                     <div className="flex flex-col md: gap-[0rem]">
                         <div className="flex flex-col items-center bg-[#ebebeb] pt-[4.56rem] md:pt-[1.25rem]">
                             <div className="container-xs flex flex-col items-center pl-[15.75rem] pr-[16.25rem] md:p-[1.25rem] md:px-[1.25rem]">
-                                <Text size="21xl" as="p" className="self-start sm:text-center !font-medium !text-[#253451]">
+                                <Text size="21xl" as="p" className="text-center !font-medium !text-[#253451]">
                                     This Week's Feature Story
                                 </Text>
                                 <Img
@@ -95,7 +95,7 @@ export default function HomePage() {
                                             </Text>
                                         </div>
                                         <Text
-                                            size="8xl"
+                                            size="7xl"
                                             as="p"
                                             className="ml-[0.44rem] w-full !text-[1.31rem] leading-[2.00rem] !text-[#000000] md:ml-0"
                                         >
@@ -219,9 +219,11 @@ export default function HomePage() {
                     </div>
                     <div className="h-full bg-[#d9d9d9] pl-24 pr-16 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
                         <div className="flex sm:block">
-                        <div className="m-auto flex flex-col items-center gap-[0.81rem]">
+                        <div className="m-auto flex flex-col items-start w-full gap-[0.81rem]">
                             <Text size="14xl" as="p" className="!text-[#000000]">
+                                <>
                                 Cracking the style code is not just a Publication
+                                </>
                             </Text>
                             <Text size="14xl" as="p" className="!text-[#000000]">
                                 Nnyin idoho itie uwed mop kpod;

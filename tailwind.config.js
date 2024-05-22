@@ -3,7 +3,7 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
   darkMode: "class",
-  theme: { screens: { md: {max: "1050px"}, sm: {max: "550px"} }, 
+  theme: { screens: { md: {max: "1304px"}, sm: {max: "550px"} }, 
   extend: {
     // colors: {
     //   blue_gray: {

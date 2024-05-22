@@ -14,7 +14,7 @@ export default function Header({ ...props }) {
 
     return (<header {...props}
         className={`${props.className} flex justify-center fixed items-center pt-[1.56rem] pb-[1.25rem] sm:pt-[1.25rem] bg-[#253451] w-full z-10`}>
-        <div className="container-xs flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
+        <div className="container px-32 flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
             <img src="images/img_header_logo.png" alt="headerlogo" className="h-[1.69rem] w-[19.13rem] object-contain" />
             <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
                 <li>

@@ -25,27 +25,27 @@ export default function Footer({ ...props }) {
                         <div className="h-full md:h-auto">
                             {/* <Heading as="h2" className="ml-[8.25rem] mt-[5.88rem] !text-[2.00rem] md:ml-0"> Our Socials
                             </Heading> */}
-                            <div className="m-auto flex h-max w-full justify-center bg-[#192235] pb-[8.31rem] pt-[5.00rem] md:mt-[5px] md:py-[1.25rem]">
+                            <div className="m-auto flex w-full justify-center bg-[#192235] py-[5.00rem] md:mt-[5px] md:py-[1.25rem]">
                                 <div className="container-xs flex items-center justify-center px-[2.3rem] md:p-[1.25rem] sm:px-[0.25rem]">
                                     <div className="flex w-full items-center justify-between gap-[1.25rem] md:flex-col">
-                                        <div className="flex pt-[5rem] md:pt-0 flex-col items-start gap-[1.81rem] md:w-full">
+                                        <div className="flex flex-col items-start gap-[0.7rem] md:w-full">
                                             <Text size="10xl" as="p" className="font-['Inter'] !text-[1.44rem]">
                                                 CRACKING THE STYLE CODE
                                             </Text>
-                                            <Text size="4xl" as="p" className="w-full leading-[1.56rem] md:ml-0">
+                                            <Text size="4xl" as="p" className="w-full leading-[1.56rem]">
                                                 <>
                                                     We believe that valuable content should be <br />
                                                     easily accessible to empower a diverse global <br /> audience.
                                                 </>
                                             </Text>
-                                            <div className="flex items-start justify-start w-[60%]"> 
-                                        <Button shape="round" className="w-[5.69rem] h-[5.69rem]">
+                                            <div className="flex items-start mt-4 justify-start"> 
+                                        <Button shape="round" className="rounded-full">
                                             <Img src="images/facebook.png" className="" />
                                         </Button>
-                                        <Button shape="round" className="w-[5.69rem] h-[5.69rem]">  
+                                        <Button shape="round" className="rounded-full">  
                                             <Img src="images/twitter.png" className="" />
                                         </Button>
-                                        <Button shape="round" className="w-[5.69rem] h-[5.69rem]">
+                                        <Button shape="round" className="rounded-full">
                                             <Img src="images/instagram.png" className="" /> 
                                         </Button>
                                     </div>
