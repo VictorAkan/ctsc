@@ -36,8 +36,8 @@ export default function HomePage() {
                                     <Link to="/ibompartnersone">
                                     <Button
                                         color="blue_gray_100_03"
-                                        size="10xl"
-                                        className="mt-[5.06rem] min-w-[21.75rem] hover:bg-[#ffffff] sm:min-w-[10rem] cursor-pointer rounded-[44px] font-medium sm:px-[1.25rem]"
+                                        size="9xl"
+                                        className="mt-[5.06rem] min-w-[15.75rem] hover:bg-[#ffffff] sm:min-w-[10rem] cursor-pointer rounded-[44px] font-medium sm:px-[1.25rem]"
                                     >
                                         Learn More
                                     </Button>
@@ -46,12 +46,12 @@ export default function HomePage() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center pb-[2.75rem] pt-[10.19rem] md:py-[1.25rem]">
-                        <div className="container-xs flex flex-col items-center pr-[0.50rem] md:p-[1.25rem] md:pl-[1.25rem]">
+                    <div className="flex flex-col items-center justify-center pb-[2.75rem] pt-[4.19rem] md:py-[1.25rem]">
+                        <div className="flex flex-col items-center pr-[0.50rem] md:p-[1.25rem] md:pl-[1.25rem]">
                             <Text size="28xl" as="p" className="self-center !text-[#253451] md:ml-0 sm:text-center">
                                 Digital Accessibility
                             </Text>
-                            <Text size="10xl" as="p" className="mt-[1.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
+                            <Text size="14xl" as="p" className="mt-[1.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
                                 <>
                                     Cracking The Style Code is accessible to everyone, ensuring a user-friendly <br />
                                     experience across various devices. We believe that valuable content should be <br /> easily accessible to empower a diverse global audience.
@@ -59,8 +59,8 @@ export default function HomePage() {
                             </Text>
                             <Button
                                 color="blue_gray_900"
-                                size="10xl"
-                                className="mt-[4.06rem] min-w-[21.75rem] sm:min-w-[10rem] hover:bg-[#2d3f61] rounded-[44px] font-medium sm:px-[1.25rem]"
+                                size="9xl"
+                                className="mt-[4.06rem] min-w-[15.75rem] sm:min-w-[10rem] hover:bg-[#2d3f61] rounded-[44px] font-medium sm:px-[1.25rem]"
                             >
                                 Ask Anything
                             </Button>
@@ -77,7 +77,7 @@ export default function HomePage() {
                                     alt="image"
                                     className="mt-[2.19rem] h-[26.94rem] w-full rounded-tl-[44px] sm:rounded-b-none rounded-tr-[44px] object-cover md:h-auto"
                                 />
-                                <div className="mt-[-0.06rem] self-stretch rounded-bl-[44px] rounded-br-[44px] bg-[#ffffff] pb-[1.19rem] pl-[1.81rem] pr-[1.31rem] pt-[1.81rem] sm:px-[1.25rem] sm:pt-[1.25rem]">
+                                <div className="mt-[-0.06rem] w-full self-stretch rounded-bl-[44px] rounded-br-[44px] bg-[#ffffff] pb-[1.19rem] pl-[1.81rem] pr-[1.31rem] pt-[1.81rem] sm:px-[1.25rem] sm:pt-[1.25rem]">
                                     <div className="flex flex-col items-start gap-[1.38rem]">
                                         <div className="flex w-[91%] items-center gap-[0rem] md:w-full md:flex-col">
                                             <Text
@@ -90,26 +90,26 @@ export default function HomePage() {
                                                     behind &quot;Made in Akwa Ibom&quot;
                                                 </>
                                             </Text>
-                                            <Text as="p" className="self-end sm:self-center !text-[#000000] sm:text-center">
+                                            <Text as="p" className="self-end text-md sm:self-center !text-[#000000] sm:text-center">
                                                 Feb 19, 2024
                                             </Text>
                                         </div>
                                         <Text
                                             size="7xl"
                                             as="p"
-                                            className="ml-[0.44rem] w-full !text-[1.31rem] leading-[2.00rem] !text-[#000000] md:ml-0"
+                                            className="ml-[0.44rem] w-full text-[1.31rem] leading-[2.00rem] !text-[#000000] md:ml-0"
                                         >
                                             <>
                                                 unlocking Success: CEO, Made in Akwa Ibom shares powerful
-                                                <br />
-                                                business lessons and passionate entrepreneurial insights that <br />
-                                                will put you in a better position to grow your focus on defining your <br /> business goals.
+                                                {/* <br /> */}
+                                                business lessons and passionate entrepreneurial insights that
+                                                will put you in a better position to grow your focus on defining your business goals.
                                             </>
                                         </Text>
                                         <Button
                                             color="black_900_01"
-                                            size="3xl"
-                                            className="ml-[0.88rem] hover:bg-[#2a2a2a] min-w-[12.75rem] rounded-[10px] md:ml-0 sm:px-[1.25rem]"
+                                            size="2xl"
+                                            className="ml-[0.88rem] hover:bg-[#2a2a2a] min-w-[9.75rem] rounded-[10px] md:ml-0 sm:px-[1.25rem]"
                                         >
                                             Read More
                                         </Button>
@@ -148,7 +148,7 @@ export default function HomePage() {
                                     </div>
                                     <div className="h-[8.44rem] md:h-auto">
                                         <div className="mb-[1.56rem] flex w-full justify-center bg-[#253451] pb-[29px] pt-8 sm:py-[1.25rem]">
-                                            <div className="container-xs flex pl-[4.00rem] pr-[3.50rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                            <div className="flex pl-[4.00rem] pr-[3.50rem] md:p-[1.25rem] md:px-[1.25rem]">
                                                 <marquee behavior="" direction="left">
                                                 <Text size="24xl" as="p" className="!font-['Inter'] text-[3.50rem]">
                                                     CRACKING THE STYLE CODE. - CRACKING THE STYLE CODE.
@@ -168,7 +168,7 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="flex justify-center bg-[#253451] pb-[7.56rem] mt-[0rem] pt-[5.00rem] md:py-[1.25rem]">
-                                <div className="container-xs flex justify-center pl-[6.81rem] pr-[9.94rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <div className="container-xs flex justify-center px-[10.94rem] md:p-[1.25rem] md:px-[1.25rem]">
                                     <div className="flex w-full flex-col items-center gap-[4.13rem] sm:gap-[2.06rem]">
                                         <div className="flex w-full flex-col items-center md:w-full">
                                             <Text size="25xl" as="p" className="text-[3.56rem] sm:text-center">
@@ -187,27 +187,27 @@ export default function HomePage() {
                                                 type="text"
                                                 name="firstName"
                                                 placeholder={`First Name`}
-                                                className="w-[87%] sm:w-full sm:h-[4rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] text-md sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Input
                                                 shape="round"
                                                 type="text"
                                                 name="lastName"
                                                 placeholder={`Last Name`}
-                                                className="w-[87%] sm:w-full sm:h-[4rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Input
                                                 shape="round"
                                                 type="email"
                                                 name="email"
                                                 placeholder={`Email Address`}
-                                                className="w-[87%] sm:w-full sm:h-[4rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Button
                                                 color="blue_gray_900"
-                                                size="7xl"
+                                                size="6xl"
                                                 shape="round"
-                                                className="min-w-[13.56rem] self-start ml-[4rem] md:ml-0 hover:bg-[#2d3f61] font-medium sm:pl-[1.25rem]"
+                                                className="min-w-[9.56rem] self-start md:ml-0 hover:bg-[#2d3f61] font-medium sm:pl-[1.25rem]"
                                             >
                                                 Shine Your Light
                                             </Button>
@@ -217,9 +217,9 @@ export default function HomePage() {
                             </div>
                         </div>
                     </div>
-                    <div className="h-full bg-[#d9d9d9] pl-24 pr-16 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
-                        <div className="flex sm:block">
-                        <div className="m-auto flex flex-col items-start w-full gap-[0.81rem]">
+                    <div className="h-full bg-[#d9d9d9] px-32 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
+                        <div className="flex space-x-32 md:space-x-0 sm:block">
+                        <div className="m-auto flex flex-col items-end md:items-start w-full gap-[0.81rem]">
                             <Text size="14xl" as="p" className="!text-[#000000]">
                                 <>
                                 Cracking the style code is not just a Publication
@@ -235,14 +235,14 @@ export default function HomePage() {
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         </div>
-                        <div className="flex sm:block space-x-6 sm:space-x-0">
+                        <div className="flex -mt-32 md:-mt-0 sm:block space-x-32 sm:space-x-0">
                             <Img
                             src="images/rectangle_18.png"
                             alt="image"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         <div className="m-auto flex order-2 sm:order-1 w-full flex-col items-start gap-[1.94rem]">
-                            <Text size="14xl" as="p" className="w-full leading-[2.81rem] !text-[#000000] md:w-full">
+                            <Text size="14xl" as="p" className="w-full font-bold leading-[2.81rem] !text-[#000000] md:w-full">
                                 <>
                                     {" "}
                                     It&#39;s a movement for positive <br />

@@ -106,7 +106,7 @@ export default function JobspageTwoPage() {
                                     <Img src="images/user.png" alt="lock" className="h-[3.06rem]" />
                                 </div>
                             </div>
-                            <div className="h-[19.69rem] w-full">
+                            <div className="h-[19.69rem] -mt-10 md:-mt-0 w-full">
                                 {/* <div className="my-auto flex h-[19.50rem] w-[69%] items-center justify-end bg-[url(/public/images/group_me.png)] bg-cover bg-no-repeat px-[3.06rem] pb-[4.81rem] pt-[12.06rem] md:h-auto md:p-[1.25rem]">
                                     <Button
                                         color="blue_gray_900"
@@ -160,7 +160,7 @@ export default function JobspageTwoPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="container-xs mt-[2.31rem] pl-[2.38rem] pr-[4.69rem] md:p-[1.25rem] nd:pr-[1.25rem] sm:px-[1.25rem]">
+                    <div className="container-xs md:mt-[2.31rem] pl-[2.38rem] pr-[4.69rem] md:p-[1.25rem] md:pr-[1.25rem] sm:px-[1.25rem]">
                         <div className="flex flex-col gap-[4.69rem] md:gap-[3.50rem] sm:gap-[2.31rem]">
                             <div className="flex w-[95%] md:w-full">
                                 <div className="flex w-full flex-col gap-[0.25rem]">

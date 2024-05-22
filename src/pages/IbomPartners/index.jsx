@@ -25,7 +25,7 @@ export default function IbomPartnersPage() {
                             </Text>
                         </div> */}
                     </div>
-                    <div className="container-xs mt-[7.06rem] pl-[32.63rem] pr-[21.88rem] md:p-[1.25rem] md:px-[1.25rem]">
+                    <div className="container-xs mt-[7.06rem] px-[28rem] md:p-[1.25rem] md:px-[1.25rem]">
                         <Button color="indigo_50" size="12xl" className="w-full rounded-[47px] font-medium sm:px-[1.25rem]">
                             Ibom Partners
                         </Button>
@@ -59,10 +59,10 @@ export default function IbomPartnersPage() {
                                 <Button
                                     color="blue_gray_900"
                                     size="11xl"
-                                    className="relative ml-[0.56rem] min-w-[15.00rem] rounded-[35px] font-medium leading-[2.38rem] !text-[#fffdfd] md:ml-0 sm:mt-5 sm:px-[1.25rem]"
+                                    className="ml-[0.56rem] mt-10 min-w-[15.00rem] rounded-[35px] font-medium leading-[2.38rem] !text-[#fffdfd] md:ml-0 sm:mt-5 sm:px-[1.25rem]"
                                 >
                                     <>
-                                        Join Our List of <br />
+                                        Join Our List of 
                                         Partners{" "}
                                     </>
                                 </Button>
