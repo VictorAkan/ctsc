@@ -2,12 +2,18 @@ import { Helmet } from "react-helmet";
 import { Img, Text, Button } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function IbomPartnersPage() {
     useScrollToTop();
+
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
     
     return (
         <>
@@ -25,7 +31,7 @@ export default function IbomPartnersPage() {
                             </Text>
                         </div> */}
                     </div>
-                    <div className="container-xs mt-[7.06rem] px-[28rem] md:p-[1.25rem] md:px-[1.25rem]">
+                    <div data-aos="zoom-in" className="container-xs mt-[7.06rem] px-[28rem] md:p-[1.25rem] md:px-[1.25rem]">
                         <Button color="indigo_50" size="12xl" className="w-full rounded-[47px] font-medium sm:px-[1.25rem]">
                             Ibom Partners
                         </Button>
@@ -68,7 +74,7 @@ export default function IbomPartnersPage() {
                                 </Button>
                             </div>
                         </div>
-                        <div className="ml-[2.13rem] flex flex-1 flex-col gap-[2.38rem] md:ml-0 md: self-stretch">
+                        <div data-aos="zoom-in-up" className="ml-[2.13rem] flex flex-1 flex-col gap-[2.38rem] md:ml-0 md: self-stretch">
                             <Img
                                 src="images/rectangle_365.png"
                                 alt="image"
@@ -80,7 +86,7 @@ export default function IbomPartnersPage() {
                                 className="h-[24.25rem] rounded-[65px] object-cover"
                             />
                         </div>
-                        <div className="mb-[3.81rem] ml-[0.50rem] flex flex-1 flex-col gap-[2.88rem] md:ml-0 md: self-stretch">
+                        <div data-aos="zoom-in-down" className="mb-[3.81rem] ml-[0.50rem] flex flex-1 flex-col gap-[2.88rem] md:ml-0 md: self-stretch">
                             <Img
                                 src="images/rectangle_366.png"
                                 alt="image"

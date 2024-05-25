@@ -1,6 +1,8 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import useScrollToTop from "../../hooks/useScrollToTop";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const teamMembers = [
     {
@@ -31,11 +33,16 @@ const teamMembers = [
 const CtscTeam = () => {
     useScrollToTop();
 
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
+
     return (
         <>
         <Header />
         <section className="bg-[aliceblue]">
-            <div className="container mx-auto text-center py-10">
+            <div data-aos="fade-up" className="container mx-auto text-center py-10">
                 <h1 className="text-3xl mt-24 md:mt-32 font-bold">Meet Our Team</h1>
                 <br />
                 <h2 className="text-2xl">(CTSC ENGINES)</h2>
@@ -43,7 +50,7 @@ const CtscTeam = () => {
 
             <div className="container mx-auto px-24 sm:px-7 grid grid-cols-3 md:grid-cols-1 gap-4">
                 {teamMembers.map((member, index) => (
-                    <div key={index} className="card h-full flex flex-col items-center bg-white border-none shadow-lg rounded-lg overflow-hidden">
+                    <div data-aos="zoom-in-up" key={index} className="card h-full flex flex-col items-center bg-white border-none shadow-lg rounded-lg overflow-hidden">
                         <img
                             src={member.imgSrc}
                             alt={`${member.name}`}
@@ -58,7 +65,7 @@ const CtscTeam = () => {
             </div>
 
             <div className="container mx-auto my-16">
-                <figure className="mx-auto text-center max-w-xl">
+                <figure data-aos="fade-up" className="mx-auto text-center max-w-xl">
                     <blockquote className="text-lg font-medium">
                         “Two are better than one because they have a good return for their
                         labor: If either of them falls down, one can help the other up. But

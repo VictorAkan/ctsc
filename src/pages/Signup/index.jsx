@@ -3,12 +3,19 @@ import { Img, Text, Button, Input, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function SignupPage() {
     useScrollToTop();
+
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
     
     return (
         <>
@@ -20,7 +27,7 @@ export default function SignupPage() {
                 <div className="relative h-[125.00rem] md:h-auto">
                     <div className="flex w-full flex-col gap-[27.94rem] md:gap-[20.94rem] sm:gap-[13.94rem]">
                         <div className="flex justify-center bg-[#253451] pb-[18.00rem] pt-[8.94rem] md:py-[1.25rem]">
-                            <div className="container-xs mt-10 md:mt-24 flex justify-center pl-[19.06rem] pr-[19.44rem] md:p-[1.25rem] md:px-[1.25rem]">
+                            <div data-aos="fade-up" className="container-xs mt-10 md:mt-24 flex justify-center pl-[19.06rem] pr-[19.44rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text size="26xl" as="p" className="tracking-[0.00rem] sm:text-center">
                                     Let's Get You On board
                                 </Text>
@@ -39,7 +46,7 @@ export default function SignupPage() {
                                 className="absolute bottom-0 sm:hidden left-[0.00rem] top-0 my-auto h-[60.50rem] w-[50%] object-cover"
                                 alt="image"
                             />
-                            <div className="absolute right-[23.00rem] md:right-[0.00rem] top-[0.00rem] m-auto flex w-[50%] md:w-full flex-col items-center gap-[1.81rem] rounded-bl-[56px] sm:rounded-bl-[0px] sm:rounded-tl-[0px] rounded-tl-[56px] bg-[#ffffff] px-[1.00rem] pb-[4.19rem] pt-[1.00rem] shadow-[-24px_32px_40px_0px_#00000028] md:pb-[1.25rem]">
+                            <div data-aos="fade-up" className="absolute right-[23.00rem] md:right-[0.00rem] top-[0.00rem] m-auto flex w-[50%] md:w-full flex-col items-center gap-[1.81rem] rounded-bl-[56px] sm:rounded-bl-[0px] sm:rounded-tl-[0px] rounded-tl-[56px] bg-[#ffffff] px-[1.00rem] pb-[4.19rem] pt-[1.00rem] shadow-[-24px_32px_40px_0px_#00000028] md:pb-[1.25rem]">
                             <div className="flex w-[77%] flex-col items-center gap-[1.25rem] md:w-full">
                                 <div className="h-[0.63rem] w-[0.63rem] rotate-[-90deg] rounded-[5px] bg-[#faf9ff]" />
                                 <Img

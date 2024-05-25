@@ -90,11 +90,11 @@ export default function Header({ ...props }) {
             {mobileMenuOpen && (
                 <ul className="absolute top-0 right-0 p-4 bg-[#253451] w-full">
                     <li className="flex justify-between">
-                        <a href="#">
+                        <Link to="/">
                             <Text size="9xl" as="p" className="!font-['Inter'] mb-5 !text-[#c2d7ff] underline">
                                 Home
                             </Text>
-                        </a>
+                        </Link>
                         <img
                 src="images/closenav_icon.png"
                 alt="hamburger"

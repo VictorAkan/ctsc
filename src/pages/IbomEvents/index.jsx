@@ -2,12 +2,19 @@ import Helmet from "react-helmet";
 import { Img, Text, Button, Heading } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function IbomEventsPage() {
     useScrollToTop();
+
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
     
     return (
         <>
@@ -27,7 +34,7 @@ export default function IbomEventsPage() {
                             </div> */}
                         </div>
                         <div className="mt-[-0.56rem] flex h-[28.94rem] items-center justify-center bg-[url(/public/images/mg.png)] bg-cover bg-no-repeat pb-[9.69rem] pt-[13.13rem] md:h-auto md:py-[1.25rem] sm:pb-[155px] sm:pt-[1.25rem]">
-                            <div className="container-xs mt-10 md:mt-24 flex justify-center pl-[27.50rem] pr-[28.06rem] md:p-[1.25rem] md:px-[1.25rem]">
+                            <div data-aos="fade-up" className="container-xs mt-10 md:mt-24 flex justify-center pl-[27.50rem] pr-[28.06rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text size="27xl" as="p" className="text-[4.00rem] sm:mt-10">
                                     IBOM EVENTS
                                 </Text>
@@ -37,7 +44,7 @@ export default function IbomEventsPage() {
                 </div>
                 <div className="container-xs mt-[16.00rem] sm:mt-[10rem] pl-[3.06rem] md:p-[1.25rem] md:pl-[1.25rem]">
                     <div className="flex flex-col gap-[3.81rem]">
-                        <div className="flex flex-1 bg-[#d9d9d9]">
+                        <div data-aos="zoom-in" className="flex flex-1 bg-[#d9d9d9]">
                             <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">
                                 <div className="flex w-[45%] flex-col gap-[0.31rem] md:w-full">
                                     <Img src="images/image_2.png" alt="ibom_tech_week" className="h-[19.75rem] object-cover" />
@@ -72,7 +79,7 @@ export default function IbomEventsPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-1 bg-[#d9d9d9]">
+                        <div data-aos="zoom-in" className="flex flex-1 bg-[#d9d9d9]">
                             <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">
                                 <div className="flex w-[45%] flex-col gap-[0.31rem] md:w-full">
                                     <img src="images/image_2A.png" alt="imagetwo" className="h-[19.75rem] object-cover" />
@@ -114,7 +121,7 @@ export default function IbomEventsPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-1 bg-[#d9d9d9]">
+                        <div data-aos="zoom-in" className="flex flex-1 bg-[#d9d9d9]">
                             <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">
                                 <div className="w-[45%] md:w-full">
                                     <Img

@@ -28,7 +28,7 @@ export default function Footer({ ...props }) {
                             <div className="m-auto flex w-full justify-center bg-[#192235] py-[5.00rem] md:mt-[5px] md:py-[1.25rem]">
                                 <div className="container-xs flex items-center justify-center px-[2.3rem] md:p-[1.25rem] sm:px-[0.25rem]">
                                     <div className="flex w-full items-center justify-between gap-[1.25rem] md:flex-col">
-                                        <div className="flex flex-col items-start gap-[0.7rem] md:w-full">
+                                        <div data-aos="flip-up" className="flex flex-col items-start gap-[0.7rem] md:w-full">
                                             <Text size="10xl" as="p" className="font-['Inter'] !text-[1.44rem]">
                                                 CRACKING THE STYLE CODE
                                             </Text>
@@ -66,7 +66,7 @@ export default function Footer({ ...props }) {
                                             </div> */}
                                         </div>
                                         <div className="flex w-[52%] items-start justify-between gap-[1.25rem] md:w-full sm:flex-col">
-                                            <div className="flex flex-col items-end">
+                                            <div data-aos="flip-down" className="flex flex-col items-end">
                                                 <div className="flex flex-col gap-[1.13rem]">
                                                     <Heading as="h2" className="text-[2.00rem]">
                                                         Pages
@@ -103,7 +103,7 @@ export default function Footer({ ...props }) {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-col items-start gap-[0.06rem]">
+                                            <div data-aos="flip-up" className="flex flex-col items-start gap-[0.06rem]">
                                                 <Heading as="h2" className="text-[2.00rem]">
                                                     Get in Touch
                                                 </Heading>

@@ -3,12 +3,19 @@ import { Img, Text, Button, Input, Heading } from "../../components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function HomePage() {
     useScrollToTop();
+
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
     
     return (
         <>
@@ -20,7 +27,7 @@ export default function HomePage() {
                 <div>
                     <div>
                         <Header />
-                        <div className="h-[48.38rem] bg-[url(/public/images/mask_group.png)] bg-cover bg-no-repeat pb-[11.06rem] md:h-auto md:pb-[1.25rem]">
+                        <div data-aos="fade-up" className="h-[48.38rem] bg-[url(/public/images/mask_group.png)] bg-cover bg-no-repeat pb-[11.06rem] md:h-auto md:pb-[1.25rem]">
                             <div className="flex flex-col items-center gap-[7.81rem] md:gap-[5.81rem] sm:gap-[3.88rem]">
                                 <div className="h-[0.20rem] self-stretch bg-[#d9d9d9]" />
                                 <div className="container-xs mt-10 flex flex-col items-center pl-[7.81rem] pr-[8.38rem] md:p-[1.25rem] md:px-[1.25rem]">
@@ -47,7 +54,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="flex flex-col items-center justify-center pb-[2.75rem] pt-[4.19rem] md:py-[1.25rem]">
-                        <div className="flex flex-col items-center pr-[0.50rem] md:p-[1.25rem] md:pl-[1.25rem]">
+                        <div data-aos="fade-down" className="flex flex-col items-center pr-[0.50rem] md:p-[1.25rem] md:pl-[1.25rem]">
                             <Text size="28xl" as="p" className="self-center !text-[#253451] md:ml-0 sm:text-center">
                                 Digital Accessibility
                             </Text>
@@ -58,6 +65,7 @@ export default function HomePage() {
                                 </>
                             </Text>
                             <Button
+                                data-aos="fade-right"
                                 color="blue_gray_900"
                                 size="9xl"
                                 className="mt-[4.06rem] min-w-[15.75rem] sm:min-w-[10rem] hover:bg-[#2d3f61] rounded-[44px] font-medium sm:px-[1.25rem]"
@@ -69,7 +77,7 @@ export default function HomePage() {
                     <div className="flex flex-col md: gap-[0rem]">
                         <div className="flex flex-col items-center bg-[#ebebeb] pt-[4.56rem] md:pt-[1.25rem]">
                             <div className="container-xs flex flex-col items-center pl-[15.75rem] pr-[16.25rem] md:p-[1.25rem] md:px-[1.25rem]">
-                                <Text size="21xl" as="p" className="text-center !font-medium !text-[#253451]">
+                                <Text data-aos="fade-down" size="21xl" as="p" className="text-center !font-medium !text-[#253451]">
                                     This Week's Feature Story
                                 </Text>
                                 <Img
@@ -81,7 +89,7 @@ export default function HomePage() {
                                     <div className="flex flex-col items-start gap-[1.38rem]">
                                         <div className="flex w-[91%] items-center gap-[0rem] md:w-full md:flex-col">
                                             <Text
-                                                size="14xl"
+                                                size="14xl" data-aos="fade-up"
                                                 as="p"
                                                 className="w-[81%] sm:text-center !font-medium leading-[2.81rem] !text-[#000000] md:w-full sm:text-xl"
                                             >
@@ -90,13 +98,13 @@ export default function HomePage() {
                                                     behind &quot;Made in Akwa Ibom&quot;
                                                 </>
                                             </Text>
-                                            <Text as="p" className="self-end text-md sm:self-center !text-[#000000] sm:text-center">
+                                            <Text as="p" data-aos="fade-up" className="self-end text-md sm:self-center !text-[#000000] sm:text-center">
                                                 Feb 19, 2024
                                             </Text>
                                         </div>
                                         <Text
                                             size="7xl"
-                                            as="p"
+                                            as="p" data-aos="fade-up"
                                             className="ml-[0.44rem] w-full text-[1.31rem] leading-[2.00rem] !text-[#000000] md:ml-0"
                                         >
                                             <>
@@ -109,6 +117,7 @@ export default function HomePage() {
                                         <Button
                                             color="black_900_01"
                                             size="2xl"
+                                            data-aos="fade-up"
                                             className="ml-[0.88rem] hover:bg-[#2a2a2a] min-w-[9.75rem] rounded-[10px] md:ml-0 sm:px-[1.25rem]"
                                         >
                                             Read More
@@ -119,6 +128,7 @@ export default function HomePage() {
                                 <Button
                                     color="blue_gray_900"
                                     size="9xl"
+                                    data-aos="fade-down"
                                     className="mb-[70px] mt-[6.63rem] hover:bg-[#2d3f61] sm:min-w-[10rem] min-w-[27.19rem] rounded-[43px] font-medium sm:px-[1.25rem]"
                                 >
                                     EXPLORE ALL NEWS & STORIES
@@ -170,7 +180,7 @@ export default function HomePage() {
                             <div className="flex justify-center bg-[#253451] pb-[7.56rem] mt-[0rem] pt-[5.00rem] md:py-[1.25rem]">
                                 <div className="container-xs flex justify-center px-[10.94rem] md:p-[1.25rem] md:px-[1.25rem]">
                                     <div className="flex w-full flex-col items-center gap-[4.13rem] sm:gap-[2.06rem]">
-                                        <div className="flex w-full flex-col items-center md:w-full">
+                                        <div data-aos="fade-up" className="flex w-full flex-col items-center md:w-full">
                                             <Text size="25xl" as="p" className="text-[3.56rem] sm:text-center">
                                                 We Do This For Us
                                             </Text>
@@ -181,7 +191,7 @@ export default function HomePage() {
                                                 </>
                                             </Text>
                                         </div>
-                                        <div className="flex flex-col items-center justify-center gap-[3.06rem] self-stretch rounded-[49px] px-[3rem] bg-[#f7f5f5] py-[3.06rem] sm:px-[1rem] md:py-[3.25rem] sm:items-center">
+                                        <div data-aos="fade-down" className="flex flex-col items-center justify-center gap-[3.06rem] self-stretch rounded-[49px] px-[3rem] bg-[#f7f5f5] py-[3.06rem] sm:px-[1rem] md:py-[3.25rem] sm:items-center">
                                             <Input
                                                 shape="round"
                                                 type="text"
@@ -219,7 +229,7 @@ export default function HomePage() {
                     </div>
                     <div className="h-full bg-[#d9d9d9] px-32 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
                         <div className="flex space-x-32 md:space-x-0 sm:block">
-                        <div className="m-auto flex flex-col items-end md:items-start w-full gap-[0.81rem]">
+                        <div data-aos="fade-up" className="m-auto flex flex-col items-end md:items-start w-full gap-[0.81rem]">
                             <Text size="14xl" as="p" className="!text-[#000000]">
                                 <>
                                 Cracking the style code is not just a Publication
@@ -232,6 +242,7 @@ export default function HomePage() {
                         <Img
                             src="images/rectangle_19.png"
                             alt="image"
+                            data-aos="flip-left"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         </div>
@@ -239,9 +250,10 @@ export default function HomePage() {
                             <Img
                             src="images/rectangle_18.png"
                             alt="image"
+                            data-aos="flip-right"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
-                        <div className="m-auto flex order-2 sm:order-1 w-full flex-col items-start gap-[1.94rem]">
+                        <div data-aos="fade-down" className="m-auto flex order-2 sm:order-1 w-full flex-col items-start gap-[1.94rem]">
                             <Text size="14xl" as="p" className="w-full font-bold leading-[2.81rem] !text-[#000000] md:w-full">
                                 <>
                                     {" "}

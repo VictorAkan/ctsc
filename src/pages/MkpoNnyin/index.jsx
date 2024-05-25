@@ -3,6 +3,8 @@ import { Img, Text } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
@@ -19,7 +21,12 @@ const serviceData = [
 ]
 
 export default function MkpoNnyinPage() {
-    // useScrollToTop();
+    useScrollToTop();
+
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
     
     return (
         <>
@@ -32,7 +39,7 @@ export default function MkpoNnyinPage() {
                 <div className="flex flex-col items-center gap-[12.19rem] md:gap-[9.13rem] sm:gap-[6.06rem]">
                     <div className="flex mt-10 h-[31.19rem] items-center justify-center self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat pb-[11.69rem] pt-[9.25rem] md:h-auto md:py-[1.25rem]">
                         <div className="mt-10 flex justify-center md:p-[1.25rem] md:px-[1.25rem]">
-                            <div className="flex flex-col items-center">
+                            <div data-aos="fade-up" className="flex flex-col items-center">
                                 <Text size="30xl" as="p" className="!font-['Inter'] !sm:text-[3rem] text-[6.50rem]">
                                     Mkpo Nnyin
                                 </Text>
@@ -45,7 +52,7 @@ export default function MkpoNnyinPage() {
                     <section className="mkpo-nnyin-1 bg-f8f5f5 py-20 flex items-center justify-center">
                         <div className="container mx-auto">
                             <div className="grid grid-cols-2 gap-4">
-                                <div className="hover:scale-105 transition duration-300 ease-in-out">
+                                <div data-aos="flip-left" className="hover:scale-105 transition duration-300 ease-in-out">
                                     <Link to="/ibomevents">
                                         <img
                                             src="images/img_subb1.png"
@@ -54,7 +61,7 @@ export default function MkpoNnyinPage() {
                                         />
                                     </Link>
                                 </div>
-                                <div className="hover:scale-105 transition duration-300 ease-in-out">
+                                <div data-aos="flip-left" className="hover:scale-105 transition duration-300 ease-in-out">
                                     <Link to="/ibomservices">
                                         <img
                                             src="images/img_subb.png"
@@ -63,7 +70,7 @@ export default function MkpoNnyinPage() {
                                         />
                                     </Link>
                                 </div>
-                                <div className="hover:scale-105 transition duration-300 ease-in-out">
+                                <div data-aos="flip-right" className="hover:scale-105 transition duration-300 ease-in-out">
                                     <Link to="/jobspagetwo">
                                         <img
                                             src="images/img_subb2.png"
@@ -72,7 +79,7 @@ export default function MkpoNnyinPage() {
                                         />
                                     </Link>
                                 </div>
-                                <div className="hover:scale-105 transition duration-300 ease-in-out">
+                                <div data-aos="flip-right" className="hover:scale-105 transition duration-300 ease-in-out">
                                     <Link to="/ibompartners">
                                         <img
                                             src="images/img_subb3.png"

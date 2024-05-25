@@ -6,6 +6,8 @@ import JobsPageTwoCategory from "../../components/JobsPageTwoCategory";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { SignUpModal } from "../../modals/SignUpModal";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // import scrolltotop hook
 import useScrollToTop from "../../hooks/useScrollToTop";
@@ -89,6 +91,11 @@ const jobsData = [
 export default function JobspageTwoPage() {
     useScrollToTop();
 
+    Aos.init({
+        duration: 1800,
+        offset: 0,
+    })
+
     const [open, setOpen] = useState(false)
     return (
         <>
@@ -117,7 +124,7 @@ export default function JobspageTwoPage() {
                                         Hire
                                     </Button>
                                 </div> */}
-                                <div className="m-auto flex w-[68%] justify-center flex-col items-center gap-[2.13rem]">
+                                <div data-aos="fade-up" className="m-auto flex w-[68%] justify-center flex-col items-center gap-[2.13rem]">
                                     <Button
                                         color="blue_gray_900_0c"
                                         size="8xl"
@@ -180,7 +187,7 @@ export default function JobspageTwoPage() {
                             </div>
                             <div className="grid grid-cols-3 gap-[3.81rem] md:grid-cols-2 sm:grid-cols-1">
                                 {jobsData.map((d, index) => (
-                                    <Link to={d.linkDest}>
+                                    <Link data-aos="zoom-in" to={d.linkDest}>
                                         <JobsPageTwoCategory
                                         {...d}
                                             key={"jobspagetwo" + index}
@@ -193,7 +200,7 @@ export default function JobspageTwoPage() {
                     <div className="mt-[9.00rem] flex justify-center self-stretch bg-[#e9f0ff] pb-[10.56rem] pt-[7.88rem] md:py-[1.25rem]">
                         <div className="container-xs flex justify-center pl-[2.81rem] md:p-[1.25rem] md:pl-[1.25rem]">
                             <div className="flex w-full flex-col gap-[5.88rem] md:gap-[4.38rem] sm:gap-[2.94rem]">
-                                <div className="flex w-[93%] flex-wrap items-start justify-between gap-[1.25rem] md:w-full">
+                                <div data-aos="fade-up" className="flex w-[93%] flex-wrap items-start justify-between gap-[1.25rem] md:w-full">
                                     <Text size="21xl" as="p" className="!text-[#000000]">
                                         Latest Job Opportunities
                                     </Text>
@@ -204,7 +211,7 @@ export default function JobspageTwoPage() {
                                     </a>
                                 </div>
                                 <div className="flex gap-[3.38rem] md:flex-col">
-                                    <div className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.81rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]">
+                                    <div data-aos="zoom-in-up" className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.81rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]">
                                         <div className="flex w-full flex-col items-end">
                                             <div className="flex items-start justify-between gap-[1.25rem] self-stretch">
                                                 <div className="flex flex-col items-start">
@@ -259,7 +266,7 @@ export default function JobspageTwoPage() {
                                                 </Text>
                                             </div>
                                         </div> </div>
-                                    <div className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.63rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]">
+                                    <div data-aos="zoom-in-down" className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.63rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]">
                                         <div className="flex w-full flex-col items-end">
                                             <div className="flex items-start justify-between gap-[1.25rem] self-stretch">
                                                 <div className="flex flex-col items-start gap-[0.19rem]">
@@ -316,7 +323,7 @@ export default function JobspageTwoPage() {
                                                 </Text>
                                             </div>
                                         </div> </div>
-                                    <div className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.81rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]"> <div className="flex w-full flex-col items-end">
+                                    <div data-aos="zoom-in-up" className="flex w-full rounded-[20px] bg-[#ffffff] pb-[3.00rem] pl-[1.50rem] pr-[1.31rem] pt-[2.81rem] shadow-[0px_1px_46px_-2px_#25345133] md:py-[1.25rem] sm:p-[1.25rem]"> <div className="flex w-full flex-col items-end">
                                         <div className="flex items-start justify-between gap-[1.25rem] self-stretch"> <div className="flex flex-col items-start">
                                             <div className="flex items-start gap-[0.50rem]">
                                                 <Img src="images/lil_bag.png" alt="bag" className="mt-[0.31rem] h-[1.19rem] w-[1.25rem]" />
@@ -378,11 +385,11 @@ export default function JobspageTwoPage() {
                     </div>
                     <div className="flex flex-col items-center justify-center self-stretch pb-[3.94rem] pt-[8.25rem] md:py-[1.25rem]">
                         <div className="container-xs flex flex-col items-start pl-[14.38rem] pr-[3.50rem] md:p-[1.25rem] md:px-[1.25rem]">
-                            <Text size="21xl" as="p" className="!text-[#000000]">
+                            <Text data-aos="fade-up" size="21xl" as="p" className="!text-[#000000]">
                                 You're a client? Find the best Talent For your Job{""}
                             </Text>
                             <div className="ml-[4.69rem] mt-[4.56rem] flex w-[73%] flex-col gap-[5.38rem] md:ml-0 md:w-full">
-                                <Button className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[2.75rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
+                                <Button data-aos="fade-up" className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[2.75rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
                                     <div className="flex w-full items-start justify-center gap-[2.00rem] sm:flex-col">
                                         <Img
                                             src="images/add_user_1.png"
@@ -398,7 +405,7 @@ export default function JobspageTwoPage() {
                                         </div>
                                     </div>
                                 </Button>
-                                <Button className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[3.31rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
+                                <Button data-aos="fade-up" className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[3.31rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]">
                                     <div className="flex w-full items-start justify-center gap-[2.00rem] sm:flex-col">
                                         <Img
                                             src="images/suitcase_1.png"
@@ -415,7 +422,7 @@ export default function JobspageTwoPage() {
                                         </div>
                                     </div>
                                 </Button>
-                                <Button className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
+                                <Button data-aos="fade-up" className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
                                     <div className="flex w-full items-start justify-center gap-[1.44rem] md:flex-col">
                                         <Img
                                             src="images/hired_1.png"
@@ -432,7 +439,7 @@ export default function JobspageTwoPage() {
                                     </div>
                                 </Button>
                             </div>
-                            <div className="ml-[10.94rem] mt-[7.44rem] flex w-[56%] items-start justify-center gap-[1.69rem] rounded-[25px] border-4 border-solid border-[#ffffff] bg-[#ffffff] pb-[2.19rem] pl-[2.06rem] pr-[3.25rem] pt-[3.88rem] shadow-[-7px_-4px_58px_3px_#25345138] md:ml-0 md:w-full md:pr-[1.25rem] md:pt-[1.25rem] sm:flex-col sm:p-[1.25ren]">
+                            <div data-aos="fade-up" className="ml-[10.94rem] mt-[7.44rem] flex w-[56%] items-start justify-center gap-[1.69rem] rounded-[25px] border-4 border-solid border-[#ffffff] bg-[#ffffff] pb-[2.19rem] pl-[2.06rem] pr-[3.25rem] pt-[3.88rem] shadow-[-7px_-4px_58px_3px_#25345138] md:ml-0 md:w-full md:pr-[1.25rem] md:pt-[1.25rem] sm:flex-col sm:p-[1.25ren]">
                                 <Img
                                     src="images/info_1.png"
                                     alt="infoone"
@@ -488,7 +495,7 @@ export default function JobspageTwoPage() {
                                                     Create Account
                                                 </Button>
                                                 <Link to="/login">
-                                                <Text size="2xl" as="p" className="flex ml-[8rem] sm:ml-0 !text-[0.94rem] !text-center tracking-[0.00rem] !text-[#494759]">
+                                                <Text data-aos="fade-up" size="2xl" as="p" className="flex ml-[8rem] sm:ml-0 !text-[0.94rem] !text-center tracking-[0.00rem] !text-[#494759]">
                                                     <span className="text-[#494759] capitalize">Already have an account?&nbsp;</span>
                                                     <a href="#" className="font-semibold text-[#000000] underline">
                                                         Sign In
