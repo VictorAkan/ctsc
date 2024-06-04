@@ -5,21 +5,6 @@ export default function Footer({ ...props }) {
     return (
         <footer {...props}>
             <div className="h-full w-full md:h-auto">
-                {/* <div className="m-auto flex w-[13%] justify-between gap-[1.25rem]"> 
-                <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                    <Img
-                        src="images/img_facebook.svg"
-                        alt="facebook"
-                        className="h-[2.69rem] rounded-tl-[21px] rounded-tr-[21px]"
-                        />
-                    </div>
-                    <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                        <img src="images/img_trash.svg" alt="trash" className="h-[2.69rem] rounded-t1-[21px] rounded-tr-[21px]" /> 
-                        </div>
-                    <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]"> 
-                    <Img src="images/img_info.svg" alt="info" className="h-[2.69rem] rounded-tl-[21px] rounded-tr-[21px]" />
-                    </div>
-                </div> */}
                 <div className="w-full">
                     <div>
                         <div className="h-full md:h-auto">
@@ -49,21 +34,6 @@ export default function Footer({ ...props }) {
                                             <Img src="images/instagram.png" className="" /> 
                                         </Button>
                                     </div>
-                                            {/* <div className="flex justify-start gap-[1.25rem]">
-                                                <div className="flex flex-col shadow-[0px_17.01px_23px_0px_#10122314]">
-                                                    <Img
-                                                        src="images/facebook.png"
-                                                        alt="facebook"
-                                                        className="h-[5rem] rounded-tl-[21px] rounded-tr-[21px]"
-                                                    />
-                                                </div>
-                                                <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                                                    <img src="images/twitter.png" alt="trash" className="h-[2.69rem] rounded-t1-[21px] rounded-tr-[21px]" />
-                                                </div>
-                                                <div className="flex flex-col rounded-[21px] bg-[#ffffff] shadow-[0px_17.01px_23px_0px_#10122314]">
-                                                    <Img src="images/instagram.png" alt="info" className="h-[2.69rem] rounded-tl-[21px] rounded-tr-[21px]" />
-                                                </div>
-                                            </div> */}
                                         </div>
                                         <div className="flex w-[52%] items-start justify-between gap-[1.25rem] md:w-full sm:flex-col">
                                             <div data-aos="flip-down" className="flex flex-col items-end">

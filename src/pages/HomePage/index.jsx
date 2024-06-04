@@ -213,6 +213,7 @@ export default function HomePage() {
                                                 placeholder={`Email Address`}
                                                 className="w-full h-[4rem] sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
+                                            <Link to="/signup">
                                             <Button
                                                 color="blue_gray_900"
                                                 size="6xl"
@@ -221,6 +222,7 @@ export default function HomePage() {
                                             >
                                                 Shine Your Light
                                             </Button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

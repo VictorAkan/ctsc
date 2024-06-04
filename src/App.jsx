@@ -1,10 +1,10 @@
-import Routes from "./Routes";
+import { ProjectRoutes } from "./Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <Routes />
+      <ProjectRoutes />
     </Router>
   )
 }

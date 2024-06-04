@@ -10,7 +10,7 @@ const sizes = {
     "15xl": "text-[1.94rem] font-medium md:text-[1.81rem] sm:text-[1.69rem]", 
     "17xl": "text-[2.06rem] font-medium md:text-[1.94rem] sm:text-[1.81rem]", 
     "16xl": "text-[2.00rem] font-normal md:text-[1.88rem] sm:text-[1.75rem]", 
-    "9xl": "text-[1.38rem] font-medium",
+    "9xl": "text-[1.38rem] sm:text-[1rem] md:text-[1.2rem] font-medium",
     "10xl": "text-[1.44rem] font-medium md:text-[1.31rem]",
     "11xl": "text-[1.56rem] font-normal md:text-[1.44rem] sm:text-[1.31rem]", 
     "12xl": "text-[1.63rem] font-normal md:text-[1.50rem] sm:text-[1.38rem]", 

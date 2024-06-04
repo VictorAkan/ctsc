@@ -29,19 +29,26 @@
     ]
   },
   "dependencies": {
+    "@heroicons/react": "v1",
     "@tailwindcss/forms": "^0.5.7",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
     "aos": "^2.3.4",
+    "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "formik": "^2.4.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.51.5",
+    "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
-    "react-router-hash-link": "^2.4.3"
+    "react-router-hash-link": "^2.4.3",
+    "yup": "^1.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

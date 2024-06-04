@@ -11,7 +11,7 @@ export default function JobsPageTwoCategory({
     linkDest,
     ...props
 }) {
-    return (<div {...props} className={`${props.className} flex justify-center hover:scale-105 transition duration-300 ease-in-out items-center w-full bg-[#253451] cursor-pointer rounded-[17px] hover: shadow-[-5px_6px_27px_0px_#25345142]`}>
+    return (<Link to={linkDest}><div {...props} className={`${props.className} flex justify-center hover:scale-105 transition duration-300 ease-in-out items-center w-full bg-[#253451] cursor-pointer rounded-[17px] hover: shadow-[-5px_6px_27px_0px_#25345142]`}>
         <div className="flex w-full items-center justify-between gap-[1.25rem]">
             <div className="mb-[0.25rem] flex w-[60%] flex-col items-start gap-[1.13rem] self-end">
                 {!!designandtext ? (
@@ -41,5 +41,6 @@ export default function JobsPageTwoCategory({
             ) : null}
         </div>
     </div>
+    </Link>
     );
 }
