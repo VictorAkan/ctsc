@@ -115,7 +115,7 @@ export default function SignupPage() {
                                 <div className="flex w-[77%] flex-col items-center gap-[1.25rem] md:w-full">
                                     <div className="h-[0.63rem] w-[0.63rem] rotate-[-90deg] rounded-[5px] bg-[#faf9ff]" />
                                     <Img
-                                        src="images/img_logo_no_background.png"
+                                        src="images/logo1.png"
                                         alt="logono"
                                         className="object-cover"
                                     />
@@ -185,12 +185,12 @@ export default function SignupPage() {
                                         )}
                                     </Formik>
                                 </div>
-                                <div className="flex w-[58%] items-center gap-[1.31rem] md:w-full sm:flex-col">
+                                {/* <div className="flex w-[58%] items-center gap-[1.31rem] md:w-full sm:flex-col">
                                     <div className="h-[0.06rem] flex-1 bg-[#cac9d6cc] sm:self-stretch" />
                                     <Text size="4x1" as="p" className="!text-[1.06rem] !font-medium !text-[#676576]"> Or </Text>
                                     <div className="h-[0.06rem] flex-1 bg-[#cac9d6cc] sm:self-stretch" />
-                                </div>
-                                <Button
+                                </div> */}
+                                {/* <Button
                                     color="blue_gray_100"
                                     size="5xl"
                                     variant="outline"
@@ -206,7 +206,7 @@ export default function SignupPage() {
                                     <div className="bg-transparent cursor-pointer font-medium !text-[1.13rem] !text-[#100f14]">
                                         Sign Up with Google
                                     </div>
-                                </Button>
+                                </Button> */}
                                 <Text size="2xl" as="p" className="!text-[1.06rem] !text-[#676576]">
                                     <Link to="/login">
                                         <Text size="2xl" as="p" className="flex !text-[0.94rem] tracking-[0.00rem] !text-[#494759]">

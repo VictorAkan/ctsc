@@ -52,7 +52,16 @@ export default function LoginPage() {
 
             const { access, refresh } = response.data;
 
+            // if (userType === 'admin') {
+            //     window.sessionStorage.setItem("adminToken", access)
+            // } else {
+                
+            // }
+
             setToken(access)
+
+            window.sessionStorage.setItem("token", access);
+            window.sessionStorage.setItem("refreshToken", refresh)
 
             const profileResponse = await axios.get(
                 'https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/',

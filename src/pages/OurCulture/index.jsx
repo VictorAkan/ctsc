@@ -39,6 +39,7 @@ const OurCulture = () => {
         const fetchCultureData = async () => {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/story/culture/");
+                console.log(response.data);
                 setCultureData(response.data);
                 setLoading(false);
             } catch (err) {
@@ -66,11 +67,11 @@ const OurCulture = () => {
                     {cultureData.map((item) => (
                         <CultureCard
                             key={item.id}
-                            imgSrc={item.imgSrc}
-                            date={item.date}
-                            author={item.author}
-                            title={item.title}
-                            description={item.description}
+                            imgSrc={item.image}
+                            date={item.created_At}
+                            author={item.author.first_name}
+                            title={item.topic}
+                            description={item.short_description}
                         />
                     ))}
                 </div>

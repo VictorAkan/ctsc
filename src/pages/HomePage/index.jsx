@@ -114,6 +114,7 @@ export default function HomePage() {
                                                 will put you in a better position to grow your focus on defining your business goals.
                                             </>
                                         </Text>
+                                        <Link to="/newssection">
                                         <Button
                                             color="black_900_01"
                                             size="2xl"
@@ -122,6 +123,7 @@ export default function HomePage() {
                                         >
                                             Read More
                                         </Button>
+                                        </Link>
                                     </div>
                                 </div>
                                 <Link to="/newssection">

@@ -30,6 +30,7 @@ export default function IbomEventsPage() {
         const fetchEvents = async () => {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/event/");
+                console.log(response);
                 setEvents(response.data); // assuming the API returns an array of events
             } catch (error) {
                 console.error("There was an error fetching the events!", error);
@@ -73,17 +74,17 @@ export default function IbomEventsPage() {
                                 <div key={event.id} data-aos="zoom-in" className="flex flex-1 bg-[#d9d9d9]">
                                     <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">
                                         <div className="flex w-[45%] flex-col gap-[0.31rem] md:w-full">
-                                            <img src={event.image_url} alt={event.title} className="h-[19.75rem] object-cover" />
+                                            <img src={event.event_image} alt={event.title} className="h-[19.75rem] object-cover" />
                                             <div className="flex flex-col items-start rounded-[20px] bg-[#eeeeee] px-[1.25rem] pb-[0.75rem] pt-[1.63rem] sm:pt-[1.25rem]">
                                                 <Text size="12xl" as="p" className="!text-[1.63rem] !font-medium !text-[#000000]">
-                                                    {event.title}
+                                                    {event.event_name}
                                                 </Text>
                                                 <Text
                                                     size="xl"
                                                     as="p"
                                                     className="mt-[0.38rem] w-[72%] !text-[0.88rem] leading-[1.31rem] !text-[#000000] md:w-full"
                                                 >
-                                                    {event.description}
+                                                    {event.about}
                                                 </Text>
                                                 <Button
                                                     color="blue_gray_900"

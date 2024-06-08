@@ -5,8 +5,22 @@ import React, { Suspense } from "react";
 
 // Welcome to the Admin's World
 const AdminDashboard = React.lazy(() => import("./components/Layout"));
-// const AdHomeLazy = React.lazy(() => import("./pages/WorldOfAdmin/AdHome"));
-// const AdUsersLazy = React.lazy(() => import("./pages/WorldOfAdmin/AdUsers"));
+const AdHomeLazy = React.lazy(() => import("./pages/WorldOfAdmin/AdHome"));
+const AdUsersLazy = React.lazy(() => import("./pages/WorldOfAdmin/AdUsers"));
+const AdApplicationsLazy = React.lazy(() => import("./pages/WorldOfAdmin/AdJobApplications"));
+const JobOpportunities = React.lazy(() => import("./pages/WorldOfAdmin/JobOpportunities"));
+const ClientProfile = React.lazy(() => import("./pages/WorldOfAdmin/ClientProfile"));
+const ContactUs = React.lazy(() => import("./pages/WorldOfAdmin/AdContactUs"));
+const CustomUsers = React.lazy(() => import("./pages/WorldOfAdmin/CustomUsers"));
+const Events = React.lazy(() => import("./pages/WorldOfAdmin/Events"));
+const Newsletters = React.lazy(() => import("./pages/WorldOfAdmin/NewsLetters"));
+const Partners = React.lazy(() => import("./pages/WorldOfAdmin/Partners"));
+const Services = React.lazy(() => import("./pages/WorldOfAdmin/Services"));
+const TalentProfiles = React.lazy(() => import("./pages/WorldOfAdmin/TalentProfiles"));
+const TeamMembers = React.lazy(() => import("./pages/WorldOfAdmin/TeamMembers"));
+const Comments = React.lazy(() => import("./pages/WorldOfAdmin/Comments"));
+const Likes = React.lazy(() => import("./pages/WorldOfAdmin/Likes"));
+const Stories = React.lazy(() => import("./pages/WorldOfAdmin/Stories"));
 
 // Wrap components in lazy imports
 const HomePageLazy = React.lazy(() => import("./pages/HomePage"));
@@ -46,6 +60,9 @@ const ClientProfileLazy = React.lazy(() => import("./pages/ClientProfilePage"));
 const ClientJobPostLazy = React.lazy(() => import("./pages/ClientJobPosting"));
 const TalentProfileLazy = React.lazy(() => import("./pages/TalentProfile"));
 const JobsLazy = React.lazy(() => import("./pages/Jobs"));
+const JobApplicationLazy = React.lazy(() => import("./pages/JobApplicationForm"));
+const ApplicationsLazy = React.lazy(() => import("./pages/JobApplications"));
+const ApplicationsStatusLazy = React.lazy(() => import("./pages/JobApplicationStatus"));
 // import general loader
 import { Loader } from "./Loader";
 
@@ -68,7 +85,24 @@ export const ProjectRoutes = () => {
     <Route
         path="/admin"
         element={<AdminDashboard />}
-    />
+    >
+        <Route path="" element={<AdHomeLazy />} />
+        <Route path="users" element={<AdUsersLazy />} />
+        <Route path="job-applications" element={<AdApplicationsLazy />} />
+        <Route path="job-opportunities" element={<JobOpportunities />} />
+        <Route path="client-profiles" element={<ClientProfile />} />
+        <Route path="contact-us" element={<ContactUs />} />
+        <Route path="custom-users" element={<CustomUsers />} />
+        <Route path="events" element={<Events />} />
+        <Route path="newsletters" element={<Newsletters />} />
+        <Route path="partners" element={<Partners />} />
+        <Route path="services" element={<Services />} />
+        <Route path="talent-profiles" element={<TalentProfiles />} />
+        <Route path="team-members" element={<TeamMembers />} />
+        <Route path="comments" element={<Comments />} />
+        <Route path="likes" element={<Likes />} />
+        <Route path="stories" element={<Stories />} />
+    </Route>
 
     {/* Other routes */}
     <Route path="/ibomevents" element={<IbomEventsLazy />} />
@@ -78,6 +112,7 @@ export const ProjectRoutes = () => {
     <Route path="/ibomservicesone" element={<IbomServicesOneLazy />} />
     <Route path="/ibomservicestwo" element={<IbomServicesTwoLazy />} />
     <Route path="/jobs" element={<JobsLazy />} />
+    <Route path="/apply/:jobId" element={<JobApplicationLazy />} />
     <Route path="/jobspageone" element={<JobspageOneLazy />} />
     <Route path="/jobspagetwo" element={<JobspageTwoLazy />} />
     <Route path="/jobs/design-creative" element={<JobspageDesignCreativeLazy />} />
@@ -93,7 +128,9 @@ export const ProjectRoutes = () => {
     <Route path="/partner/:id" element={<PartnerDetailLazy />} />
     <Route path="/ibompartnersone" element={<IbomPartnersOneLazy />} />
     <Route path="/signup" element={<SignupLazy />} />
-    <Route path="/talentprofile" element={<TalentProfileLazy />} />
+    <Route path="/talentprofile" element={<TalentProfileLazy />} >
+    </Route>
+    <Route path="/application_status" element={<ApplicationsStatusLazy />} />
     <Route path="/newssection" element={<NewsSectionLazy />} />
     <Route path="/story/:storyId" element={<FullStoryLazy />} />
     <Route path="/featurestory" element={<AutismLazy />} />
@@ -103,341 +140,13 @@ export const ProjectRoutes = () => {
     <Route path="/ctscinterviews" element={<InterviewsLazy />} />
     <Route path="/ourculture" element={<OurCultureLazy />} />
     <Route path="/ctscteam" element={<CtscTeamLazy />} />
-    <Route path="/client_profile" element={<ClientProfileLazy />} />
+    <Route path="/client_profile" element={<ClientProfileLazy />} >
+    </Route>
+    <Route path="/applications" element={<ApplicationsLazy />} />
     <Route path="/post_job" element={<ClientJobPostLazy />} />
     <Route path="/contactus" element={<ContactUsLazy />} />
-  </Routes>
+    </Routes>
 </Suspense>
     )
 }
 
-// const ProjectRoutes = () => {
-
-//     let element = useRoutes([
-//         {
-//             path: "/",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <HomePageLazy />
-//                 </Suspense>
-//             ),
-//         }, // Home with Suspense
-//         { path: "*", element: <NotFound /> },
-//         {
-//             path: "/mkponnyin",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <MkpoNnyinLazy />
-//                 </Suspense>
-//             ),
-//         },
-
-
-
-//         // Admin's World
-//         {
-//             path: "/admin",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <AdminDashboard>
-//                         <Suspense fallback={<Loader />}>
-//                             <AdHomeLazy path="/home" />
-//                         </Suspense>
-//                         <Suspense fallback={<Loader />}>
-//                             <AdUsersLazy path="/users" /> {/* New path for AdUsersLazy */}
-//                         </Suspense>
-//                     </AdminDashboard>
-//                 </Suspense>
-//             )
-//         },
-
-
-
-
-
-//         {
-//             path: "/ibomevents",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomEventsLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/event/:eventId",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <EventsDetailLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/ibomservices",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomServicesLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/ibomservices/:serviceId",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <ServiceDetailLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/ibomservicesone",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomServicesOneLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/ibomservicestwo",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomServicesTwoLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobs",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobsLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/jobspageone",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageOneLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspagetwo",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageTwoLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/design-creative",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageDesignCreativeLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/sales-marketing",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageSalesMarketingLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/photography",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspagePhotographyLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/development-it",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageDevelopmentITLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/finance-accounting",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageFinanceAccountingLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/writing-translation",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageWritingTranslationLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/legal",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageLegalLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/repairs-engineering",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageRepairsEngineeringLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/jobspage/hr-personnel",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <JobspageHRPersonnelLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/ibompartners",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomPartnersLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/partner/:id",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <PartnerDetailLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/ibompartnersone",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <IbomPartnersOneLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/signup",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <SignupLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/talentprofile",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <TalentProfileLazy />
-//                 </Suspense>
-//             ),
-//         },
-//         {
-//             path: "/newssection",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <NewsSectionLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/story/:storyId",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <FullStoryLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/featurestory",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <AutismLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/login",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <LoginLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/personalgrowth",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <PersonalGrowthLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/readerscorner",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <ReadersCornerLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/ctscinterviews",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <InterviewsLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/ourculture",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <OurCultureLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/ctscteam",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <CtscTeamLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/client_profile",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <ClientProfileLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/post_job",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <ClientJobPostLazy />
-//                 </Suspense>
-//             )
-//         },
-//         {
-//             path: "/contactus",
-//             element: (
-//                 <Suspense fallback={<Loader />}>
-//                     <ContactUsLazy />
-//                 </Suspense>
-//             )
-//         },
-//     ]);
-
-//     return element;
-// };
-
-// export default ProjectRoutes;

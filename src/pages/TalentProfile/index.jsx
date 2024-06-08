@@ -7,7 +7,7 @@ import { UserContext } from '../../context/UserContext';
 import axios from 'axios';
 
 const UserProfile = () => {
-    const { user, token } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -45,6 +45,8 @@ const UserProfile = () => {
         setCvDocument(file.name);
         setValue('cv_document', file);
     };
+
+    const token = window.sessionStorage.getItem("token");
 
     const handleSaveChanges = async () => {
         try {
@@ -165,6 +167,7 @@ const UserProfile = () => {
                         {...register('work_experiences')}
                         className="mt-1 block w-full p-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         rows="4"
+                        onChange={handleWorkExperience}
                     ></textarea>
                 </div>
 
@@ -180,11 +183,18 @@ const UserProfile = () => {
             <Link to="/jobs" className='text-center'>
                 See all Jobs
             </Link>
+            <div className="flex justify-between sm:flex-col">
             <Link to="/" replace onClick={handleSignOut}>
                     <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]" onClick={handleSignOut}>
                         Sign Out
                     </Button>
-                    </Link>
+            </Link>
+            <Link to="/application_status">
+                    <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
+                        View Application Status
+                    </Button>
+            </Link>
+            </div>
         </div>
     );
 };

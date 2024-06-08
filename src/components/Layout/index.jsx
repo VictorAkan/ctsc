@@ -1,10 +1,8 @@
 import Sidebar from "../Sidebar";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Home from "../../pages/WorldOfAdmin/AdHome";
-import Users from "../../pages/WorldOfAdmin/AdUsers";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
@@ -19,12 +17,7 @@ const Layout = ({ children }) => {
                 <Sidebar />
             </div>
             <div className="flex-1 p-6 bg-gray-100">
-                <Routes>
-                    <Route path="/admin/home" element={<Home />} />
-                    <Route path="/admin/users" element={<Users />} />
-                    {/* Add more nested routes as needed */}
-                </Routes>
-                {children}
+                <Outlet />
             </div>
         </div>
     );

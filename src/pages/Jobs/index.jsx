@@ -21,6 +21,10 @@ const JobsPage = () => {
             });
     }, []);
 
+    const applyToJob = (jobId) => {
+        window.location.href = `/apply/${jobId}`;
+    };
+
     if (loading) {
         return <Loader />;
     }
@@ -82,7 +86,7 @@ const JobsPage = () => {
                                             </Text>
                                         </a>
                                     </div>
-                                    <div className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                    <div onClick={() => applyToJob(job.id)} className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
                                         <Text
                                             size="3xl"
                                             as="p"
