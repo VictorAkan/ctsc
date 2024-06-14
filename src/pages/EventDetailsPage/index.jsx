@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import Loader from 'react-loader-spinner'; // If using react-loader-spinner
+import { Loader } from '../../Loader';
 
 export default function EventDetailsPage() {
     const { eventId } = useParams();
@@ -27,7 +27,7 @@ export default function EventDetailsPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-full">
-                <Loader type="ThreeDots" color="#000000" height={80} width={80} />
+                <Loader />
             </div>
         );
     }
