@@ -1,14 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import UserForm from '../../../components/Admin/UserForm';
 import UserList from '../../../components/Admin/UserList';
 
 const Users = () => {
-    const [users, setUsers] = useState([
-        { id: 1, name: 'John Doe', email: 'john@example.com' },
-        { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-    ]);
+    const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
+
+    const token = window.sessionStorage.getItem("token");
+
+    // Fetch users from the API
+    useEffect(() => {
+        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/users/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setUsers(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the users!', error);
+            });
+    }, []);
 
     const handleEdit = (user) => {
         setSelectedUser(user);
@@ -48,7 +63,9 @@ const Users = () => {
                     >
                         Add User
                     </button>
-                    <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
+                    {users.length > 0 ? <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} /> : <div>
+                        No Users yet 
+                    </div>}
                 </div>
             )}
         </div>
@@ -56,4 +73,5 @@ const Users = () => {
 };
 
 export default Users;
+
 

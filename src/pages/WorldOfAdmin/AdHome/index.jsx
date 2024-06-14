@@ -21,16 +21,11 @@ const Home = () => {
                     }
                 });
                 const jobOpportunitiesResponse = await axios.all([
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/1/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }), 
                     axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/2/', {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }
-                    })
+                    }),
                 ]);
 
                 setClientsCount(clientsResponse.data.length);

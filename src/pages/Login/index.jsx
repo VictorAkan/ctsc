@@ -52,12 +52,6 @@ export default function LoginPage() {
 
             const { access, refresh } = response.data;
 
-            // if (userType === 'admin') {
-            //     window.sessionStorage.setItem("adminToken", access)
-            // } else {
-                
-            // }
-
             setToken(access)
 
             window.sessionStorage.setItem("token", access);
@@ -98,12 +92,14 @@ export default function LoginPage() {
     };
 
     return (
+        <>
+        <Header />
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="mb-4 text-center text-2xl font-bold text-[#253451]">Login</h3>
-                <p className="text-center justify-center flex gap-2 text-gray-600">
+                {/* <p className="text-center justify-center flex gap-2 text-gray-600">
                     Don't have an account yet? <Link to="/signup" className="text-[#253451]">Sign up</Link>
-                </p>
+                </p> */}
                 {loginError && (
                     <div className="mb-4 text-center text-red-500 text-xs">{loginError}</div>
                 )}
@@ -117,7 +113,7 @@ export default function LoginPage() {
                                     <div className="flex flex-col w-full items-start gap-[0.50rem]">
                                         <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> Email Address </Text>
                                         <Field type="email" name="email" placeholder="Enter your email address"
-                                            className="font-medium sm:pr-[1.25rem] !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4" />
+                                            className="font-medium sm:pr-[1.25rem] !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4" />
                                         {errors.email && touched.email && (
                                             <ErrorMessage name="email" component="div" className="text-red-500 text-xs" />
                                         )}
@@ -125,11 +121,14 @@ export default function LoginPage() {
                                     <div className="flex flex-col items-start gap-[0.50rem]">
                                         <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> Password </ Text>
                                         <Field type="password" name="password" placeholder="Enter password"
-                                            className="gap-[2.19rem] self-stretch !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 font-medium" />
+                                            className="gap-[2.19rem] self-stretch !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 font-medium" />
                                         {errors.password && touched.password && (
                                             <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                                         )}
                                     </div>
+                                    <p className="text-center !text-sm justify-center flex gap-2 text-gray-600">
+                                        Don't have an account yet? <Link to="/signup" className="text-[#253451]">Sign up</Link>
+                                    </p>
                                     <div className="flex flex-col items-center gap-[1.81rem] self-stretch">
                                         <Button color="blue_gray_900" size="4xl" disabled={isSubmitting}
                                             className="w-full rounded-[30px] font-medium sm:px-[1.25rem]">
@@ -143,6 +142,7 @@ export default function LoginPage() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

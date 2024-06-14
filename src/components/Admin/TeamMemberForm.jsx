@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 
 const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
+    // separate state for profile pic
+    const [profPic, setProfPic] = useState('');
     const [formData, setFormData] = useState({
         id: teamMember ? teamMember.id : null,
         first_name: teamMember ? teamMember.first_name : '',
         last_name: teamMember ? teamMember.last_name : '',
         about: teamMember ? teamMember.about : '',
-        profile_image: teamMember ? teamMember.profile_image : '',
+        // profile_image: teamMember ? teamMember.profile_image : '',
     });
 
     useEffect(() => {
@@ -34,6 +36,18 @@ const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleProfilePic = (e) => {
+        const file = e.target.files[0];
+        setProfPic(URL.createObjectURL(file))
+        setFormData({
+            id: teamMember.id,
+                first_name: teamMember.first_name,
+                last_name: teamMember.last_name,
+                about: teamMember.about,
+                profile_image: file,
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onSave(formData);
@@ -49,7 +63,7 @@ const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
                     name="first_name"
                     value={formData.first_name}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-200 border rounded"
+                    className="w-full !p-4 !bg-gray-200 border rounded"
                     maxLength={50}
                     minLength={1}
                     required
@@ -62,7 +76,7 @@ const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
                     name="last_name"
                     value={formData.last_name}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-200 border rounded"
+                    className="w-full !p-4 !bg-gray-200 border rounded"
                     maxLength={50}
                     minLength={1}
                     required
@@ -74,7 +88,7 @@ const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
                     name="about"
                     value={formData.about}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-200 border rounded"
+                    className="w-full !p-4 !bg-gray-200 border rounded"
                     maxLength={100}
                     minLength={1}
                     required
@@ -86,9 +100,9 @@ const TeamMemberForm = ({ teamMember, onSave, onCancel }) => {
                     type="text"
                     name="profile_image"
                     value={formData.profile_image}
-                    onChange={handleChange}
+                    onChange={handleProfilePic}
                     className="w-full p-4 bg-gray-200 border rounded"
-                    readOnly
+                    required
                 />
             </div>
             <div className="flex justify-end">

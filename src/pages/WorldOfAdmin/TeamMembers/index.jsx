@@ -51,7 +51,11 @@ const TeamMembers = () => {
                     console.error('Error updating team member:', error);
                 });
         } else {
-            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/team-members/', teamMember)
+            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/team-members/', teamMember, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
                 .then(response => {
                     teamMember.id = response.data.id;
                     setTeamMembers([...teamMembers, teamMember]);

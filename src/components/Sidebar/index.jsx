@@ -90,7 +90,7 @@ const Sidebar = () => (
                         <span className="ml-2">Team Members</span>
                     </Link>
                 </li>
-                <li className="p-4 hover:bg-[#364b76]">
+                {/* <li className="p-4 hover:bg-[#364b76]">
                     <Link to="/admin/comments">
                         <ChatIcon className="h-5 w-5 inline-block" />
                         <span className="ml-2">Comments</span>
@@ -101,7 +101,7 @@ const Sidebar = () => (
                         <ThumbUpIcon className="h-5 w-5 inline-block" />
                         <span className="ml-2">Likes</span>
                     </Link>
-                </li>
+                </li> */}
                 <li className="p-4 hover:bg-[#364b76]">
                     <Link to="/admin/stories">
                         <TableIcon className="h-5 w-5 inline-block" />

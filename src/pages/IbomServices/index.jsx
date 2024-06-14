@@ -62,14 +62,14 @@ export default function IbomServicesPage() {
                             </div>
                         </div>
                         <div className="container-xs relative mt-[-9.63rem] md:flex md:justify-center md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
-                            <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-[#d2d2d2] pb-[47.00rem] px-32 pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
+                            <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-gray-100 pb-[47.00rem] px-32 pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
                                 {data.map((d, index) => (
                                     <Link to={`/ibomservices/${d.id}`} key={"ibomservices" + index}>
                                         <div
-                                            className="flex w-full justify-center rounded-[37px] bg-[#fcf5f5] pb-[5.75rem] pl-[2.88rem] pr-[3.50rem] pt-[5.69rem] md:p-[1.25rem]"
+                                            className="flex w-full justify-center rounded-[37px] bg-[#f8e1e1] pb-[5.75rem] pl-[2.88rem] pr-[3.50rem] pt-[5.69rem] md:p-[1.25rem]"
                                         >
                                             <Text size="19xl" as="p" className="text-[2.31rem] !text-[#000000]">
-                                                {d.plumber}
+                                                {d.service_name}
                                             </Text>
                                         </div>
                                     </Link>

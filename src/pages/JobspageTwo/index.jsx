@@ -344,7 +344,7 @@ export default function JobspageTwoPage() {
                         <Text size="21xl" as="p" className="!text-[#000000]">
                             Latest Job Opportunities
                         </Text>
-                        <Link to="/jobs" className="mt-[0.31rem]">
+                        <Link to="/login" className="mt-[0.31rem]">
                             <Text size="13xl" as="p" className="!font-medium !text-[#555453]">
                                 See All
                             </Text>
@@ -374,8 +374,8 @@ export default function JobspageTwoPage() {
                                                 <Text size="5xl" as="p" className="!text-[#626262]">
                                                     {job.hiring_company}
                                                 </Text>
-                                                <div className="flex rounded-md bg-[#253451] pl-[0.19rem] pr-[0.13rem]">
-                                                    <Text size="s" as="p" className="!text-[0.63rem] !font-medium">
+                                                <div className="flex rounded-[43px] bg-[#253451] p-1">
+                                                    <Text size="s" as="p" className="!text-[0.63rem] text-center !font-medium">
                                                         {job.tag}
                                                     </Text>
                                                 </div>
@@ -383,7 +383,7 @@ export default function JobspageTwoPage() {
                                         </div>
                                         <div className="h-[2.44rem] w-[2.44rem] rounded-[19px] bg-[#d9d9d9]" />
                                     </div>
-                                    <div className="mt-[1.88rem] flex flex-col items-start self-stretch">
+                                    <div className="mt-[0.88rem] flex flex-col items-start self-stretch">
                                         <Text size="2xl" as="p" className="!text-[#626262]">
                                             Requirements & Skills
                                         </Text>
@@ -401,7 +401,8 @@ export default function JobspageTwoPage() {
                                             </Text>
                                         </a>
                                     </div>
-                                    <div onClick={() => applyToJob(job.id)} className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                    <div className="mr-[1.88rem] flex w-[25%] hover:scale-105 transition duration-300 ease-in-out justify-center rounded-[10px] bg-[#253451] md:mr-0 md:w-full">
+                                        <Link to="/login">
                                         <Text
                                             size="3xl"
                                             as="p"
@@ -409,6 +410,7 @@ export default function JobspageTwoPage() {
                                         >
                                             Apply
                                         </Text>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -459,7 +461,7 @@ export default function JobspageTwoPage() {
                                             alt="image"
                                             className="h-[5.00rem] w-[5.00rem] object-cover"
                                         />
-                                        <div className="mt-[0.50rem] flex flex-col items-start">
+                                        <div className="mt-[0.00rem] mb-4 flex flex-col items-start">
                                             <Text size="21xl" as="p" className="!text-[#000000]">
                                                 Post a Job
                                             </Text>
@@ -471,7 +473,7 @@ export default function JobspageTwoPage() {
                                 </Link>
                                 <Link to="/signup"
                                     data-aos="fade-up"
-                                    className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]"
+                                    className="flex flex-1 rounded-[25px] border border-solid !border-[#253451] !bg-gray-50 pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]"
                                 >
                                     <div className="flex w-full items-start justify-center gap-[1.44rem] md:flex-col">
                                         <Img
@@ -479,11 +481,11 @@ export default function JobspageTwoPage() {
                                             alt="hiredone"
                                             className="h-[5.50rem] w-[5.50rem] object-cover"
                                         />
-                                        <div className="mt-[0.38rem] flex flex-col items-start gap-[0.81rem]">
+                                        <div className="mt-[0.00rem] mb-10 flex flex-col items-start gap-[0.81rem]">
                                             <Text size="21xl" as="p" className="!text-[#000000]">
                                                 Hire a talent for work
                                             </Text>
-                                            <Text as="p" className="!font-medium !text-[#908f8f]">
+                                            <Text as="p" className="!font-medium -mt-4 !text-[#908f8f]">
                                                 {" "}
                                                 Choose your best fit for the Job and and interract
                                             </Text>
@@ -493,7 +495,7 @@ export default function JobspageTwoPage() {
                             </div>
                             <div
                                 data-aos="fade-up"
-                                className="ml-[10.94rem] mt-[7.44rem] flex w-[56%] items-start justify-center gap-[1.69rem] rounded-[25px] border-4 border-solid border-[#ffffff] bg-[#ffffff] pb-[2.19rem] pl-[2.06rem] pr-[3.25rem] pt-[3.88rem] shadow-[-7px_-4px_58px_3px_#25345138] md:ml-0 md:w-full md:pr-[1.25rem] md:pt-[1.25rem] sm:flex-col sm:p-[1.25ren]"
+                                className="ml-[4.94rem] mt-[7.44rem] flex w-[73%] items-start justify-center gap-[1.69rem] rounded-[25px] border-4 border-solid border-[#ffffff] bg-[#ffffff] pb-[2.19rem] pl-[2.06rem] pr-[3.25rem] pt-[2.88rem] shadow-[-7px_-4px_58px_3px_#25345138] md:ml-0 md:w-full md:pr-[1.25rem] md:pt-[1.25rem] sm:flex-col sm:p-[1.25ren]"
                             >
                                 <Img
                                     src="images/info_1.png"
@@ -501,17 +503,17 @@ export default function JobspageTwoPage() {
                                     className="mt-[0.44rem] h-[4.56rem] w-[4.56rem] object-cover"
                                 />
                                 <Button
-                                    size="15xl"
+                                    size="10xl"
                                     as="p"
                                     className="w-[80%] !text-[1.94rem] leading-[2.94rem] !text-[#000000] sm:w-full"
                                 >
                                     <Link to="/contactus">
-                                        Get Instant <br />
-                                        Feedback From us.{" "}
+                                        Get
+                                        Feedback From us{" "}
                                     </Link>
                                 </Button>
                             </div>
-                            <div className="ml-[8.25rem] mt-[9.56rem] flex flex-wrap gap-[1.38rem] md:ml-0">
+                            <div className="ml-[14.25rem] mt-[9.56rem] flex flex-col gap-[0.2rem] md:ml-0">
                                 <Text size="21xl" as="p" className="!text-[#000000] ">
                                     Haven't sign up yet?{" "}
                                 </Text>
@@ -519,7 +521,7 @@ export default function JobspageTwoPage() {
                                     onClick={() => setOpen(true)}
                                     size="21xl"
                                     as="p"
-                                    className="!font-medium cursor-pointer !text-[#253451]"
+                                    className="!font-medium cursor-pointer text-center !text-[#253451]"
                                 >
                                     Sign up
                                 </Text>

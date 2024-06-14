@@ -15,6 +15,8 @@ function ClientProfile() {
     const [email, setEmail] = useState('');
     const fileInputRef = useRef(null);
 
+    const username = window.sessionStorage.getItem("name");
+
     useEffect(() => {
         return () => {
             // Cleanup the object URL when the component unmounts
@@ -95,20 +97,22 @@ function ClientProfile() {
 
     const handleSignOut = async () => {
         try {
-            await axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/sign-out/');
-            window.sessionStorage.removeItem(token)
-            window.sessionStorage.removeItem(refresh) // Route to home page after successful sign out
+            await axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/sign-out/', {
+                refresh_token: refresh
+            });
+            // window.sessionStorage.removeItem(token)
+            // window.sessionStorage.removeItem(refresh)
             alert('Signed out successfully!');
         } catch (error) {
             console.error('Error signing out:', error);
-            // alert('Failed to sign out. Please try again.');
+            alert('Failed to sign out. Please try again.');
         }
     };
 
     return (
         <div className="container mx-auto md:p-5 sm:p-3 px-[10rem] py-16">
             <div className="bg-white shadow-lg md:p-5 sm:p-3 px-[10rem] py-16">
-                <h1 className="text-2xl font-bold mb-4">Hello </h1>
+                <h1 className="text-2xl font-bold mb-4">Hello {username ? username : 'Guest'}</h1>
                 <div className="flex flex-col">
                     <div className="w-full">
                         <label htmlFor="profilePic" className="block mb-2">
@@ -214,8 +218,8 @@ function ClientProfile() {
                     </Link>
                 </div>
                 <div className="flex sm:flex-col justify-between">
-                <Link to="/" replace onClick={handleSignOut}>
-                    <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]" onClick={handleSignOut}>
+                <Link to="/login" replace onClick={handleSignOut}>
+                    <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
                         Sign Out
                     </Button>
                     </Link>

@@ -4,8 +4,14 @@ import axios from 'axios';
 const JobApplications = () => {
     const [applications, setApplications] = useState([]);
 
+    const token = window.sessionStorage.getItem("token");
+
     useEffect(() => {
-        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/')
+        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 setApplications(response.data);
             })

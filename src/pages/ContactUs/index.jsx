@@ -42,7 +42,7 @@ const ContactForm = () => {
     return (
         <>
             <Header />
-            <section className="bg-[beige]">
+            <section className="">
                 <div className="container mx-auto px-10 sm:px-4 py-10">
                     <div className="flex mt-24 gap-4 md:flex-col">
                         <div className="w-full mt-5">
@@ -50,8 +50,8 @@ const ContactForm = () => {
                                 Get In Touch
                             </h1>
                             <p className="mt-4 text-lg sm:text-center">
-                                Let's chat, share your story, and spread some positive vibes. Don’t hesitate to
-                                reach out for a chat and a cup of tea. We love hearing from you!
+                                Let's chat, share your story, and spread some positive vibes.<br/> Don’t hesitate to
+                                reach out for a chat and a cup of tea.<br /> We love hearing from you!
                             </p>
                         </div>
 
@@ -79,7 +79,7 @@ const ContactForm = () => {
                                                     type="text"
                                                     id="firstName"
                                                     name="first_name"
-                                                    className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 sm:text-sm"
+                                                    className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 sm:text-sm"
                                                     placeholder="First Name"
                                                     required
                                                 />
@@ -94,7 +94,7 @@ const ContactForm = () => {
                                                     type="text"
                                                     id="lastName"
                                                     name="last_name"
-                                                    className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 sm:text-sm"
+                                                    className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 sm:text-sm"
                                                     placeholder="Last Name"
                                                     required
                                                 />
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                                 type="email"
                                                 id="email"
                                                 name="email_address"
-                                                className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 sm:text-sm"
+                                                className="mt-1 block w-full !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 sm:text-sm"
                                                 placeholder="Email address"
                                                 required
                                             />
@@ -124,7 +124,7 @@ const ContactForm = () => {
                                                 as="textarea"
                                                 id="message"
                                                 name="message"
-                                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-[#d9d9d9] p-4 sm:text-sm"
+                                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-gray-100 p-4 sm:text-sm"
                                                 placeholder="Leave a comment here"
                                                 style={{ height: '100px' }}
                                                 required
@@ -135,7 +135,7 @@ const ContactForm = () => {
 
                                         <Button type="submit" disabled={isSubmitting || isLoading} color="blue_gray_900"
                                             className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white mt-3">
-                                            {isSubmitting || isLoading ? "sending data..." : "send"}
+                                            {isSubmitting || isLoading ? "Sending data..." : "Send"}
                                         </Button>
                                     </Form>
                                 )}

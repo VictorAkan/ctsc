@@ -44,7 +44,7 @@ export default function HomePage() {
                                     <Button
                                         color="blue_gray_100_03"
                                         size="9xl"
-                                        className="mt-[5.06rem] min-w-[15.75rem] hover:bg-[#ffffff] sm:min-w-[10rem] cursor-pointer rounded-[44px] font-medium sm:px-[1.25rem]"
+                                        className="mt-[5.06rem] min-w-[15.75rem] bg-gray-100 hover:bg-[#ffffff] sm:min-w-[10rem] cursor-pointer rounded-[44px] font-medium sm:px-[1.25rem]"
                                     >
                                         Learn More
                                     </Button>
@@ -58,7 +58,7 @@ export default function HomePage() {
                             <Text size="28xl" as="p" className="self-center !text-[#253451] md:ml-0 sm:text-center">
                                 Digital Accessibility
                             </Text>
-                            <Text size="14xl" as="p" className="mt-[1.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
+                            <Text size="14xl" as="p" className="mt-[0.94rem] w-full text-center leading-[2.81rem] !text-[#000000]">
                                 <>
                                     Cracking The Style Code is accessible to everyone, ensuring a user-friendly <br />
                                     experience across various devices. We believe that valuable content should be <br /> easily accessible to empower a diverse global audience.
@@ -68,14 +68,14 @@ export default function HomePage() {
                                 data-aos="fade-right"
                                 color="blue_gray_900"
                                 size="9xl"
-                                className="mt-[4.06rem] min-w-[15.75rem] sm:min-w-[10rem] hover:bg-[#2d3f61] rounded-[44px] font-medium sm:px-[1.25rem]"
+                                className="mt-[3.06rem] min-w-[15.75rem] sm:min-w-[10rem] hover:bg-[#2d3f61] rounded-[44px] font-medium sm:px-[1.25rem]"
                             >
                                 Ask Anything
                             </Button>
                         </div>
                     </div>
                     <div className="flex flex-col md: gap-[0rem]">
-                        <div className="flex flex-col items-center bg-[#ebebeb] pt-[4.56rem] md:pt-[1.25rem]">
+                        <div className="flex flex-col items-center bg-gray-100 pt-[4.56rem] md:pt-[1.25rem]">
                             <div className="container-xs flex flex-col items-center pl-[15.75rem] pr-[16.25rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text data-aos="fade-down" size="21xl" as="p" className="text-center !font-medium !text-[#253451]">
                                     This Week's Feature Story
@@ -108,7 +108,7 @@ export default function HomePage() {
                                             className="ml-[0.44rem] w-full text-[1.31rem] leading-[2.00rem] !text-[#000000] md:ml-0"
                                         >
                                             <>
-                                                unlocking Success: CEO, Made in Akwa Ibom shares powerful
+                                                Unlocking Success: CEO, Made in Akwa Ibom shares powerful
                                                 {/* <br /> */}
                                                 business lessons and passionate entrepreneurial insights that
                                                 will put you in a better position to grow your focus on defining your business goals.
@@ -116,10 +116,10 @@ export default function HomePage() {
                                         </Text>
                                         <Link to="/newssection">
                                         <Button
-                                            color="black_900_01"
+                                            color="blue_gray_900"
                                             size="2xl"
                                             data-aos="fade-up"
-                                            className="ml-[0.88rem] hover:bg-[#2a2a2a] min-w-[9.75rem] rounded-[10px] md:ml-0 sm:px-[1.25rem]"
+                                            className="ml-[0.88rem] rounded-[43px] hover:bg-[#2d3f61] min-w-[9.75rem] rounded-[10px] md:ml-0 sm:px-[1.25rem]"
                                         >
                                             Read More
                                         </Button>
@@ -199,28 +199,28 @@ export default function HomePage() {
                                                 type="text"
                                                 name="firstName"
                                                 placeholder={`First Name`}
-                                                className="w-full h-[4rem] text-md sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] bg-gray-200 text-md sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Input
                                                 shape="round"
                                                 type="text"
                                                 name="lastName"
                                                 placeholder={`Last Name`}
-                                                className="w-full h-[4rem] sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] bg-gray-200 sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Input
                                                 shape="round"
                                                 type="email"
                                                 name="email"
                                                 placeholder={`Email Address`}
-                                                className="w-full h-[4rem] sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
+                                                className="w-full h-[4rem] bg-gray-200 sm:w-full sm:h-[2rem] sm:px-[1.25rem]"
                                             />
                                             <Link to="/signup">
                                             <Button
                                                 color="blue_gray_900"
                                                 size="6xl"
                                                 shape="round"
-                                                className="min-w-[9.56rem] self-start md:ml-0 hover:bg-[#2d3f61] font-medium sm:pl-[1.25rem]"
+                                                className="min-w-[9.56rem] rounded-[43px] self-start md:ml-0 hover:bg-[#2d3f61] font-medium sm:pl-[1.25rem]"
                                             >
                                                 Shine Your Light
                                             </Button>
@@ -231,9 +231,9 @@ export default function HomePage() {
                             </div>
                         </div>
                     </div>
-                    <div className="h-full bg-[#d9d9d9] px-32 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
+                    <div className="h-full bg-[#ffffff] px-32 pt-[4.69rem] md:pl-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]">
                         <div className="flex space-x-32 md:space-x-0 sm:block">
-                        <div data-aos="fade-up" className="m-auto flex flex-col items-end md:items-start w-full gap-[0.81rem]">
+                        <div data-aos="fade-up" className="m-auto flex flex-col items-start md:items-start w-full gap-[0.81rem]">
                             <Text size="14xl" as="p" className="!text-[#000000]">
                                 <>
                                 Cracking the style code is not just a Publication
@@ -250,20 +250,18 @@ export default function HomePage() {
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         </div>
-                        <div className="flex -mt-32 md:-mt-0 sm:block space-x-32 sm:space-x-0">
+                        <div className="flex -mt-32 md:-mt-0 sm:block space-x-[20rem] sm:space-x-0">
                             <Img
                             src="images/rectangle_18.png"
                             alt="image"
                             data-aos="flip-right"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
-                        <div data-aos="fade-down" className="m-auto flex order-2 sm:order-1 w-full flex-col items-start gap-[1.94rem]">
-                            <Text size="14xl" as="p" className="w-full font-bold leading-[2.81rem] !text-[#000000] md:w-full">
-                                <>
-                                    {" "}
+                        <div data-aos="fade-down" className="m-auto flex order-2 sm:order-1 w-full flex-col items-end gap-[1.94rem]">
+                            <Text size="14xl" as="p" className="w-full font-bold leading-[2.81rem] !text-[#000000]">
+                                    {" "}   
                                     It&#39;s a movement for positive <br />
                                     change and empowerment.
-                                </>
                             </Text>
                             <Text size="14xl" as="p" className="!text-[#000000]">
                                 Ado Isang Eti Ukpogho mkpo ye Isang Uwam

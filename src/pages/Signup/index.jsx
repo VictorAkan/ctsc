@@ -58,6 +58,7 @@ export default function SignupPage() {
                 }
             );
             console.log(response.data);
+            window.sessionStorage.setItem("name", values.fullName)
 
             if (response.status === 201) {
                 localStorage.setItem('userType', values.userType);
@@ -133,7 +134,7 @@ export default function SignupPage() {
                                                     <div className="flex flex-col w-full items-start gap-[0.50rem]">
                                                         <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> Email Address </Text>
                                                         <Field type="email" name="email" placeholder="Enter your email address"
-                                                            className="font-medium sm:pr-[1.25rem] w-[30rem] sm:w-[15rem] !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4" />
+                                                            className="font-medium sm:pr-[1.25rem] w-[30rem] sm:w-[15rem] !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4" />
                                                         {errors.email && touched.email && (
                                                             <ErrorMessage name="email" component="div" className="text-red-500 text-xs" />
                                                         )}
@@ -143,7 +144,7 @@ export default function SignupPage() {
                                                             <Text size="3xl" as="p" className="!text-[#9794aa]"> Full Name </Text>
                                                         </div>
                                                         <Field type="text" name="fullName" placeholder="Enter your full name"
-                                                            className="!rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 font-medium sm:pr-[1.25rem]" />
+                                                            className="!rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 font-medium sm:pr-[1.25rem]" />
                                                         {errors.fullName && touched.fullName && (
                                                             <ErrorMessage name="fullName" component="div" className="text-red-500 text-xs" />
                                                         )}
@@ -153,11 +154,11 @@ export default function SignupPage() {
                                                             <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> User Type </Text>
                                                             <div className="flex items-center gap-[1.25rem]">
                                                                 <label className="flex items-center gap-[0.50rem]">
-                                                                    <Field type="radio" name="userType" value="client" className="!bg-[#d9d9d9]" />
+                                                                    <Field type="radio" name="userType" value="client" className="!bg-gray-100" />
                                                                     <Text size="2xl" as="p" className="!text-[#9794aa]">Client</Text>
                                                                 </label>
                                                                 <label className="flex items-center gap-[0.50rem]">
-                                                                    <Field type="radio" name="userType" value="talent" className="!bg-[#d9d9d9]" />
+                                                                    <Field type="radio" name="userType" value="talent" className="!bg-gray-100" />
                                                                     <Text size="2xl" as="p" className="!text-[#9794aa]">Talent</Text>
                                                                 </label>
                                                             </div>
@@ -169,7 +170,7 @@ export default function SignupPage() {
                                                     <div className="flex flex-col items-start gap-[0.50rem]">
                                                         <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> Password </Text>
                                                         <Field type="password" name="password" placeholder="Create your password"
-                                                            className="gap-[2.19rem] self-stretch !rounded-md border-gray-300 shadow-sm !bg-[#d9d9d9] !p-4 font-medium" />
+                                                            className="gap-[2.19rem] self-stretch !rounded-md border-gray-300 shadow-sm !bg-gray-100 !p-4 font-medium" />
                                                         {errors.password && touched.password && (
                                                             <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                                                         )}

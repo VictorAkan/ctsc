@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 
 const JobApplicationForm = () => {
     const { jobId } = useParams();
-    const [talentId, setTalentId] = useState(''); // This should be fetched from the user context or auth state
+    const [talentId, setTalentId] = useState(0); // This should be fetched from the user context or auth state
+
+    const token = window.sessionStorage.getItem("token");
 
     console.log(talentId);
 
@@ -16,7 +18,11 @@ const JobApplicationForm = () => {
             talent: talentId
         };
 
-        axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', applicationData)
+        axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', applicationData, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 alert('Application submitted successfully');
             })

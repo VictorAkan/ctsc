@@ -16,7 +16,7 @@ export default function Header({ ...props }) {
         className={`${props.className} flex justify-center fixed items-center pt-[1.56rem] pb-[1.25rem] sm:pt-[1.25rem] bg-[#253451] w-full z-10`}>
         <div className="container px-32 flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
             <Link to="/">
-            <Text size="9xl" as="p" className="uppercase text-white">cracking the style code</Text>
+            <Text size="10xl" as="p" className="uppercase text-white">cracking the style code</Text>
             </Link>
             <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
                 <li>
@@ -40,7 +40,7 @@ export default function Header({ ...props }) {
                             Mkpo Nnyin
                         </Link>
                         </Text>
-                        <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
+                        {/* <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
                     {menuOpen ? <MegaMenu1 /> : null}
                 </li>
@@ -58,7 +58,7 @@ export default function Header({ ...props }) {
                         News & Stories
                         </Link>
                         </Text>
-                        <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" />
+                        {/* <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
                     {menuOpen1 ? <MegaMenu2 /> : null}
                 </li>
@@ -76,7 +76,7 @@ export default function Header({ ...props }) {
                             About CTSCode
                         </Link>
                         </Text>
-                        <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
+                        {/* <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
                     {menuOpen2 ? <MegaMenu3 /> : null}
                 </li>
@@ -113,7 +113,7 @@ export default function Header({ ...props }) {
                                 Mkpo Nnyin
                                 </Link>
                             </Text>
-                            <img src="images/img_polygon_2.svg" alt="polygontwo" className="-mt-2 h-[0.44rem] w-[0.50rem]" />
+                            {/* <img src="images/img_polygon_2.svg" alt="polygontwo" className="-mt-2 h-[0.44rem] w-[0.50rem]" /> */}
                         </div>
                         {menuOpen ? <MegaMenu1 /> : null}
                     </li>
@@ -127,7 +127,7 @@ export default function Header({ ...props }) {
                         <div className="flex cursor-pointer mb-5 items-center">
                             <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> News & Stories
                             </Text>
-                            <img src="images/img_polygon_2.svg" alt="polygonone" className="-mb-2 h-[0.44rem] w-[0.50rem]" />
+                            {/* <img src="images/img_polygon_2.svg" alt="polygonone" className="-mb-2 h-[0.44rem] w-[0.50rem]" /> */}
                         </div>
                         {menuOpen1 ? <MegaMenu2 /> : null}
                     </li>
@@ -144,7 +144,7 @@ export default function Header({ ...props }) {
                                 About CTSCode
                             </Link>
                             </Text>
-                            <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" />
+                            {/* <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
                         </div>
                         {menuOpen2 ? <MegaMenu3 /> : null}
                     </li>

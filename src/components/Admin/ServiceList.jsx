@@ -8,7 +8,7 @@ const ServiceList = ({ services, onEdit, onDelete }) => (
                 <thead className="bg-gray-800 text-white">
                     <tr>
                         <th className="w-1/4 px-4 py-2">Name</th>
-                        <th className="w-1/4 px-4 py-2">Description</th>
+                        {/* <th className="w-1/4 px-4 py-2">Description</th> */}
                         <th className="w-1/4 px-4 py-2">Actions</th>
                     </tr>
                 </thead>
@@ -16,7 +16,7 @@ const ServiceList = ({ services, onEdit, onDelete }) => (
                     {services.map((service) => (
                         <tr key={service.id}>
                             <td className="border px-4 py-2">{service.service_name}</td>
-                            <td className="border px-4 py-2">{service.description}</td>
+                            {/* <td className="border px-4 py-2">{service.description}</td> */}
                             <td className="border px-4 py-2">
                                 <button onClick={() => onEdit(service)} className="bg-blue-500 text-white px-2 py-1 rounded mr-2">
                                     Edit

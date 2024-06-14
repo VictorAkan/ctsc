@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import axios from "axios";
+import { format } from "date-fns";
 // import hooks
 import { useState, useEffect } from "react";
 
@@ -16,6 +17,7 @@ const ReadersCorner = () => {
         const fetchStories = async () => {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/anonymous-story/");
+                console.log(response);
                 setStories(response.data);
             } catch (error) {
                 setError(error.message);
@@ -49,16 +51,16 @@ const ReadersCorner = () => {
                     ) : (
                         <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-4" id="stories-wrapper">
                             {stories.map((story, index) => (
-                                <div key={index} className="flex flex-col md:flex-row bg-[#f8f5f5] p-4 rounded-xl md:w-full lg:w-1/3">
+                                <div key={index} className="flex flex-col bg-[#f8f5f5] p-4 rounded-xl md:w-full lg:w-1/3">
                                     <div className="img-container flex-shrink-0 mb-4 md:mb-0">
-                                        <img src={story.imgSrc} alt="" className="w-full h-auto rounded-xl" />
+                                        <img src={story.image} alt="" className="w-full h-auto rounded-xl" />
                                     </div>
                                     <div className="text-container flex-grow">
-                                        <h3 className="text-xl font-bold mb-2">{story.title}</h3>
-                                        <p className="mb-2">{story.content}</p>
+                                        <h3 className="text-xl font-bold mb-2">{story.topic}</h3>
+                                        <p className="mb-2">{story.short_description}</p>
                                         <div className="card-meta-data text-gray-600">
-                                            <span className="date mr-8">{story.date}</span>
-                                            <span className="italic">{story.author}</span>
+                                            <span className="date mr-8">{format(new Date(story.created_at), 'PPP')}</span>
+                                            <span className="italic">{story.author.first_name}</span>
                                         </div>
                                     </div>
                                 </div>

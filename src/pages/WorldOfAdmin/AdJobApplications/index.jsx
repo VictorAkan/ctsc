@@ -10,8 +10,15 @@ const JobApplications = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const token = window.sessionStorage.getItem("token")
+    console.log(token);
+
     useEffect(() => {
-        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/')
+        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 setJobApplications(response.data);
                 setLoading(false);
@@ -28,7 +35,11 @@ const JobApplications = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/${id}/`)
+        axios.delete(`https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/${id}/`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(() => {
                 setJobApplications(jobApplications.filter((jobApplication) => jobApplication.id !== id));
             })
