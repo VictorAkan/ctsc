@@ -3,6 +3,8 @@ import axios from 'axios';
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import useScrollToTop from "../../hooks/useScrollToTop";
+import { Loader } from '../../Loader';
+import { format } from "date-fns";
 
 const PersonalGrowth = () => {
     useScrollToTop();
@@ -27,7 +29,9 @@ const PersonalGrowth = () => {
     }, []);
     console.log(posts);
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>
+            <Loader />
+        </div>;
     }
 
     if (error) {
@@ -68,11 +72,11 @@ const PersonalGrowth = () => {
                                     </a>
                                 </div>
                                 <div className="blog-detail">
-                                    <span className="text-gray-500">{post?.created_at} <span className="dot">·</span> {post?.author?.email}</span>
+                                    <span className="text-gray-500">{format(new Date(post?.created_at), 'PPP')} <span className="dot">·</span> {post?.author?.email}</span>
                                     <a href="#">
                                         <h3 className="mt-4 mb-5 text-2xl sm:text-sm leading-10 sm:leading-[3rem] font-bold">{post?.title}</h3>
                                     </a>
-                                    <a href="#" className="read-more text-blue-500">Read More</a>
+                                    <p>{post?.short_description}</p>
                                 </div>
                             </div>
                         ))}
