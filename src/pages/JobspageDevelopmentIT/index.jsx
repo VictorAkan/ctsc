@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "react-helmet";
 import { Img, Text } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import JobsPageStackgraphic from "../../components/JobsPageStackgraphic";
 import useScrollToTop from "../../hooks/useScrollToTop";
-
-const data = [
-    { Johnokon: "John Okon", graphic: "Graphic Designer", viewprofile: "View Profile" },
-    { Johnokon: "John Okon", graphic: "Graphic Designer", viewprofile: "View Profile" },
-    // ... more data
-];
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Loader } from "../../Loader";
 
 export default function JobspageDevelopmentIT() {
     useScrollToTop();
+    const [job, setJob] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        async function fetchJob() {
+            try {
+                const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/job/2/");
+                setJob(response.data);
+            } catch (error) {
+                console.error("Error fetching job data:", error);
+            }
+        }
+
+        fetchJob();
+    }, []);
+
+    if (!job) {
+        return <div><Loader /></div>;
+    }
+
     return (
         <>
             <Helmet>
@@ -30,22 +46,28 @@ export default function JobspageDevelopmentIT() {
                                     Development and IT
                                 </Text>
                             </div>
-                            <Text size="27xl" as="p" className="relative mt-[-4.75rem] !text-[4.00rem]">
-                                IBOM EVENTS
-                            </Text>
                         </div>
                         <Text size="11xl" as="p" className="ml-[32.00rem] mt-[1.75rem] self-start !font-['Inter'] !text-[1.56rem] !font-medium md:ml-0">
                             Hire
                         </Text>
                         <div className="mt-[2.69rem] grid grid-cols-3 justify-center gap-[9.19rem] self-stretch md:grid-cols-2 sm:grid-cols-1">
-                            {data.map((d, index) => (
-                                <JobsPageStackgraphic {...d} key={"jobspage" + index} />
-                            ))}
+                            <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
+                                <Text as="p" size="2xl" className="font-semibold text-gray-400">{job.title}</Text>
+                                <Text as="p" size="lg" className="text-gray-700">{job.hiring_company}</Text>
+                                <Text as="p" size="md" className="text-gray-500">{job.category}</Text>
+                                <Text as="p" size="sm" className="text-gray-600 whitespace-pre-line">{job.requirements}</Text>
+                                <button
+                                    className="mt-4 px-4 py-2 bg-[#253451] text-white rounded hover:bg-[#253451]"
+                                    onClick={() => navigate("/login")}
+                                >
+                                    Apply
+                                </button>
+                            </div>
                         </div>
-                        <div className="mt-[5.13rem] flex gap-[0.88rem]">
+                        {/* <div className="mt-[5.13rem] flex gap-[0.88rem]">
                             <Img src="images/arrow_2.png" alt="arrowtwo" className="h-[0.13rem]" />
                             <img src="images/arrow_1.png" alt="arrowone" className="h-[0.13rem]" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <Footer className="mt-[18.63rem] self-stretch" />

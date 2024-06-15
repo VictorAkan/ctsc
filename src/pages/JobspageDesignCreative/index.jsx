@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../Loader";
 
 export default function JobspageDesignCreative() {
     useScrollToTop();
@@ -26,7 +27,7 @@ export default function JobspageDesignCreative() {
     }, []);
 
     if (!job) {
-        return <div>Loading...</div>;
+        return <div><Loader /></div>;
     }
 
     return (
@@ -45,9 +46,9 @@ export default function JobspageDesignCreative() {
                                     Designs and creative
                                 </Text>
                             </div>
-                            <Text size="27xl" as="p" className="relative mt-[-4.75rem] !text-[4.00rem]">
+                            {/* <Text size="27xl" as="p" className="relative mt-[-4.75rem] !text-[4.00rem]">
                                 IBOM EVENTS
-                            </Text>
+                            </Text> */}
                         </div>
                         <Text
                             size="11xl"
@@ -58,7 +59,7 @@ export default function JobspageDesignCreative() {
                         </Text>
                         <div className="mt-[2.69rem] grid grid-cols-3 justify-center gap-[9.19rem] self-stretch md:grid-cols-2 sm:grid-cols-1">
                             <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
-                                <Text as="p" size="2xl" className="font-semibold">{job.title}</Text>
+                                <Text as="p" size="2xl" className="font-semibold text-gray-400">{job.title}</Text>
                                 <Text as="p" size="lg" className="text-gray-700">{job.hiring_company}</Text>
                                 <Text as="p" size="md" className="text-gray-500">{job.category}</Text>
                                 <Text as="p" size="sm" className="text-gray-600 whitespace-pre-line">{job.requirements}</Text>
@@ -70,14 +71,15 @@ export default function JobspageDesignCreative() {
                                 </button>
                             </div>
                         </div>
-                        <div className="mt-[5.13rem] flex gap-[0.88rem]">
+                        {/* <div className="mt-[5.13rem] flex gap-[0.88rem]">
                             <Img src="images/arrow_2.png" alt="arrowtwo" className="h-[0.13rem]" />
                             <Img src="images/arrow_1.png" alt="arrowone" className="h-[0.13rem]" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-                <Footer className="mt-[18.63rem] self-stretch" />
+                {/* <Footer className="mt-[18.63rem] self-stretch" /> */}
             </div>
+            <Footer className="mt-[18.63rem]" />
         </>
     );
 }
