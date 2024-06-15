@@ -33,7 +33,7 @@ function JobPosting() {
     });
 
     return (
-        <div className="container mx-auto p-24 md:p-10 sm:px-4 sm:py-8">
+        <div className="container mx-auto p-24 px-[15rem] md:p-10 sm:px-4 sm:py-8">
             <h1 className="text-2xl font-bold mb-4">Post a Job</h1>
             <form onSubmit={formik.handleSubmit}>
                 <div className="grid grid-cols-2 sm:grid-cols-1 gap-7">
@@ -47,7 +47,7 @@ function JobPosting() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.category}
-                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9]"
+                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100"
                     />
                     <datalist id="job-categories">
                         <option value="Design and Creative" />
@@ -74,7 +74,7 @@ function JobPosting() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.title}
-                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9]"
+                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100"
                     />
                     {formik.touched.title && formik.errors.title ? (
                         <div className="text-red-500">{formik.errors.title}</div>
@@ -90,7 +90,7 @@ function JobPosting() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.hiring_company}
-                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9]"
+                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100"
                     />
                     {formik.touched.hiring_company && formik.errors.hiring_company ? (
                         <div className="text-red-500">{formik.errors.hiring_company}</div>
@@ -107,7 +107,7 @@ function JobPosting() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.tag}
-                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9]"
+                        className="w-full border !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100"
                     />
                     <datalist id="job-tags">
                         <option value="Remote" />
@@ -129,7 +129,7 @@ function JobPosting() {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.requirements}
-                        className="w-full border rounded-md p-4 border-gray-300 shadow-sm bg-[#d9d9d9]"
+                        className="w-full border rounded-md p-4 border-gray-300 shadow-sm bg-gray-100"
                     />
                     {formik.touched.requirements && formik.errors.requirements ? (
                         <div className="text-red-500">{formik.errors.requirements}</div>

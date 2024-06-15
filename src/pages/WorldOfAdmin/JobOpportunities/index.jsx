@@ -3,7 +3,7 @@ import axios from 'axios';
 import JobOpportunityForm from '../../../components/Admin/JobOpportunityForm';
 import JobOpportunityList from '../../../components/Admin/JobOpportunityList';
 
-const jobIds = [2]; 
+const jobIds = [2,6,7,8,9,10,11,12,13]; 
 
 const JobOpportunities = () => {
     const [jobOpportunities, setJobOpportunities] = useState([]);

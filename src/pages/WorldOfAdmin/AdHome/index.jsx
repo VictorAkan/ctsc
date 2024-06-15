@@ -26,6 +26,46 @@ const Home = () => {
                             Authorization: `Bearer ${token}`
                         }
                     }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/6/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/7/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/8/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/9/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/10/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/11/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/12/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
+                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/13/', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }),
                 ]);
 
                 setClientsCount(clientsResponse.data.length);

@@ -95,7 +95,7 @@ export default function LoginPage() {
         <>
         <Header />
         <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+            <div className="w-full max-w-md bg-white mt-24 md:mt-32 p-8 rounded-lg shadow-lg">
                 <h3 className="mb-4 text-center text-2xl font-bold text-[#253451]">Login</h3>
                 {/* <p className="text-center justify-center flex gap-2 text-gray-600">
                     Don't have an account yet? <Link to="/signup" className="text-[#253451]">Sign up</Link>

@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/outline';
 
 const Sidebar = () => (
-    <div className="h-full pb-28 bg-[#253451] text-white w-64">
+    <div className="h-full pb-40 bg-[#253451] text-white w-64">
         <div className="p-4">
             <h1 className="text-xl font-bold">Hello Admin</h1>
         </div>

@@ -4,7 +4,7 @@ const PartnerList = ({ partners, onEdit, onDelete }) => (
         <table className="min-w-full bg-white">
             <thead className="bg-gray-800 text-white">
                 <tr>
-                    <th className="w-1/4 px-4 py-2">Name</th>
+                    <th className="w-1/4 px-4 py-2">Profile Picture</th>
                     <th className="w-1/4 px-4 py-2">Description</th>
                     <th className="w-1/4 px-4 py-2">Actions</th>
                 </tr>
@@ -12,7 +12,9 @@ const PartnerList = ({ partners, onEdit, onDelete }) => (
             <tbody className="text-gray-700">
                 {partners.map((partner) => (
                     <tr key={partner.id}>
-                        <td className="border px-4 py-2">{partner.name}</td>
+                        <td className="border px-4 py-2">
+                            <img src={partner.partner_pics} alt={partner.name} className="w-16 h-16 rounded-full object-cover" />
+                        </td>
                         <td className="border px-4 py-2">{partner.description}</td>
                         <td className="border px-4 py-2">
                             <button onClick={() => onEdit(partner)} className="bg-blue-500 text-white px-2 py-1 rounded mr-2">
@@ -30,3 +32,4 @@ const PartnerList = ({ partners, onEdit, onDelete }) => (
 );
 
 export default PartnerList;
+

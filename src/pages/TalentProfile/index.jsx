@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { AiOutlineCloudUpload, AiOutlineEdit } from 'react-icons/ai';
+import { AiOutlineCloudUpload } from 'react-icons/ai';
 import { Button } from '../../components';
-import { Link } from 'react-router-dom'; 
-import { UserContext } from '../../context/UserContext';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const UserProfile = () => {
-    // const { user } = useContext(UserContext);
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -17,14 +15,13 @@ const UserProfile = () => {
 
     const token = window.sessionStorage.getItem("token");
     const name = window.sessionStorage.getItem("name");
+    const refresh = window.sessionStorage.getItem("refershToken");
 
     useEffect(() => {
         const fetchProfileData = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
+                    headers: { Authorization: `Bearer ${token}` }
                 });
                 const data = response.data;
                 setAddress(data.address || '');
@@ -32,7 +29,6 @@ const UserProfile = () => {
                 setProfilePicture(data.profile_picture || null);
                 setCvDocument(data.cv_document || null);
                 setWorkExperience(data.work_experience || '');
-                // Set values in the form
                 setValue('address', data.address || '');
                 setValue('phone_number', data.phone_number || '');
                 setValue('work_experiences', data.work_experience || '');
@@ -44,18 +40,14 @@ const UserProfile = () => {
         fetchProfileData();
     }, [token, setValue]);
 
-    const onSubmit = async data => {
+    const onSubmit = async (data) => {
         try {
             const formData = new FormData();
             formData.append('address', data.address);
             formData.append('phone_number', data.phone_number);
             formData.append('work_experiences', data.work_experiences);
-            if (data.profile_picture[0]) {
-                formData.append('profile_picture', data.profile_picture[0]);
-            }
-            if (data.cv_document[0]) {
-                formData.append('cv_document', data.cv_document[0]);
-            }
+            if (data.profile_picture[0]) formData.append('profile_picture', data.profile_picture[0]);
+            if (data.cv_document[0]) formData.append('cv_document', data.cv_document[0]);
 
             const response = await axios.put('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', formData, {
                 headers: {
@@ -64,9 +56,8 @@ const UserProfile = () => {
                 }
             });
 
-            console.log('Profile updated:', response.data);
             alert('Profile updated successfully!');
-            reset();    
+            reset();
             setProfilePicture(null);
             setCvDocument(null);
         } catch (error) {
@@ -75,33 +66,17 @@ const UserProfile = () => {
         }
     };
 
-    const handleAddressChange = (event) => {
-        setAddress(event.target.value);
-    };
-
-    const handlePhoneChange = (event) => {
-        setPhoneNumber(event.target.value);
-    };
-
-    const handleWorkExperienceChange = (event) => {
-        setWorkExperience(event.target.value);
-    };
-
-    const handleProfilePictureChange = (e) => {
-        const file = e.target.files[0];
-        setProfilePicture(URL.createObjectURL(file));
-        setValue('profile_picture', file);
-    };
-
-    const handleCvDocumentChange = (e) => {
-        const file = e.target.files[0];
-        setCvDocument(file.name);
-        setValue('cv_document', file);
+    const handleFileChange = (event, setter, setValueFunc, fieldName) => {
+        const file = event.target.files[0];
+        setter(URL.createObjectURL(file));
+        setValueFunc(fieldName, file);
     };
 
     const handleSignOut = async () => {
         try {
-            await axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/sign-out/'); // Route to home page after successful sign out
+            await axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/sign-out/', {
+                refresh_token: refresh
+            });
             alert('Signed out successfully!');
         } catch (error) {
             console.error('Error signing out:', error);
@@ -111,7 +86,7 @@ const UserProfile = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-10 mb-10 bg-white shadow-md rounded-lg">
-            <h1 className="text-xl mb-10 text-[#253451] font-bold">Hello {name ? name : 'Guest'}</h1>
+            <h1 className="text-xl mb-10 text-[#253451] font-bold">Hello {name || 'Guest'}</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="flex sm:flex-col items-center space-x-6">
                     <div className="relative w-32 h-32">
@@ -126,7 +101,7 @@ const UserProfile = () => {
                             accept="image/*"
                             id="profilePicture"
                             {...register('profile_picture')}
-                            onChange={handleProfilePictureChange}
+                            onChange={(e) => handleFileChange(e, setProfilePicture, setValue, 'profile_picture')}
                         />
                         <label
                             htmlFor="profilePicture"
@@ -144,10 +119,9 @@ const UserProfile = () => {
                     <label className="block text-sm font-medium text-gray-700">Address</label>
                     <input
                         {...register('address', { maxLength: 200 })}
-                        className="mt-1 block w-full rounded-md p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        maxLength="200"
+                        className="mt-1 block w-full rounded-md p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         value={address}
-                        onChange={handleAddressChange}
+                        onChange={(e) => setAddress(e.target.value)}
                     />
                     {errors.address && <span className="text-red-500 text-sm">Address must be less than 200 characters.</span>}
                 </div>
@@ -157,15 +131,11 @@ const UserProfile = () => {
                     <input
                         {...register('phone_number', {
                             maxLength: 15,
-                            pattern: {
-                                value: /^\d{10,15}$/,
-                                message: "Invalid phone number"
-                            }
+                            pattern: { value: /^\d{10,15}$/, message: "Invalid phone number" }
                         })}
-                        className="mt-1 block w-full rounded-md p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        maxLength="15"
+                        className="mt-1 block w-full rounded-md p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         value={phoneNumber}
-                        onChange={handlePhoneChange}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                     {errors.phone_number && <span className="text-red-500 text-sm">{errors.phone_number.message}</span>}
                 </div>
@@ -179,7 +149,7 @@ const UserProfile = () => {
                             accept=".pdf,.doc,.docx"
                             id="cvDocument"
                             {...register('cv_document')}
-                            onChange={handleCvDocumentChange}
+                            onChange={(e) => handleFileChange(e, setCvDocument, setValue, 'cv_document')}
                         />
                         <label
                             htmlFor="cvDocument"
@@ -194,11 +164,11 @@ const UserProfile = () => {
                     <label className="block text-sm font-medium text-gray-700">Work Experiences</label>
                     <textarea
                         {...register('work_experiences')}
-                        className="mt-1 block w-full p-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full p-3 rounded-md !bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         rows="4"
                         value={workExperience}
-                        onChange={handleWorkExperienceChange}
-                    ></textarea>
+                        onChange={(e) => setWorkExperience(e.target.value)}
+                    />
                 </div>
 
                 <div className="flex justify-end">
@@ -209,23 +179,24 @@ const UserProfile = () => {
                     </Button>
                 </div>
             </form>
-            <Link to="/jobs" className='text-center'>
+            <Link to="/jobs" className="text-center">
                 See all Jobs
             </Link>
-            <div className="flex justify-between sm:flex-col">
-            <Link to="/" replace onClick={handleSignOut}>
-                    <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]" onClick={handleSignOut}>
+            <div className="flex justify-between sm:flex-col mt-10">
+                <Link to="/login" replace onClick={handleSignOut}>
+                    <Button type="button" className="px-4 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
                         Sign Out
                     </Button>
-            </Link>
-            <Link to="/application_status">
-                    <Button type="button" className="px-4 mt-10 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
+                </Link>
+                <Link to="/application_status">
+                    <Button type="button" className="px-4 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
                         View Application Status
                     </Button>
-            </Link>
+                </Link>
             </div>
         </div>
     );
 };
 
 export default UserProfile;
+

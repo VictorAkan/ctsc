@@ -24,6 +24,7 @@ export default function SignupPage() {
     useScrollToTop();
     const navigate = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errMessage, setErrMessage] = useState("");
     const { setUser } = useContext(UserContext); // Use UserContext
 
     useEffect(() => {
@@ -75,6 +76,7 @@ export default function SignupPage() {
             }
         } catch (error) {
             console.error('Signup error:', error);
+            setErrMessage(error.response.data.email)
             setStatus({ message: 'An error occurred. Please try again.', type: 'error' });
         } finally {
             setIsSubmitting(false);
@@ -120,6 +122,8 @@ export default function SignupPage() {
                                         alt="logono"
                                         className="object-cover"
                                     />
+                                    {errMessage ? <div className='font-bold text-2xl text-red-500'>{errMessage}</div> : null}
+
                                     <a href="#">
                                         <Heading size="lg" as="h1" className="text-[1.88rem] !text-[#100f14]">
                                             Create an account

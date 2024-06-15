@@ -150,7 +150,7 @@ function ClientProfile() {
                             id="address"
                             value={address}
                             onChange={handleAddressChange}
-                            className="!w-full border rounded-md p-4 border-gray-300 shadow-sm bg-[#d9d9d9] "
+                            className="!w-full border rounded-md p-4 border-gray-300 shadow-sm bg-gray-100 "
                         />
                     </div>
                 </div>
@@ -164,7 +164,7 @@ function ClientProfile() {
                         id="firstName"
                         value={firstName}
                         onChange={handleFirstName}
-                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] focus:!outline-none"
+                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:!outline-none"
                     />
                 </div>
 
@@ -177,7 +177,7 @@ function ClientProfile() {
                         id="lastName"
                         value={lastName}
                         onChange={handleLastName}
-                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] focus:!outline-none"
+                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:!outline-none"
                     />
                 </div>
 
@@ -190,7 +190,7 @@ function ClientProfile() {
                         id="email"
                         value={email}
                         onChange={handleEmail}
-                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] focus:!outline-none"
+                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:!outline-none"
                     />
                 </div>
 
@@ -203,7 +203,7 @@ function ClientProfile() {
                         id="phoneNumber"
                         value={phoneNumber}
                         onChange={handlePhoneChange}
-                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-[#d9d9d9] focus:!outline-none"
+                        className="w-full !rounded-md !p-4 !border-gray-300 shadow-sm !bg-gray-100 focus:!outline-none"
                     />
                 </div>
 

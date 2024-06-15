@@ -21,7 +21,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_1.png",
-        linkDest: "/jobspage/design-creative",
+        linkDest: "/jobs/design-creative",
     },
     {
         designandtext: "Sales & Marketing",
@@ -30,7 +30,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_2.png",
-        linkDest: "/jobspage/sales-marketing",
+        linkDest: "/jobs/sales-marketing",
     },
     {
         designandtext: "Photography",
@@ -39,7 +39,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_3.png",
-        linkDest: "/jobspage/photography",
+        linkDest: "/jobs/photography",
     },
     {
         designandtext: "Development & IT",
@@ -48,7 +48,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_4.png",
-        linkDest: "/jobspage/development-it",
+        linkDest: "/jobs/development-it",
     },
     {
         designandtext: "Finance & Accounting",
@@ -57,7 +57,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_5.png",
-        linkDest: "/jobspage/finance-accounting",
+        linkDest: "/jobs/finance-accounting",
     },
     {
         designandtext: "Writing & Translation",
@@ -66,7 +66,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_6.png",
-        linkDest: "/jobspage/writing-translation",
+        linkDest: "/jobs/writing-translation",
     },
     {
         designandtext: "Legal",
@@ -75,7 +75,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_7.png",
-        linkDest: "/jobspage/legal",
+        linkDest: "/jobs/legal",
     },
     {
         designandtext: "Repairs & Engineering",
@@ -84,7 +84,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_8.png",
-        linkDest: "/jobspage/repairs-engineering",
+        linkDest: "/jobs/repairs-engineering",
     },
     {
         designandtext: "HR Personnel",
@@ -93,7 +93,7 @@ const jobsData = [
         starimage: "images/star_rate.png",
         ratingtext: "5/5",
         designandimage: "images/workimg_9.png",
-        linkDest: "/jobspage/hr-personnel",
+        linkDest: "/jobs/hr-personnel",
     },
 ];
 

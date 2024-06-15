@@ -5,20 +5,38 @@ import { Loader } from '../../Loader';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
+const jobIds = [2,6,7,8,9,10,11,12,13];
+
 const JobsPage = () => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/latest-job/')
-            .then(response => {
-                setJobs(response.data);
+        const fetchJobs = async () => {
+            try {
+                // Fetch each job opportunity by its ID
+                const jobRequests = jobIds.map(id => axios.get(`https://crackingthestylecode.pythonanywhere.com/api/v1/job/${id}/`));
+                const jobResponses = await Promise.all(jobRequests);
+                const jobs = jobResponses.map(response => response.data);
+
+                setJobs(jobs);
                 setLoading(false);
-            })
-            .catch(error => {
-                console.error('Error fetching jobs:', error);
+            } catch (error) {
+                console.error('Error fetching job opportunities:', error);
                 setLoading(false);
-            });
+            }
+        };
+
+        fetchJobs();
+        // axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/latest-job/')
+        //     .then(response => {
+        //         setJobs(response.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error fetching jobs:', error);
+        //         setLoading(false);
+        //     });
     }, []);
 
     const applyToJob = (jobId) => {

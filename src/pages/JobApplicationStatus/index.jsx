@@ -4,9 +4,14 @@ import axios from 'axios';
 const TalentApplications = () => {
     const [applications, setApplications] = useState([]);
     const talentId = ''; // This should be fetched from the user context or auth state
+    const token = window.sessionStorage.getItem("token")
 
     useEffect(() => {
-        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/')
+        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', {
+            header: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 const filteredApplications = response.data.filter(app => app.talent === talentId);
                 setApplications(filteredApplications);
