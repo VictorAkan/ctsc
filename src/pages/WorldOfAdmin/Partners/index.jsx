@@ -8,12 +8,22 @@ const Partners = () => {
     const [selectedPartner, setSelectedPartner] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
 
+    const token = window.sessionStorage.getItem("token");
+
     useEffect(() => {
-        // Fetch partners from the API
-        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/partner/')
-            .then(response => setPartners(response.data))
-            .catch(error => console.error('Error fetching partners:', error));
-    }, []);
+        // Fetch partners when the component mounts
+        axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/partner/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setPartners(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching partners:', error);
+            });
+    }, [token]);
 
     const handleEdit = (partner) => {
         setSelectedPartner(partner);
@@ -21,38 +31,52 @@ const Partners = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`https://crackingthestylecode.pythonanywhere.com/api/v1/partner/${id}/`)
+        axios.delete(`https://crackingthestylecode.pythonanywhere.com/api/v1/partner/${id}/`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(() => {
                 setPartners(partners.filter((partner) => partner.id !== id));
             })
-            .catch(error => console.error('Error deleting partner:', error));
+            .catch(error => {
+                console.error('Error deleting partner:', error);
+            });
     };
 
-    const handleSave = (partner) => {
-        if (partner.id) {
-            // Update existing partner
-            axios.put(`https://crackingthestylecode.pythonanywhere.com/api/v1/partner/${partner.id}/`, partner)
-                .then(response => {
-                    setPartners(partners.map((p) => (p.id === partner.id ? response.data : p)));
-                    setIsEditing(false);
-                    setSelectedPartner(null);
+    const handleSave = (partnerData) => {
+        if (selectedPartner?.id) {
+            axios.put(`https://crackingthestylecode.pythonanywhere.com/api/v1/partner/${selectedPartner.id}/`, partnerData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+                .then(() => {
+                    setPartners(partners.map((p) => (p.id === selectedPartner.id ? partnerData : p)));
                 })
-                .catch(error => console.error('Error updating partner:', error));
+                .catch(error => {
+                    console.error('Error updating partner:', error);
+                });
         } else {
-            // Create new partner
-            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/partner/', partner)
+            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/partner/', partnerData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
                 .then(response => {
                     setPartners([...partners, response.data]);
-                    setIsEditing(false);
-                    setSelectedPartner(null);
                 })
-                .catch(error => console.error('Error creating partner:', error));
+                .catch(error => {
+                    console.error('Error adding partner:', error);
+                });
         }
+        setIsEditing(false)
+        // setSelectedPartner(null)
     };
 
     const handleCancel = () => {
         setIsEditing(false);
-        setSelectedPartner(null);
+        // setSelectedPartner(null);
     };
 
     return (
@@ -66,7 +90,7 @@ const Partners = () => {
                         Add Partner
                     </button>
                     {partners.length === 0 ? (
-                        <p>No Partners yet</p>
+                        <p>No partners yet.</p>
                     ) : (
                         <PartnerList partners={partners} onEdit={handleEdit} onDelete={handleDelete} />
                     )}
@@ -77,4 +101,3 @@ const Partners = () => {
 };
 
 export default Partners;
-

@@ -49,7 +49,7 @@ const UserProfile = () => {
             if (data.profile_picture[0]) formData.append('profile_picture', data.profile_picture[0]);
             if (data.cv_document[0]) formData.append('cv_document', data.cv_document[0]);
 
-            const response = await axios.put('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', formData, {
+            const response = await axios.patch('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -86,7 +86,7 @@ const UserProfile = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-10 mb-10 bg-white shadow-md rounded-lg">
-            <h1 className="text-xl mb-10 text-[#253451] font-bold">Hello {name || 'Guest'}</h1>
+            <h1 className="text-xl mb-10 text-[#253451] font-bold">Hello {name ? name : 'Guest'}</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="flex sm:flex-col items-center space-x-6">
                     <div className="relative w-32 h-32">
@@ -189,7 +189,7 @@ const UserProfile = () => {
                     </Button>
                 </Link>
                 <Link to="/application_status">
-                    <Button type="button" className="px-4 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
+                    <Button type="button" className="px-4 sm:mt-4 py-2 bg-[#253451] text-white rounded-md hover:bg-[#374e7a]">
                         View Application Status
                     </Button>
                 </Link>

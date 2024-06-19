@@ -10,23 +10,24 @@ import { Loader } from "../../Loader";
 
 export default function JobspageDesignCreative() {
     useScrollToTop();
-    const [job, setJob] = useState(null);
+    const [jobs, setJobs] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchJob() {
+        async function fetchJobs() {
             try {
-                const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/job/6/");
-                setJob(response.data);
+                const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/job/");
+                const designCreativeJobs = response.data.filter(job => job.category === "Designs and Creative");
+                setJobs(designCreativeJobs);
             } catch (error) {
                 console.error("Error fetching job data:", error);
             }
         }
 
-        fetchJob();
+        fetchJobs();
     }, []);
 
-    if (!job) {
+    if (jobs.length === 0) {
         return <div><Loader /></div>;
     }
 
@@ -46,9 +47,6 @@ export default function JobspageDesignCreative() {
                                     Designs and creative
                                 </Text>
                             </div>
-                            {/* <Text size="27xl" as="p" className="relative mt-[-4.75rem] !text-[4.00rem]">
-                                IBOM EVENTS
-                            </Text> */}
                         </div>
                         <Text
                             size="11xl"
@@ -58,28 +56,25 @@ export default function JobspageDesignCreative() {
                             Hire
                         </Text>
                         <div className="mt-[2.69rem] grid grid-cols-3 justify-center gap-[9.19rem] self-stretch md:grid-cols-2 sm:grid-cols-1">
-                            <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
-                                <Text as="p" size="2xl" className="font-semibold text-gray-400">{job.title}</Text>
-                                <Text as="p" size="lg" className="text-gray-700">{job.hiring_company}</Text>
-                                <Text as="p" size="md" className="text-gray-500">{job.category}</Text>
-                                <Text as="p" size="sm" className="text-gray-600 whitespace-pre-line">{job.requirements}</Text>
-                                <button
-                                    className="mt-4 px-4 py-2 bg-[#253451] text-white rounded hover:bg-[#253451]"
-                                    onClick={() => navigate("/login")}
-                                >
-                                    Apply
-                                </button>
-                            </div>
+                            {jobs.map((job) => (
+                                <div key={job.id} className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
+                                    <Text as="p" size="2xl" className="font-semibold text-gray-400">{job.title}</Text>
+                                    <Text as="p" size="lg" className="text-gray-700">{job.hiring_company}</Text>
+                                    <Text as="p" size="md" className="text-gray-500">{job.category}</Text>
+                                    <Text as="p" size="sm" className="text-gray-600 whitespace-pre-line">{job.requirements}</Text>
+                                    <button
+                                        className="mt-4 px-4 py-2 bg-[#253451] text-white rounded hover:bg-[#253451]"
+                                        onClick={() => navigate("/login")}
+                                    >
+                                        Apply
+                                    </button>
+                                </div>
+                            ))}
                         </div>
-                        {/* <div className="mt-[5.13rem] flex gap-[0.88rem]">
-                            <Img src="images/arrow_2.png" alt="arrowtwo" className="h-[0.13rem]" />
-                            <Img src="images/arrow_1.png" alt="arrowone" className="h-[0.13rem]" />
-                        </div> */}
                     </div>
                 </div>
-                {/* <Footer className="mt-[18.63rem] self-stretch" /> */}
+                <Footer className="mt-[18.63rem]" />
             </div>
-            <Footer className="mt-[18.63rem]" />
         </>
     );
 }

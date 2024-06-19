@@ -1,42 +1,33 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const teamMembers = [
-    {
-        name: 'Ima Sefanang',
-        description: `A key strength of mine is maintaining consistency in writing
-                    style and tone, ensuring a cohesive and professional feel
-                    throughout the magazine. This contributes to a strong and
-                    unified brand image.`,
-        imgSrc: 'images/rect_361_1.png',
-    },
-    {
-        name: 'Vicky Jonah',
-        description: `Being proficient in multiple languages, I can contribute to
-                    expanding the magazine's reach by creating content that
-                    resonates with a broader and more diverse audience.`,
-        imgSrc: 'images/rect_361_2.png',
-    },
-    {
-        name: 'Andiyangha Udosen',
-        description: `I bring a strong passion for creating compelling and diverse
-                    content, including articles, interviews, and reviews. My goal is
-                    to contribute to the magazine's success by producing engaging
-                    and informative pieces.`,
-        imgSrc: 'images/rect_361_3.png',
-    },
-];
-
 const CtscTeam = () => {
     useScrollToTop();
 
-    Aos.init({
-        duration: 1800,
-        offset: 0,
-    })
+    const [teamMembers, setTeamMembers] = useState([]);
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1800,
+            offset: 0,
+        });
+
+        const fetchTeamMembers = async () => {
+            try {
+                const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/team-members/');
+                setTeamMembers(response.data);
+            } catch (error) {
+                console.error("Error fetching the team members:", error);
+            }
+        };
+
+        fetchTeamMembers();
+    }, []);
 
     return (
         <>
@@ -49,16 +40,16 @@ const CtscTeam = () => {
             </div>
 
             <div className="container mx-auto px-24 sm:px-7 grid grid-cols-3 md:grid-cols-1 gap-4">
-                {teamMembers.map((member, index) => (
-                    <div data-aos="zoom-in-up" key={index} className="card h-full flex flex-col items-center bg-white border-none shadow-lg rounded-lg overflow-hidden">
+                {teamMembers.map((member) => (
+                    <div data-aos="zoom-in-up" key={member.id} className="card h-full flex flex-col items-center bg-white border-none shadow-lg rounded-lg overflow-hidden">
                         <img
-                            src={member.imgSrc}
-                            alt={`${member.name}`}
+                            src={member.profile_image}
+                            alt={`${member.first_name} ${member.last_name}`}
                             className="w-80 h-80 rounded-full object-cover mt-4"
                         />
                         <div className="card-body p-4 text-center bg-aliceblue">
-                            <h5 className="text-xl font-bold mb-2">{member.name}</h5>
-                            <p className="text-sm">{member.description}</p>
+                            <h5 className="text-xl font-bold mb-2">{member.first_name} {member.last_name}</h5>
+                            <p className="text-sm">{member.about}</p>
                         </div>
                     </div>
                 ))}
@@ -83,3 +74,4 @@ const CtscTeam = () => {
 };
 
 export default CtscTeam;
+

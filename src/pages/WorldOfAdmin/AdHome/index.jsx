@@ -7,6 +7,7 @@ const Home = () => {
     const [talentsCount, setTalentsCount] = useState(0);
     const [jobOpportunitiesCount, setJobOpportunitiesCount] = useState(0);
     const token = window.sessionStorage.getItem("token");
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,64 +21,22 @@ const Home = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                const jobOpportunitiesResponse = await axios.all([
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/2/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/6/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/7/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/8/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/9/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/10/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/11/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/12/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                    axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/13/', {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }),
-                ]);
+                const jobOpportunitiesResponse = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/', {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
 
                 setClientsCount(clientsResponse.data.length);
                 setTalentsCount(talentsResponse.data.length);
-                setJobOpportunitiesCount(jobOpportunitiesResponse.length);
+                setJobOpportunitiesCount(jobOpportunitiesResponse.data.length);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [token]);
 
     return (
         <div className="p-6">

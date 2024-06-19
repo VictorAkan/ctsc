@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import useScrollToTop from "../../hooks/useScrollToTop";
+import { Loader } from "../../Loader";
 
 export default function IbomServicesPage() {
     useScrollToTop();
@@ -30,7 +31,7 @@ export default function IbomServicesPage() {
         fetchData();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div><Loader /></div>;
     if (error) return <div>Error loading data</div>;
 
     return (

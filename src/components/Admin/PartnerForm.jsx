@@ -1,157 +1,151 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const PartnerForm = ({ partner, onSave, onCancel }) => {
-    const [description, setDescription] = useState('');
-    const [profilePic, setProfilePic] = useState(null);
-    const [preview, setPreview] = useState(null);
-    const [profilePicBase64, setProfilePicBase64] = useState('');
+  const [formData, setFormData] = useState({
+    id: partner ? partner.id : null,
+    description: partner ? partner.description : '',
+    partner_pics: partner ? partner.partner_pics : '',
+  });
 
-    useEffect(() => {
-        if (partner) {
-            setDescription(partner.description);
-            setPreview(partner.partner_pics);
-        }
-    }, [partner]);
+  useEffect(() => {
+    if (partner) {
+      setFormData({
+        id: partner.id,
+        description: partner.description,
+        partner_pics: partner.partner_pics,
+      });
+    } else {
+      setFormData({
+        id: null,
+        description: '',
+        partner_pics: '',
+      });
+    }
+  }, [partner]);
 
-    const handleFileChange = async (e) => {
-        const file = e.target.files[0];
-        setProfilePic(file);
-        setPreview(URL.createObjectURL(file));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setProfilePicBase64(reader.result);
-        };
-        reader.readAsDataURL(file);
-    };
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData({ ...formData, partner_pics: file });
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('description', description);
+    const formDataToSend = new FormData();
+    Object.keys(formData).forEach(key => {
+      formDataToSend.append(key, formData[key]);
+    });
 
-        let profilePicUrl = partner?.partner_pics;
+    // Debug: Log FormData contents
+    for (let [key, value] of formDataToSend.entries()) {
+      console.log(`${key}:`, value);
+    }
 
-        if (profilePicBase64) {
-            const uploadResponse = await axios.post(
-                'https://crackingthestylecode.pythonanywhere.com/api/v1/partner/',
-                { description, file: profilePicBase64 }
-            );
-            profilePicUrl = uploadResponse.data.url;
-        }
+    onSave(formDataToSend);
+  };
 
-        const partnerData = {
-            ...partner,
-            description,
-            partner_pics: profilePicUrl,
-        };
-
-        onSave(partnerData);
-    };
-
-    return (
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-            <h2 className="text-2xl mb-4">{partner ? 'Edit Partner' : 'Add Partner'}</h2>
-            <div className="mb-4">
-                <label className="block text-gray-700">Description</label>
-                <textarea
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    className="w-full p-4 bg-gray-200 border rounded"
-                    required
-                />
-            </div>
-            <div className="mb-4">
-                <label className="block text-gray-700">Profile Picture</label>
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    className="w-full p-2 bg-gray-200 border rounded"
-                />
-                {preview && <img src={preview} alt="Profile Preview" className="mt-2 w-32 h-32 rounded-full object-cover" />}
-            </div>
-            <div className="flex justify-end">
-                <button type="button" onClick={onCancel} className="bg-gray-500 text-white px-4 py-2 rounded mr-2">
-                    Cancel
-                </button>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-                    Save
-                </button>
-            </div>
-        </form>
-    );
+  return (
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md" encType="multipart/form-data">
+      <h2 className="text-2xl mb-4">{partner ? 'Edit Partner' : 'Add Partner'}</h2>
+      <div className="mb-4">
+        <label className="block text-gray-700">Description</label>
+        <textarea
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          className="w-full p-4 bg-gray-200 border rounded"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Profile Picture</label>
+        <input
+          type="file"
+          name="partner_pics"
+          onChange={handleFileChange}
+          className="w-full p-2 bg-gray-200 border rounded"
+        />
+      </div>
+      {formData.partner_pics && typeof formData.partner_pics === 'object' && (
+        <div className="mb-4">
+          <img src={URL.createObjectURL(formData.partner_pics)} alt="Profile Preview" className="w-32 h-32 object-cover" />
+        </div>
+      )}
+      <div className="flex justify-end">
+        <button type="button" onClick={onCancel} className="bg-gray-500 text-white px-4 py-2 rounded mr-2">
+          Cancel
+        </button>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+          Save
+        </button>
+      </div>
+    </form>
+  );
 };
 
 export default PartnerForm;
 
 
-
 // import { useState, useEffect } from 'react';
-// import axios from 'axios';
 
 // const PartnerForm = ({ partner, onSave, onCancel }) => {
-//     const [name, setName] = useState('');
-//     const [description, setDescription] = useState('');
-//     const [profilePic, setProfilePic] = useState(null);
-//     const [preview, setPreview] = useState(null);
+//     const [formData, setFormData] = useState({
+//         id: partner ? partner.id : null,
+//         description: partner ? partner.description : '',
+//         partner_pics: partner ? partner.partner_pics : '',
+//     });
 
 //     useEffect(() => {
 //         if (partner) {
-//             setDescription(partner.description);
-//             setPreview(partner.partner_pics);
+//             setFormData({
+//                 id: partner.id,
+//                 description: partner.description,
+//                 partner_pics: partner.partner_pics,
+//             });
+//         } else {
+//             setFormData({
+//                 id: null,
+//                 description: '',
+//                 partner_pics: '',
+//             });
 //         }
 //     }, [partner]);
 
-//     const handleFileChange = (e) => {
-//         const file = e.target.files[0];
-//         setProfilePic(file);
-//         setPreview(URL.createObjectURL(file));
+//     const handleChange = (e) => {
+//         const { name, value } = e.target;
+//         setFormData({ ...formData, [name]: value });
 //     };
 
-//     const handleSubmit = async (e) => {
+//     const handleFileChange = (e) => {
+//         const file = e.target.files[0];
+//         setFormData({ ...formData, partner_pics: file });
+//     };
+
+//     const handleSubmit = (e) => {
 //         e.preventDefault();
 
-//         const formData = new FormData();
-//         formData.append('description', description);
+//         const formDataToSend = new FormData();
+//         Object.keys(formData).forEach(key => {
+//             formDataToSend.append(key, formData[key]);
+//         });
 
-//         if (profilePic) {
-//             formData.append('file', profilePic);
-//         }
-
-//         try {
-//             let profilePicUrl = partner?.partner_pics;
-
-//             if (profilePic) {
-//                 const uploadResponse = await axios.post(
-//                     'https://crackingthestylecode.pythonanywhere.com/api/v1/partner/',
-//                     formData
-//                 );
-//                 profilePicUrl = uploadResponse.data.url;
-//             }
-
-//             const partnerData = {
-//                 ...partner,
-//                 description,
-//                 partner_pics: profilePicUrl,
-//             };
-
-//             onSave(partnerData);
-//         } catch (error) {
-//             console.error('Error uploading profile picture', error);
-//         }
+//         onSave(formDataToSend);
 //     };
 
 //     return (
-//         <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
+//         <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md" encType="multipart/form-data">
 //             <h2 className="text-2xl mb-4">{partner ? 'Edit Partner' : 'Add Partner'}</h2>
 //             <div className="mb-4">
 //                 <label className="block text-gray-700">Description</label>
 //                 <textarea
-//                     value={description}
-//                     onChange={(e) => setDescription(e.target.value)}
+//                     name="description"
+//                     value={formData.description}
+//                     onChange={handleChange}
 //                     className="w-full p-4 bg-gray-200 border rounded"
 //                     required
 //                 />
@@ -160,12 +154,16 @@ export default PartnerForm;
 //                 <label className="block text-gray-700">Profile Picture</label>
 //                 <input
 //                     type="file"
-//                     accept="image/*"
+//                     name="partner_pics"
 //                     onChange={handleFileChange}
 //                     className="w-full p-2 bg-gray-200 border rounded"
 //                 />
-//                 {preview && <img src={preview} alt="Profile Preview" className="mt-2 w-32 h-32 rounded-full object-cover" />}
 //             </div>
+//             {formData.partner_pics && typeof formData.partner_pics === 'object' && (
+//                 <div className="mb-4">
+//                     <img src={URL.createObjectURL(formData.partner_pics)} alt="Profile Preview" className="w-32 h-32 object-cover" />
+//                 </div>
+//             )}
 //             <div className="flex justify-end">
 //                 <button type="button" onClick={onCancel} className="bg-gray-500 text-white px-4 py-2 rounded mr-2">
 //                     Cancel
