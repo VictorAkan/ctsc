@@ -21,6 +21,7 @@ const JobApplications = () => {
         })
             .then(response => {
                 setJobApplications(response.data);
+                console.log(jobApplications);
                 setLoading(false);
             })
             .catch(error => {

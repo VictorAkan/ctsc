@@ -19,14 +19,14 @@ const JobApplicationForm = () => {
         // Create a form data object to handle file upload
         const formData = new FormData();
         formData.append('job_opportunity', jobId);
-        formData.append('talent.user', user);
-        formData.append('talent.address', address);
-        formData.append('talent.phone_number', phoneNumber);
-        formData.append('talent.work_experiences', workExperiences);
-        formData.append('talent.is_talent', isTalent);
-        if (cvDocument) {
-            formData.append('talent.cv_document', cvDocument);
-        }
+        // formData.append('talent.user', user);
+        // formData.append('talent.address', address);
+        // formData.append('talent.phone_number', phoneNumber);
+        // formData.append('talent.work_experiences', workExperiences);
+        // formData.append('talent.is_talent', isTalent);
+        // if (cvDocument) {
+        //     formData.append('talent.cv_document', cvDocument);
+        // }
 
         try {
             const response = await axios.post(
@@ -111,7 +111,7 @@ const JobApplicationForm = () => {
                                 onChange={(e) => setWorkExperiences(e.target.value)}
                             ></textarea>
                         </div>
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                             <input
                                 id="is_talent"
                                 name="is_talent"
@@ -123,7 +123,7 @@ const JobApplicationForm = () => {
                             <label htmlFor="is_talent" className="ml-2 block text-sm text-gray-900">
                                 Is Talent
                             </label>
-                        </div>
+                        </div> */}
                         <div>
                             <label htmlFor="cv_document">Upload CV</label>
                             <input

@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const JobApplicationList = ({ jobApplications, onEdit, onDelete }) => (
     <div>
         <h2 className="text-xl font-bold mb-4">Job Application List</h2>
@@ -8,20 +10,20 @@ const JobApplicationList = ({ jobApplications, onEdit, onDelete }) => (
                     <th className="w-1/6 px-4 py-2">Applied Date</th>
                     <th className="w-1/6 px-4 py-2">Job Opportunity</th>
                     <th className="w-1/6 px-4 py-2">Talent User</th>
-                    <th className="w-1/6 px-4 py-2">Talent Address</th>
+                    {/* <th className="w-1/6 px-4 py-2">Talent Address</th>
                     <th className="w-1/6 px-4 py-2">Talent Phone Number</th>
-                    <th className="w-1/6 px-4 py-2">Actions</th>
+                    <th className="w-1/6 px-4 py-2">Actions</th> */}
                 </tr>
             </thead>
             <tbody className="text-gray-700">
                 {jobApplications.map((jobApplication) => (
-                    <tr key={jobApplication.id}>
+                    <tr key={jobApplication.job_opportunity}>
                         <td className="border px-4 py-2">{jobApplication.id}</td>
-                        <td className="border px-4 py-2">{jobApplication.applied_date}</td>
+                        <td className="border px-4 py-2">{format(new Date(jobApplication.applied_date), "PPP")}</td>
                         <td className="border px-4 py-2">{jobApplication.job_opportunity}</td>
-                        <td className="border px-4 py-2">{jobApplication.talent.user}</td>
+                        {/* <td className="border px-4 py-2">{jobApplication.talent.user}</td>
                         <td className="border px-4 py-2">{jobApplication.talent.address}</td>
-                        <td className="border px-4 py-2">{jobApplication.talent.phone_number}</td>
+                        <td className="border px-4 py-2">{jobApplication.talent.phone_number}</td> */}
                         <td className="border px-4 py-2">
                             <button
                                 onClick={() => onEdit(jobApplication)}
