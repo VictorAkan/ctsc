@@ -66,6 +66,8 @@ export default function LoginPage() {
                 }
             );
 
+            window.sessionStorage.setItem("email", values.email);
+
             console.log('Profile response:', profileResponse);
 
             const user = {

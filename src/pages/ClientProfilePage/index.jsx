@@ -67,7 +67,7 @@ function ClientProfile() {
 
     const handleSaveChanges = async () => {
         try {
-            const response = await axios.patch('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', {
+            const response = await axios.put('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', {
                 user: {
                     first_name: firstName,
                     last_name: lastName,

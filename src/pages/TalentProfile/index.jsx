@@ -16,6 +16,7 @@ const UserProfile = () => {
     const token = window.sessionStorage.getItem("token");
     const name = window.sessionStorage.getItem("name");
     const refresh = window.sessionStorage.getItem("refershToken");
+    const email = window.sessionStorage.getItem("email");
 
     useEffect(() => {
         const fetchProfileData = async () => {
@@ -49,10 +50,19 @@ const UserProfile = () => {
             if (data.profile_picture[0]) formData.append('profile_picture', data.profile_picture[0]);
             if (data.cv_document[0]) formData.append('cv_document', data.cv_document[0]);
 
-            const response = await axios.patch('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', formData, {
+            const response = await axios.put('https://crackingthestylecode.pythonanywhere.com/api/v1/user-profile/', {
+                user: {
+                    first_name: name,
+                    last_name: name,
+                    email: email,
+                },
+                profile: {
+                    address: address,
+                    phone_number: phoneNumber
+                }
+            }, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data'
+                    Authorization: `Bearer ${token}`
                 }
             });
 
