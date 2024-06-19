@@ -10,7 +10,7 @@ const JobApplications = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const token = window.sessionStorage.getItem("token")
+    const token = window.sessionStorage.getItem("token");
     console.log(token);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const JobApplications = () => {
                 setError('Failed to fetch job applications');
                 setLoading(false);
             });
-    }, []);
+    }, [token]);
 
     const handleEdit = (jobApplication) => {
         setSelectedJobApplication(jobApplication);
@@ -50,7 +50,11 @@ const JobApplications = () => {
 
     const handleSave = (jobApplication) => {
         if (jobApplication.id) {
-            axios.put(`https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/${jobApplication.id}/`, jobApplication)
+            axios.put(`https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/${jobApplication.id}/`, jobApplication, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
                 .then(response => {
                     setJobApplications(jobApplications.map((j) => (j.id === jobApplication.id ? response.data : j)));
                     setIsEditing(false);
@@ -60,7 +64,11 @@ const JobApplications = () => {
                     setError('Failed to update job application');
                 });
         } else {
-            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', jobApplication)
+            axios.post('https://crackingthestylecode.pythonanywhere.com/api/v1/job_applications/', jobApplication, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
                 .then(response => {
                     setJobApplications([...jobApplications, response.data]);
                     setIsEditing(false);
@@ -118,75 +126,3 @@ const JobApplications = () => {
 };
 
 export default JobApplications;
-
-
-
-
-
-
-// import { useState } from 'react';
-// import JobApplicationForm from '../../../components/Admin/AdJobApplicationForm';
-// import JobApplicationList from '../../../components/Admin/AdJobApplicationList';
-
-// const JobApplications = () => {
-//     const [jobApplications, setJobApplications] = useState([
-//         { id: 1, name: 'John Doe', position: 'Frontend Developer' },
-//         { id: 2, name: 'Jane Smith', position: 'Backend Developer' },
-//     ]);
-//     const [selectedJobApplication, setSelectedJobApplication] = useState(null);
-//     const [isEditing, setIsEditing] = useState(false);
-
-//     const handleEdit = (jobApplication) => {
-//         setSelectedJobApplication(jobApplication);
-//         setIsEditing(true);
-//     };
-
-//     const handleDelete = (id) => {
-//         setJobApplications(jobApplications.filter((jobApplication) => jobApplication.id !== id));
-//     };
-
-//     const handleSave = (jobApplication) => {
-//         if (jobApplication.id) {
-//             setJobApplications(jobApplications.map((j) => (j.id === jobApplication.id ? jobApplication : j)));
-//         } else {
-//             jobApplication.id = jobApplications.length + 1;
-//             setJobApplications([...jobApplications, jobApplication]);
-//         }
-//         setIsEditing(false);
-//         setSelectedJobApplication(null);
-//     };
-
-//     const handleCancel = () => {
-//         setIsEditing(false);
-//         setSelectedJobApplication(null);
-//     };
-
-//     return (
-//         <div>
-//             <h1 className="text-2xl font-bold mb-4">Job Applications</h1>
-//             {isEditing ? (
-//                 <JobApplicationForm
-//                     jobApplication={selectedJobApplication}
-//                     onSave={handleSave}
-//                     onCancel={handleCancel}
-//                 />
-//             ) : (
-//                 <div>
-//                     <button
-//                         onClick={() => setIsEditing(true)}
-//                         className="bg-green-500 text-white px-4 py-2 rounded mb-4"
-//                     >
-//                         Add Job Application
-//                     </button>
-//                     <JobApplicationList
-//                         jobApplications={jobApplications}
-//                         onEdit={handleEdit}
-//                         onDelete={handleDelete}
-//                     />
-//                 </div>
-//             )}
-//         </div>
-//     );
-// };
-
-// export default JobApplications;

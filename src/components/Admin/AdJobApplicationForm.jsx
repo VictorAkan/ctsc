@@ -2,7 +2,15 @@ import { useState, useEffect } from 'react';
 
 const JobApplicationForm = ({ jobApplication, onSave, onCancel }) => {
     const [jobOpportunity, setJobOpportunity] = useState('');
-    const [talent, setTalent] = useState('');
+    const [talent, setTalent] = useState({
+        user: '',
+        address: '',
+        phone_number: '',
+        profile_picture: '',
+        cv_document: '',
+        work_experiences: '',
+        is_talent: false
+    });
 
     useEffect(() => {
         if (jobApplication) {
@@ -25,16 +33,69 @@ const JobApplicationForm = ({ jobApplication, onSave, onCancel }) => {
                     type="number"
                     value={jobOpportunity}
                     onChange={(e) => setJobOpportunity(e.target.value)}
-                    className="w-full !p-4 !bg-gray-200 border rounded-md"
+                    className="w-full p-4 bg-gray-200 border rounded-md"
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Talent</label>
+                <label className="block text-gray-700">User</label>
                 <input
-                    type="number"
-                    value={talent}
-                    onChange={(e) => setTalent(e.target.value)}
-                    className="w-full !p-4 !bg-gray-200 border rounded"
+                    type="text"
+                    value={talent.user}
+                    onChange={(e) => setTalent({ ...talent, user: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">Address</label>
+                <input
+                    type="text"
+                    value={talent.address}
+                    onChange={(e) => setTalent({ ...talent, address: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">Phone Number</label>
+                <input
+                    type="text"
+                    value={talent.phone_number}
+                    onChange={(e) => setTalent({ ...talent, phone_number: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">Profile Picture</label>
+                <input
+                    type="text"
+                    value={talent.profile_picture}
+                    onChange={(e) => setTalent({ ...talent, profile_picture: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">CV Document</label>
+                <input
+                    type="text"
+                    value={talent.cv_document}
+                    onChange={(e) => setTalent({ ...talent, cv_document: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">Work Experiences</label>
+                <textarea
+                    value={talent.work_experiences}
+                    onChange={(e) => setTalent({ ...talent, work_experiences: e.target.value })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700">Is Talent</label>
+                <input
+                    type="checkbox"
+                    checked={talent.is_talent}
+                    onChange={(e) => setTalent({ ...talent, is_talent: e.target.checked })}
+                    className="w-full p-4 bg-gray-200 border rounded-md"
                 />
             </div>
             <div className="flex justify-end">
@@ -51,58 +112,3 @@ const JobApplicationForm = ({ jobApplication, onSave, onCancel }) => {
 
 export default JobApplicationForm;
 
-
-
-
-// import { useState, useEffect } from 'react';
-
-// const JobApplicationForm = ({ jobApplication, onSave, onCancel }) => {
-//     const [name, setName] = useState('');
-//     const [position, setPosition] = useState('');
-
-//     useEffect(() => {
-//         if (jobApplication) {
-//             setName(jobApplication.name);
-//             setPosition(jobApplication.position);
-//         }
-//     }, [jobApplication]);
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         onSave({ ...jobApplication, name, position });
-//     };
-
-//     return (
-//         <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-//             <h2 className="text-2xl mb-4">{jobApplication ? 'Edit Job Application' : 'Add Job Application'}</h2>
-//             <div className="mb-4">
-//                 <label className="block text-gray-700">Name</label>
-//                 <input
-//                     type="text"
-//                     value={name}
-//                     onChange={(e) => setName(e.target.value)}
-//                     className="w-full !p-4 !bg-gray-200 border rounded-md"
-//                 />
-//             </div>
-//             <div className="mb-4">
-//                 <label className="block text-gray-700">Position</label>
-//                 <input
-//                     type="text"
-//                     value={position}
-//                     onChange={(e) => setPosition(e.target.value)}
-//                     className="w-full !p-4 !bg-gray-200 border rounded"
-//                 />
-//             </div>
-//             <div className="flex justify-end">
-//                 <button type="button" onClick={onCancel} className="bg-gray-500 text-white px-4 py-2 rounded mr-2">
-//                     Cancel
-//                 </button>
-//                 <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-//                     Save
-//                 </button>
-//             </div>
-//         </form>
-//     );
-// };
-
-// export default JobApplicationForm;
