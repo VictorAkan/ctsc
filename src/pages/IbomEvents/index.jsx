@@ -92,7 +92,7 @@ export default function IbomEventsPage() {
                                                     size="sm"
                                                     className="ml-[0.81rem] mt-[1.25rem] min-w-[6.44rem] rounded-[14px] font-medium md:ml-0"
                                                 >
-                                                    <Link to={`/event/${event.id}`}>View Event</Link>
+                                                    <Link to={`/event/${event.event_id}`}>View Event</Link>
                                                 </Button>
                                             </div>
                                         </div>
