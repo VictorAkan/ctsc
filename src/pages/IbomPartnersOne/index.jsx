@@ -46,7 +46,7 @@ export default function IbomPartnersOnePage() {
                             </Text>
                         </div>
                         {/* <div className="h-[39.94rem] w-[53%] md:hidden bg-[#d9d9d9]" /> */}
-                        <Img className="" src="images/rect_361_3.png" />
+                        {/* <Img className="" src="images/rect_361_3.png" /> */}
                     </div>
                 </div>
                 <Footer className="mt-[12.38rem]" />
