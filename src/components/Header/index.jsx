@@ -21,7 +21,7 @@ export default function Header({ ...props }) {
             <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
                 <li>
                     <Link to="/">
-                        <Text size="9xl" as="p" className="!font-['Inter'] !text-[#c2d7ff] underline">
+                        <Text size="9xl" as="p" className="!font-['Inter'] hover:text-[#c2d7ff] hover:underline">
                             Home
                         </Text>
                     </Link>

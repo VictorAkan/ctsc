@@ -81,7 +81,7 @@ export default function Footer({ ...props }) {
                                                     <li>
                                                         <a href="#">
                                                             <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
-                                                                Email: crackingthestyle.co
+                                                                Email: ourstory@crackingthestyleco.de
                                                             </Text>
                                                         </a>
                                                     </li>

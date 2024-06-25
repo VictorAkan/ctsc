@@ -19,7 +19,6 @@ export default function IbomServicesPage() {
         const fetchData = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/service/');
-                console.log(response.data.results);
                 setData(response.data.results);
             } catch (error) {
                 setError(error);
@@ -36,54 +35,133 @@ export default function IbomServicesPage() {
 
     return (
         <>
+        <Header />
             <Helmet>
-                <title>CTSC</title>
+                <title>CTSC - Ibom Services</title>
                 <meta name="description" content="web site created by Victor Ikurekong" />
             </Helmet>
-            <div className="w-full bg-[#ffffff]">
-                <div className="flex flex-col gap-[7.06rem] md:gap-[5.25rem] sm:gap-[3.50rem]">
-                    <div className="flex flex-col items-center">
-                        <div className="self-stretch">
-                            <div className="flex flex-col items-center">
-                                <Header className="self-stretch" />
-                            </div>
-                            <div className="mt-[-0.56rem] flex flex-col items-center justify-center bg-[#d8d7ff] pb-[13.88rem] pt-[8.00rem] md:py-[1.25rem]">
-                                <div className="container-xs flex flex-col mt-24 md:p-[1.25rem] md:px-[1.25rem]">
-                                    <Text
-                                        size="27xl"
-                                        as="p"
-                                        className="sm:text-[2.00rem] text-center !font-medium !text-[#000000] md:mr-0 md:flex items-center md:justify-center"
-                                    >
-                                        IBOM SERVICES
-                                    </Text>
-                                    <Text className="text-center text-black">
-                                        Find Services Near You
+            <div className="w-full bg-white">
+                {/* <Header /> */}
+                <div className="flex flex-col items-center py-16 bg-[#d8d7ff]">
+                    <div className="text-center mt-24 sm:mt-32">
+                        <Text
+                            size="9xl"
+                            as="h1"
+                            className="font-bold !text-4xl text-black"
+                        >
+                            Ibom Services
+                        </Text>
+                        <Text className="mt-2 text-lg text-black">
+                            Find Services Near You
+                        </Text>
+                    </div>
+                </div>
+                <div className="container mx-auto px-52 md:p-4 py-12">
+                    <div className="grid gap-8 grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+                        {data.map((d, index) => (
+                            <Link to={`/ibomservices/${d.service_id}`} key={index}>
+                                <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                    <Text size="2xl" as="h2" className="text-center font-semibold text-black">
+                                        {d.service_name}
                                     </Text>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="container-xs relative mt-[-9.63rem] md:flex md:justify-center md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
-                            <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-gray-100 pb-[47.00rem] px-32 pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
-                                {data.map((d, index) => (
-                                    <Link to={`/ibomservices/${d.service_id}`} key={"ibomservices" + index}>
-                                        <div
-                                            className="flex w-full justify-center rounded-[37px] bg-[#f8e1e1] pb-[5.75rem] pl-[2.88rem] pr-[3.50rem] pt-[5.69rem] md:p-[1.25rem]"
-                                        >
-                                            <Text size="19xl" as="p" className="text-[2.31rem] !text-[#000000]">
-                                                {d.service_name}
-                                            </Text>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
+                            </Link>
+                        ))}
                     </div>
-                    <Footer />
                 </div>
+                <Footer />
             </div>
         </>
     );
 }
+
+
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { Helmet } from "react-helmet";
+// import { Text } from "../../components";
+// import Header from "../../components/Header";
+// import Footer from "../../components/Footer";
+// import { Link } from "react-router-dom";
+// import useScrollToTop from "../../hooks/useScrollToTop";
+// import { Loader } from "../../Loader";
+
+// export default function IbomServicesPage() {
+//     useScrollToTop();
+
+//     const [data, setData] = useState([]);
+//     const [loading, setLoading] = useState(true);
+//     const [error, setError] = useState(null);
+
+//     useEffect(() => {
+//         const fetchData = async () => {
+//             try {
+//                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/service/');
+//                 console.log(response.data.results);
+//                 setData(response.data.results);
+//             } catch (error) {
+//                 setError(error);
+//             } finally {
+//                 setLoading(false);
+//             }
+//         };
+
+//         fetchData();
+//     }, []);
+
+//     if (loading) return <div><Loader /></div>;
+//     if (error) return <div>Error loading data</div>;
+
+//     return (
+//         <>
+//             <Helmet>
+//                 <title>CTSC</title>
+//                 <meta name="description" content="web site created by Victor Ikurekong" />
+//             </Helmet>
+//             <div className="w-full bg-[#ffffff]">
+//                 <div className="flex flex-col gap-[7.06rem] md:gap-[5.25rem] sm:gap-[3.50rem]">
+//                     <div className="flex flex-col items-center">
+//                         <div className="self-stretch">
+//                             <div className="flex flex-col items-center">
+//                                 <Header className="self-stretch" />
+//                             </div>
+//                             <div className="mt-[-0.56rem] flex flex-col items-center justify-center bg-[#d8d7ff] pb-[13.88rem] pt-[8.00rem] md:py-[1.25rem]">
+//                                 <div className="container-xs flex flex-col mt-24 md:p-[1.25rem] md:px-[1.25rem]">
+//                                     <Text
+//                                         size="27xl"
+//                                         as="p"
+//                                         className="sm:text-[2.00rem] text-center !font-medium !text-[#000000] md:mr-0 md:flex items-center md:justify-center"
+//                                     >
+//                                         IBOM SERVICES
+//                                     </Text>
+//                                     <Text className="text-center text-black">
+//                                         Find Services Near You
+//                                     </Text>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                         <div className="container-xs relative mt-[-9.63rem] md:flex md:justify-center md:p-[1.25rem] md:pl-[1.25rem] sm:px-[1.25rem]">
+//                             <div className="grid grid-cols-3 justify-center gap-[3.25rem] rounded-[69px] bg-gray-100 pb-[47.00rem] px-32 pt-[7.94rem] md:mt-[200px] md:grid-cols-2 sm:grid-cols-1 md:items-center md:p-[1.25rem] sm:gap-5">
+//                                 {data.map((d, index) => (
+//                                     <Link to={`/ibomservices/${d.service_id}`} key={"ibomservices" + index}>
+//                                         <div
+//                                             className="flex w-full justify-center rounded-[37px] bg-[#d2d2d2] pb-[5.75rem] pl-[2.88rem] pr-[3.50rem] pt-[5.69rem] md:p-[1.25rem]"
+//                                         >
+//                                             <Text size="19xl" as="p" className="text-[2.31rem] !text-[#000000]">
+//                                                 {d.service_name}
+//                                             </Text>
+//                                         </div>
+//                                     </Link>
+//                                 ))}
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <Footer />
+//                 </div>
+//             </div>
+//         </>
+//     );
+// }
 
 
 

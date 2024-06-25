@@ -216,7 +216,7 @@ export default function HomePage() {
                                                 shape="round"
                                                 className="min-w-[9.56rem] rounded-[43px] self-start md:ml-0 hover:bg-[#2d3f61] font-medium sm:pl-[1.25rem]"
                                             >
-                                                Shine Your Light
+                                                Sign Up
                                             </Button>
                                             </Link>
                                         </div>

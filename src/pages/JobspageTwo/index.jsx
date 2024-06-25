@@ -430,7 +430,7 @@ export default function JobspageTwoPage() {
                                 You're a client? Find the best Talent For your Job{""}
                             </Text>
                             <div className="ml-[4.69rem] mt-[4.56rem] flex w-[73%] flex-col gap-[5.38rem] md:ml-0 md:w-full">
-                                <Link to="/signup"
+                                <Link to="/clientsignup"
                                     data-aos="fade-up"
                                     className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[2.75rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]"
                                 >
@@ -451,7 +451,7 @@ export default function JobspageTwoPage() {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to="/login"
+                                <Link to="/clientsignup"
                                     data-aos="fade-up"
                                     className="flex flex-1 rounded-[25px] border border-solid border-[#000000] bg-[#f7f7f7] pb-[1.88rem] pl-[1.94rem] pr-[2.75rem] pt-[3.31rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:p-[1.25rem]"
                                 >
@@ -471,7 +471,7 @@ export default function JobspageTwoPage() {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to="/signup"
+                                <Link to="/clientsignup"
                                     data-aos="fade-up"
                                     className="flex flex-1 rounded-[25px] border border-solid !border-[#253451] !bg-gray-50 pb-[0.63rem] pl-[2.00rem] pr-[2.88rem] pt-[2.88rem] md:pr-[1.25rem] md:pt-[1.25rem] sm:px-[1.25rem]"
                                 >

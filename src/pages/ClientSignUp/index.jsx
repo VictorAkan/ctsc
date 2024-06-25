@@ -50,7 +50,7 @@ export default function SignupPage() {
                     email: values.email,
                     full_name: values.fullName,
                     password: values.password,
-                    is_talent: values.userType === 'talent',
+                    is_talent: false,
                 },
                 {
                     headers: {
@@ -62,13 +62,13 @@ export default function SignupPage() {
             window.sessionStorage.setItem("name", values.fullName)
 
             if (response.status === 201) {
-                localStorage.setItem('userType', values.userType);
+                localStorage.setItem('userType', 'client');
                 // Navigate to the login page
                 navigate('/login');
                 const user = {
                     email: values.email,
                     fullName: values.fullName,
-                    userType: values.userType,
+                    userType: 'client',
                 };
                 setUser(user.fullName);
             } else {
@@ -126,7 +126,7 @@ export default function SignupPage() {
 
                                     <a href="#">
                                         <Heading size="lg" as="h1" className="text-[1.88rem] !text-[#100f14]">
-                                            Create an account
+                                            Create A Client Account
                                         </Heading>
                                     </a>
                                     <Formik initialValues={{ email: '', fullName: '', password: '', userType: '' }}
@@ -153,7 +153,7 @@ export default function SignupPage() {
                                                             <ErrorMessage name="fullName" component="div" className="text-red-500 text-xs" />
                                                         )}
                                                     </div>
-                                                    {values.email !== 'admin@example.com' || values.password !== 'supersecret' ? (
+                                                    {/* {values.email !== 'admin@example.com' || values.password !== 'supersecret' ? (
                                                         <div className="flex flex-col gap-[0.50rem]">
                                                             <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> User Type </Text>
                                                             <div className="flex items-center gap-[1.25rem]">
@@ -170,7 +170,7 @@ export default function SignupPage() {
                                                                 <ErrorMessage name="userType" component="div" className="text-red-500 text-xs" />
                                                             )}
                                                         </div>
-                                                    ) : null}
+                                                    ) : null} */}
                                                     <div className="flex flex-col items-start gap-[0.50rem]">
                                                         <Text size="2xl" as="p" className="!text-[0.94rem] !font-medium !text-[#9794aa]"> Password </Text>
                                                         <Field type="password" name="password" placeholder="Create your password"

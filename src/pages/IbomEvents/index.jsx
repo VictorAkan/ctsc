@@ -75,7 +75,7 @@ export default function IbomEventsPage() {
                                 <div key={event.id} data-aos="zoom-in" className="flex flex-1 bg-gray-100">
                                     <div className="flex w-[89%] items-center justify-between gap-[1.25rem] md:w-full md:flex-col md:p-[1.25rem]">
                                         <div className="flex w-[45%] flex-col gap-[0.31rem] md:w-full">
-                                            <img src={event.event_image} alt={event.title} className="h-[19.75rem] object-cover" />
+                                            <img src={event.event_image} alt={event.title} className="h-full object-cover" />
                                             <div className="flex flex-col items-start rounded-[20px] bg-[#eeeeee] px-[1.25rem] pb-[0.75rem] pt-[1.63rem] sm:pt-[1.25rem]">
                                                 <Text size="12xl" as="p" className="!text-[1.63rem] !font-medium !text-[#000000]">
                                                     {event.event_name}
@@ -96,7 +96,7 @@ export default function IbomEventsPage() {
                                                 </Button>
                                             </div>
                                         </div>
-                                        <div className="mb-[6.56rem] flex w-[49%] flex-col items-start gap-[1.25rem] self-end md:w-full">
+                                        <div className="flex w-[49%] mt-[-10rem] flex-col items-start gap-[1.25rem] md:w-full">
                                             <p>{event.brief_summary}</p>
                                             <p>{event.date}</p>
                                             {/* 
