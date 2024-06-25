@@ -96,7 +96,7 @@ export default function IbomEventsPage() {
                                                 </Button>
                                             </div>
                                         </div>
-                                        <div className="flex w-[49%] mt-[-10rem] flex-col items-start gap-[1.25rem] md:w-full">
+                                        <div className="flex w-[49%] mt-[-10rem] md:mt-0 flex-col items-start gap-[1.25rem] md:w-full">
                                             <p>{event.brief_summary}</p>
                                             <p>{event.date}</p>
                                             {/* 
