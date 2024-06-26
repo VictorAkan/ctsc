@@ -16,7 +16,7 @@ export default function Header({ ...props }) {
         className={`${props.className} flex justify-center fixed items-center pt-[1.56rem] pb-[1.25rem] sm:pt-[1.25rem] bg-[#253451] w-full z-10`}>
         <div className="container px-32 flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
             <Link to="/">
-            <Text size="10xl" as="p" className="uppercase text-white">cracking the style code</Text>
+            <Text size="10xl" as="p" className="uppercase text-white">cracking the support code</Text>
             </Link>
             <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
                 <li>
@@ -93,7 +93,7 @@ export default function Header({ ...props }) {
                 <ul className="absolute top-0 right-0 p-4 bg-[#253451] w-full">
                     <li className="flex justify-between">
                         <Link to="/">
-                            <Text size="9xl" as="p" className="!font-['Inter'] mb-5 !text-[#c2d7ff] underline">
+                            <Text size="9xl" as="p" className="!font-['Inter'] mb-5 hover:text-[#c2d7ff] underline">
                                 Home
                             </Text>
                         </Link>

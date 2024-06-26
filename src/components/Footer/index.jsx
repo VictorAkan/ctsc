@@ -15,7 +15,7 @@ export default function Footer({ ...props }) {
                                     <div className="flex w-full items-center justify-between gap-[1.25rem] md:flex-col">
                                         <div data-aos="flip-up" className="flex flex-col items-start gap-[0.7rem] md:w-full">
                                             <Text size="10xl" as="p" className="font-['Inter'] mt-10 md:mt-0 !text-[1.44rem]">
-                                                CRACKING THE STYLE CODE
+                                                CRACKING THE SUPPORT CODE
                                             </Text>
                                             <Text size="4xl" as="p" className="w-full leading-[1.56rem]">
                                                 <>
@@ -100,7 +100,7 @@ export default function Footer({ ...props }) {
                             <div className="container-xs flex justify-center pl-[20.00rem] pr-[20.13rem] md:p-[1.25rem] md:px-[1.25rem]">
                                 <Text size="9xl" as="p" className="!text-[#fffffff2]">
                                     <span className="text-[#fffffff2]">All Rights Reserved. ©2024</span>
-                                    <span className="lowercase text-[#fffffff2]">&nbsp;CRACKING THE STYLE CODE</span>
+                                    <span className="lowercase text-[#fffffff2]">&nbsp;CRACKING THE SUPPORT CODE</span>
                                 </Text>
                             </div>
                         </div>
