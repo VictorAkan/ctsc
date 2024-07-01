@@ -4,14 +4,14 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import useScrollToTop from "../../hooks/useScrollToTop";
 
-const InterviewCard = ({ image, title, date, author, content }) => (
+const InterviewCard = ({ image, title, date, author, shortDescription }) => (
     <div className="bg-[#d9d9d9] p-2 rounded-xl flex flex-col w-full md:w-full lg:w-1/3">
         <div className="bg-[#ccc] flex items-center justify-center rounded-t-xl">
             <img src={image} alt="" className="w-full rounded-t-xl" />
         </div>
         <div className="text-container p-4">
             <h3 className="text-xl font-bold mb-2">{title}</h3>
-            <p className="mb-2">{content}</p>
+            <p className="mb-2">{shortDescription}</p>
             <div className="card-meta-data text-gray-600">
                 <span className="date mr-8">{date}</span>
                 <span className="italic">{author}</span>
@@ -40,7 +40,7 @@ const CtscInterviews = () => {
     return (
         <>
             <Header />
-            <div className="min-h-[70vh] bg-cover bg-center flex items-center justify-center text-white self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat">
+            <div className="min-h-[70vh] bg-center flex items-center justify-center text-white self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat">
                 <div className="text-center mt-7 md:mt-24">
                     <p className="text-center">ctsc interviews</p>
                     <h2 className="pb-2 text-4xl text-center">Tell us about you and your brand</h2>
@@ -52,12 +52,12 @@ const CtscInterviews = () => {
                     <div className="flex flex-wrap grid grid-cols-3 md:grid-cols-1 justify-center gap-4" id="interviewsWrapper">
                         {stories.map((story, index) => (
                             <InterviewCard
-                                key={index}
-                                image={story.imgSrc}
-                                title={story.title}
-                                date={story.date}
-                                author={story.author}
-                                content={story.content}
+                                key={story.story_id}
+                                image={story.image}
+                                title={story.topic}
+                                date={new Date(story.created_at).toLocaleDateString()}
+                                author={`${story.author.first_name} ${story.author.last_name}`}
+                                shortDescription={story.short_description}
                             />
                         ))}
                     </div>
@@ -69,14 +69,6 @@ const CtscInterviews = () => {
 };
 
 export default CtscInterviews;
-
-
-
-
-
-
-
-
 
 
 

@@ -88,7 +88,7 @@ export default function Footer({ ...props }) {
                                                     <li>
                                                         <a href="#">
                                                             <Text as="p" className="text-[1.25rem] hover:text-[#c2d7ff]">
-                                                                Phone: +2347080141538
+                                                                Phone: +2348101537008
                                                             </Text>
                                                         </a>
                                                     </li>

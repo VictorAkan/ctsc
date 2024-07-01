@@ -64,7 +64,7 @@ export default function IbomEventsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="container-xs mt-[16.00rem] sm:mt-[10rem] pl-[3.06rem] md:p-[1.25rem] md:pl-[1.25rem]">
+                <div className="container-xs mt-[9.00rem] sm:mt-[1rem] pl-[3.06rem] md:p-[1.25rem] md:pl-[1.25rem]">
                     <div className="flex flex-col gap-[3.81rem]">
                         {loading ? (
                             <div className="flex justify-center items-center h-full">

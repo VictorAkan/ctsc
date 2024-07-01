@@ -20,10 +20,10 @@ const CultureCard = ({ imgSrc, date, author, title, description }) => {
                 </div>
                 <h3 className="text-lg font-bold">{title}</h3>
                 <p className="my-2">{description}</p>
-                <a href="#" className="relative btn p-0 inline-block">
+                {/* <a href="#" className="relative btn p-0 inline-block">
                     Read more
                     <span className="absolute inset-x-0 bottom-[-5px] mx-auto border-b border-black"></span>
-                </a>
+                </a> */}
             </div>
         </div>
     );
