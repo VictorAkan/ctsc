@@ -14,75 +14,7 @@ export default function Header({ ...props }) {
 
     return (<header {...props}
         className={`${props.className} flex justify-center fixed items-center pt-[1.56rem] pb-[1.25rem] sm:pt-[1.25rem] bg-[#253451] w-full z-10`}>
-        <div className="container px-32 flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
-            <Link to="/">
-            <Text size="10xl" as="p" className="uppercase text-white">cracking the support code</Text>
-            </Link>
-            <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
-                <li>
-                    <Link to="/">
-                        <Text size="9xl" as="p" className="!font-['Inter'] hover:text-[#c2d7ff] hover:underline">
-                            Home
-                        </Text>
-                    </Link>
-                </li>
-                <li
-                    onMouseLeave={() => {
-                        setMenuOpen(false);
-                    }}
-                    onMouseEnter={() => {
-                        setMenuOpen(true);
-                    }}
-                >
-                    <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
-                        <Link to="/mkponnyin">
-                            Mkpo Nnyin
-                        </Link>
-                        </Text>
-                        {/* <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
-                    </div>
-                    {menuOpen ? <MegaMenu1 /> : null}
-                </li>
-                <li
-                    onMouseLeave={() => {
-                        setMenuOpen1(false);
-                    }}
-                    onMouseEnter={() => {
-                        setMenuOpen1(true);
-                    }}
-                >
-                    <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline">
-                        <Link to="/newssection">
-                        News & Stories
-                        </Link>
-                        </Text>
-                        {/* <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" /> */}
-                    </div>
-                    {menuOpen1 ? <MegaMenu2 /> : null}
-                </li>
-                <li
-                    onMouseLeave={() => {
-                        setMenuOpen2(false);
-                    }}
-                    onMouseEnter={() => {
-                        setMenuOpen2(true);
-                    }}
-                >
-                    <div className="flex cursor-pointer items-center">
-                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
-                        <Link to="/ibompartnersone">
-                            About CTSCode
-                        </Link>
-                        </Text>
-                        {/* <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
-                    </div>
-                    {menuOpen2 ? <MegaMenu3 /> : null}
-                </li>
-            </ul >
-        </div >
-        <div className="md:flex-col hidden p-3 md:block flex justify-end">
+            <div className="md:flex-col hidden p-3 md:block flex justify-end">
             <img
                 src="images/nav_icon.png"
                 alt="hamburger"
@@ -151,6 +83,75 @@ export default function Header({ ...props }) {
                 </ul>
             )}
         </div>
+        
+        <div className="container px-32 flex items-center justify-between gap-[1.25rem] md:flex-col md:p-[1.25rem]">
+            <Link to="/">
+            <Text size="10xl" as="p" className="uppercase text-white">cracking the support code</Text>
+            </Link>
+            <ul className="flex md:hidden gap-[1.56rem] md:flex-col">
+                <li>
+                    <Link to="/">
+                        <Text size="9xl" as="p" className="!font-['Inter'] hover:text-[#c2d7ff] hover:underline">
+                            Home
+                        </Text>
+                    </Link>
+                </li>
+                <li
+                    onMouseLeave={() => {
+                        setMenuOpen(false);
+                    }}
+                    onMouseEnter={() => {
+                        setMenuOpen(true);
+                    }}
+                >
+                    <div className="flex cursor-pointer items-center">
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
+                        <Link to="/mkponnyin">
+                            Mkpo Nnyin
+                        </Link>
+                        </Text>
+                        {/* <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
+                    </div>
+                    {menuOpen ? <MegaMenu1 /> : null}
+                </li>
+                <li
+                    onMouseLeave={() => {
+                        setMenuOpen1(false);
+                    }}
+                    onMouseEnter={() => {
+                        setMenuOpen1(true);
+                    }}
+                >
+                    <div className="flex cursor-pointer items-center">
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline">
+                        <Link to="/newssection">
+                        News & Stories
+                        </Link>
+                        </Text>
+                        {/* <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" /> */}
+                    </div>
+                    {menuOpen1 ? <MegaMenu2 /> : null}
+                </li>
+                <li
+                    onMouseLeave={() => {
+                        setMenuOpen2(false);
+                    }}
+                    onMouseEnter={() => {
+                        setMenuOpen2(true);
+                    }}
+                >
+                    <div className="flex cursor-pointer items-center">
+                        <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
+                        <Link to="/ibompartnersone">
+                            About CTSCode
+                        </Link>
+                        </Text>
+                        {/* <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
+                    </div>
+                    {menuOpen2 ? <MegaMenu3 /> : null}
+                </li>
+            </ul >
+        </div >
     </header >
     )
 }

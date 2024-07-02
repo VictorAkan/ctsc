@@ -34,7 +34,7 @@ const Story = () => {
     return (
         <>
             <Header />
-            <div className="container mx-auto px-10">
+            <div className="container mx-auto px-[20rem] md:px-[10rem] sm:px-3">
                 {/* Feature Story */}
                 <div className="pt-20">
                     <h1 className="text-center mt-24 text-4xl sm:text-2xl font-bold text-gray-800">
@@ -51,7 +51,7 @@ const Story = () => {
                     {error && <p className="mt-5 text-red-500">Error: {error.message}</p>}
                     {story && (
                         <div className="justify-center items-center">
-                            <Img src={story.image} alt={story.topic} className="mt-5 justify-center ml-[20rem] md:ml-0" />
+                            <Img src={story.image} alt={story.topic} className="mt-5 justify-center w-full md:ml-0" />
                             <p className="mt-5 text-gray-800">{story.short_description}</p>
                             <p className="mt-5 text-gray-800">
                                 {/* By {story.author.first_name} {story.author.last_name} */}
@@ -70,7 +70,7 @@ const Story = () => {
                             {previousStories.map((prevStory) => (
                                 <li key={prevStory.story_id} className="mt-4">
                                     <h3 className="text-xl font-bold">{prevStory.topic}</h3>
-                                    <img src={prevStory.image} alt={prevStory.topic} className="mt-2" />
+                                    <Img src={prevStory.image} alt={prevStory.topic} className="mt-2 w-full" />
                                     <p>{prevStory.short_description}</p>
                                     <p>{prevStory.body}</p>
                                     {prevStory.author.first_name && (

@@ -40,16 +40,16 @@ export default function MkpoNnyinPage() {
                     <div className="flex mt-10 h-[31.19rem] items-center justify-center self-stretch bg-[url(/public/images/group_186.png)] bg-cover bg-no-repeat pb-[11.69rem] pt-[9.25rem] md:h-auto md:py-[1.25rem]">
                         <div className="mt-10 flex justify-center md:p-[1.25rem] md:px-[1.25rem]">
                             <div data-aos="fade-up" className="flex flex-col items-center">
-                                <Text size="30xl" as="p" className="!font-['Inter'] !sm:text-[3rem] text-[6.50rem]">
+                                <Text size="30xl" as="p" className="!font-['Inter'] sm:mt-10 sm:!text-[2rem] text-[4.50rem]">
                                     Mkpo Nnyin
                                 </Text>
-                                <Text size="20xl" as="p" className="!font-['Inter'] !md:tect-[2.13rem] text-[2.38rem]">
+                                <Text size="20xl" as="p" className="!font-['Inter'] sm:!text-[1rem] text-[1.38rem]">
                                     Our Culture & Pride{" "}
                                 </Text>
                             </div>
                         </div>
                     </div>
-                    <section className="mkpo-nnyin-1 bg-f8f5f5 py-20 flex items-center justify-center">
+                    <section className="mkpo-nnyin-1 bg-f8f5f5 py-20 px-[15rem] md:px-0 flex items-center justify-center">
                         <div className="container mx-auto">
                             <div className="grid grid-cols-2 gap-4">
                                 <div data-aos="flip-left" className="hover:scale-105 transition duration-300 ease-in-out">
@@ -88,7 +88,7 @@ export default function MkpoNnyinPage() {
                                         />
                                     </Link>
                                 </div>
-                                <div className="centered-div rounded-[3.5em] md:hidden bg-[#d9d9d9] h-[20%] w-[20%] top-[79rem] left-[38rem] absolute"></div>
+                                <div className="centered-div rounded-[3.5em] md:hidden bg-[#d9d9d9] h-[20%] w-[20%] top-[73rem] left-[38rem] absolute"></div>
                             </div>
                         </div>
                     </section>
