@@ -43,16 +43,18 @@ export default function HomePage() {
                         <div data-aos="fade-up" className="h-[48.38rem] bg-[url(/public/images/mask_group.png)] bg-cover bg-no-repeat pb-[11.06rem] md:h-auto md:pb-[1.25rem]">
                             <div className="flex flex-col items-center gap-[7.81rem] md:gap-[5.81rem] sm:gap-[3.88rem]">
                                 <div className="h-[0.20rem] self-stretch bg-[#d9d9d9]" />
-                                <div className="container-xs mt-10 flex flex-col items-center pl-[7.81rem] pr-[8.38rem] md:p-[1.25rem] md:px-[1.25rem]">
-                                    <Heading size="4xl" as="h1" className="!text-[#ffa14a] !font-['Poppins']">
+                                <div className="container-xs mt-10 flex flex-col pl-[7.81rem] pr-[8.38rem] md:p-[1.25rem] md:px-[1.25rem]">
+                                <Img src="ctsclogo.png" className="w-10 items-start"/>
+                                    <Heading size="4xl" as="h1" className="!text-[#ffa14a] text-center !font-['Poppins']">
                                         Ndito Eka
                                     </Heading>
                                     <Text size="29xl" as="p" className="mt-[0.75rem] text-[6.19rem] text-center"> 
                                         Witness Our Evolution
                                     </Text>
-                                    <Text size="12xl" as="p" className="text-[1.63rem] sm:text-center sm:mt-5">
+                                    <Text size="12xl" as="p" className="text-[1.63rem] text-center sm:mt-5">
                                         Inspiring Lives, Defining Standards
                                     </Text>
+                                    <div className="!items-center flex !justify-center">
                                     <Link to="/ibompartnersone">
                                     <Button
                                         color="blue_gray_100_03"
@@ -62,6 +64,7 @@ export default function HomePage() {
                                         Learn More
                                     </Button>
                                     </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

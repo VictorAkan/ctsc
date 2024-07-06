@@ -64,6 +64,7 @@ const JobApplicationLazy = React.lazy(() => import("./pages/JobApplicationForm")
 const ApplicationsLazy = React.lazy(() => import("./pages/JobApplications"));
 const ApplicationsStatusLazy = React.lazy(() => import("./pages/JobApplicationStatus"));
 const ClientSignLazy = React.lazy(() => import("./pages/ClientSignUp"));
+const CtsfLazy = React.lazy(() => import("./pages/CTSF"));
 // import general loader
 import { Loader } from "./Loader";
 
@@ -132,6 +133,7 @@ export const ProjectRoutes = () => {
     <Route path="/clientsignup" element={<ClientSignLazy />} />
     <Route path="/talentprofile" element={<TalentProfileLazy />} >
     </Route>
+    <Route path="/ctsf" element={<CtsfLazy />} />
     <Route path="/application_status" element={<ApplicationsStatusLazy />} />
     <Route path="/newssection" element={<NewsSectionLazy />} />
     <Route path="/story/:storyId" element={<FullStoryLazy />} />

@@ -48,6 +48,8 @@ export default function MegaMenu3() {
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Contact Us</Text> </Link>
                         <Link to="/signup" className="self-center">
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Sign Up</Text> </Link>
+                            <Link to="/ctsf" className="self-center">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">CTSF</Text> </Link>
                     </div>
                 </div>
             </div>
