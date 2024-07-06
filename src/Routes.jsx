@@ -21,6 +21,7 @@ const TeamMembers = React.lazy(() => import("./pages/WorldOfAdmin/TeamMembers"))
 const Comments = React.lazy(() => import("./pages/WorldOfAdmin/Comments"));
 const Likes = React.lazy(() => import("./pages/WorldOfAdmin/Likes"));
 const Stories = React.lazy(() => import("./pages/WorldOfAdmin/Stories"));
+const Outreach = React.lazy(() => import("./pages/WorldOfAdmin/Outreaches"));
 
 // Wrap components in lazy imports
 const HomePageLazy = React.lazy(() => import("./pages/HomePage"));
@@ -104,6 +105,7 @@ export const ProjectRoutes = () => {
         <Route path="comments" element={<Comments />} />
         <Route path="likes" element={<Likes />} />
         <Route path="stories" element={<Stories />} />
+        <Route path="outreach" element={<Outreach />} />
     </Route>
 
     {/* Other routes */}
