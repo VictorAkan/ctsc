@@ -16,7 +16,7 @@ export default function IbomPartnersOnePage() {
             <div className="w-full bg-[#ffffff]">
                 <Header />
                 <div className="flex flex-col items-center px-5 md:px-0 gap-[6.31rem] md:gap-[4.69rem] sm:gap-[3.13rem]">
-                    <div className="flex flex-col mt-16 md:mt-28 items-center self-stretch rounded-[188px] bg-[#cddeff] pb-[2.13rem] pt-[4.44rem] md:pt-[1.25rem] sm:py-[1.25rem]">
+                    <div className="flex flex-col mt-32 md:mt-40 items-center self-stretch rounded-[188px] bg-[#cddeff] pb-[2.13rem] pt-[4.44rem] md:pt-[1.25rem] sm:py-[1.25rem]">
                         <div className="container-xs flex flex-col items-center gap-[0.75rem] pl-[16.50rem] pr-[19.06rem] md:p-[1.25rem] md:px-[1.25rem]">
                             <Text size="14xl" as="p" className="!font-['Inter'] text-[1.88rem] !font-medium !text-[#000000]"> ABOUT US
                             </Text>

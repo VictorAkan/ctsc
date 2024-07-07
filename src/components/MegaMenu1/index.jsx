@@ -40,8 +40,8 @@ export default function MegaMenu1() {
                 <div className="flex flex-col items-start gap-[1.00rem]">
                     {/* <Text className="!font-['Open_Sans'] text-[1.13rem] font-bold !text-[#000000]">Title 3</Text>  */}
                     <div className="flex flex-col items-start gap-[0.75rem]">
-                        {/* <Link to="/mkponnyin">
-                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Mkpo Nnyin</Text> </Link> */}
+                        <Link to="/mkponnyin">
+                            <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Mkpo Nnyin</Text> </Link>
                         <Link to="/ibomevents" className="self-center">
                             <Text className="!font-['Open Sans'] hover:text-[#c3d7ff] text-[1.00rem] font-normal">Ibom Events</Text> </Link>
                         <Link to="/ibomservices" className="self-center">

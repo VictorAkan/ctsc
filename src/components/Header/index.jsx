@@ -106,9 +106,9 @@ export default function Header({ ...props }) {
                 >
                     <div className="flex cursor-pointer items-center">
                         <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
-                        <Link to="/mkponnyin">
+                        {/* <Link to="/mkponnyin"> */}
                             Mkpo Nnyin
-                        </Link>
+                        {/* </Link> */}
                         </Text>
                         {/* <img src="images/img_polygon_2.svg" alt="polygontwo" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
@@ -124,9 +124,9 @@ export default function Header({ ...props }) {
                 >
                     <div className="flex cursor-pointer items-center">
                         <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline">
-                        <Link to="/newssection">
+                        {/* <Link to="/newssection"> */}
                         News & Stories
-                        </Link>
+                        {/* </Link> */}
                         </Text>
                         {/* <img src="images/img_polygon_2.svg" alt="polygonone" className="mt-[0.50rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
@@ -142,9 +142,9 @@ export default function Header({ ...props }) {
                 >
                     <div className="flex cursor-pointer items-center">
                         <Text size="9xl" as="p" className="cursor-pointer !font-['Inter'] hover:text-[#c2d7ff] hover:underline"> 
-                        <Link to="/ibompartnersone">
+                        {/* <Link to="/ibompartnersone"> */}
                             About CTSCode
-                        </Link>
+                        {/* </Link> */}
                         </Text>
                         {/* <Img src="images/img_polygon_2.svg" alt="polygonthree" className="mt-[0.56rem] h-[0.44rem] w-[0.50rem]" /> */}
                     </div>
