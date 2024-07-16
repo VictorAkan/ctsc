@@ -28,7 +28,7 @@ const CtscInterviews = () => {
         const fetchStories = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/story/interview/');
-                setStories(response.data);
+                setStories(response.data.results);
             } catch (error) {
                 console.error('Error fetching stories:', error);
             }

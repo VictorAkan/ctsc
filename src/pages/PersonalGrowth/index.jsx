@@ -18,7 +18,7 @@ const PersonalGrowth = () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/story/personal-growth/');
                 console.log(response.data);
-                setPosts(response.data);
+                setPosts(response.data.results);
                 setLoading(false);
             } catch (err) {
                 setError(err.message);

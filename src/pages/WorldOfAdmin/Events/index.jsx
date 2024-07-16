@@ -12,7 +12,7 @@ const Events = () => {
         // Fetch events from the API when the component mounts
         axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/event/')
             .then(response => {
-                setEvents(response.data);
+                setEvents(response.data.results);
             })
             .catch(error => {
                 console.error('Error fetching events:', error);

@@ -45,7 +45,7 @@ const FullStory = () => {
         <>
             <Header />
             <div className="container mx-auto px-4 py-8">
-                <div className="bg-white shadow-md rounded p-[10rem]">
+                <div className="bg-white shadow-md rounded md:mt-24 p-[10rem] md:p-10 sm:p-6">
                     <h1 className="text-2xl font-bold mb-4">{story.title}</h1>
                     <img src={story.image} alt={story.title} className="w-full h-auto mb-4" />
                     <p className="text-gray-900 mb-4">{story.body}</p>

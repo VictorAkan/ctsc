@@ -18,7 +18,7 @@ const ClientProfiles = () => {
             }
         })
             .then(response => {
-                setClientProfiles(response.data);
+                setClientProfiles(response.data.results);
                 setIsLoading(false);
             })
             .catch(error => {

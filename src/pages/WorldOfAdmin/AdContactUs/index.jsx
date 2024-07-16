@@ -20,7 +20,7 @@ const ContactUs = () => {
             }
         })
             .then(response => {
-                setContactUsMessages(response.data);
+                setContactUsMessages(response.data.results);
                 setLoading(false);
             })
             .catch(error => {

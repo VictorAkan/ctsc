@@ -22,7 +22,8 @@ export default function IbomPartnersPage() {
         // Fetch partner data
         axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/partner/")
             .then(response => {
-                setPartners(response.data);
+                console.log(response.data);
+                setPartners(response.data.results);
             })
             .catch(error => {
                 console.error("There was an error fetching the partner data!", error);

@@ -19,7 +19,7 @@ const TeamMembers = () => {
         })
             .then(response => {
                 console.log(response.data);
-                setTeamMembers(response.data);
+                setTeamMembers(response.data.results);
             })
             .catch(error => {
                 console.error('Error fetching team members:', error);

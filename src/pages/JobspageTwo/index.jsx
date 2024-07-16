@@ -128,7 +128,7 @@ export default function JobspageTwoPage() {
             const response = await axios.get(
                 "https://crackingthestylecode.pythonanywhere.com/api/v1/latest-job/"
             );
-            setLatestJobs(response.data);
+            setLatestJobs(response.data.results);
         } catch (error) {
             console.error(error);
         }

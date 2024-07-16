@@ -20,7 +20,7 @@ const CtscTeam = () => {
         const fetchTeamMembers = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/team-members/');
-                setTeamMembers(response.data);
+                setTeamMembers(response.data.results);
             } catch (error) {
                 console.error("Error fetching the team members:", error);
             }

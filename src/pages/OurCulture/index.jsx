@@ -40,7 +40,7 @@ const OurCulture = () => {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/story/culture/");
                 console.log(response.data);
-                setCultureData(response.data);
+                setCultureData(response.data.results);
                 setLoading(false);
             } catch (err) {
                 setError(err);

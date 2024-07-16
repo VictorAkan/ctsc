@@ -157,17 +157,17 @@ export default function HomePage() {
                                         <marquee behavior="" direction="left">
                                         <Text
                                             size="24xl" as="p"
-                                            className="self-start sm:self-center !font-['Inter'] text-[3.50rem] uppercase !text-[#253451]"
+                                            className="self-start sm:self-center !font-['Inter'] text-[2.50rem] uppercase !text-[#253451]"
                                         >
                                             Inspiring Lives, Defining Standards. -  Inspiring Lives, Defining Standards
                                         </Text>
                                         </marquee>
                                     </div>
                                     <div className="h-[8.44rem] md:h-auto">
-                                        <div className="mb-[1.56rem] flex w-full justify-center bg-[#253451] pb-[29px] pt-8 sm:py-[1.25rem]">
+                                        <div className="mb-[1.56rem] flex w-full justify-center bg-[#253451] pb-[45px] pt-10 sm:py-[1.25rem]">
                                             <div className="flex pl-[4.00rem] pr-[3.50rem] md:p-[1.25rem] md:px-[1.25rem]">
                                                 <marquee behavior="" direction="left">
-                                                <Text size="24xl" as="p" className="!font-['Inter'] text-[3.50rem]">
+                                                <Text size="24xl" as="p" className="!font-['Inter'] text-[2.50rem]">
                                                     CRACKING THE STYLE CODE. - CRACKING THE STYLE CODE.
                                                 </Text>
                                                 </marquee>
@@ -243,7 +243,6 @@ export default function HomePage() {
                         <Img
                             src="images/rectangle_19.png"
                             alt="image"
-                            data-aos="flip-left"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         </div>
@@ -251,7 +250,6 @@ export default function HomePage() {
                             <Img
                             src="images/rectangle_18.png"
                             alt="image"
-                            data-aos="flip-right"
                             className="m-auto h-[29.88rem] sm:mt-5 w-[42%] sm:w-full object-cover"
                         />
                         <div data-aos="fade-down" className="m-auto flex order-2 sm:order-1 w-full flex-col items-end gap-[1.94rem]">

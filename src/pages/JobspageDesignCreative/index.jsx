@@ -17,7 +17,7 @@ export default function JobspageDesignCreative() {
         async function fetchJobs() {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/job/");
-                const designCreativeJobs = response.data.filter(job => job.category === "Designs and Creative");
+                const designCreativeJobs = response.data.results.filter(job => job.category === "Designs and Creative");
                 setJobs(designCreativeJobs);
             } catch (error) {
                 console.error("Error fetching job data:", error);
@@ -73,8 +73,8 @@ export default function JobspageDesignCreative() {
                         </div>
                     </div>
                 </div>
-                <Footer className="mt-[18.63rem]" />
             </div>
+            <Footer className="mt-[18.63rem]" />
         </>
     );
 }

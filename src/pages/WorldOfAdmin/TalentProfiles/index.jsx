@@ -18,7 +18,7 @@ const TalentProfiles = () => {
         })
             .then(response => {
                 // Assuming the response.data contains an array of talent profiles
-                setTalentProfiles(response.data);
+                setTalentProfiles(response.data.results);
             })
             .catch(error => {
                 console.error('Error fetching talent profiles:', error);

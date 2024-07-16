@@ -32,7 +32,7 @@ export default function IbomEventsPage() {
             try {
                 const response = await axios.get("https://crackingthestylecode.pythonanywhere.com/api/v1/event/");
                 console.log(response);
-                setEvents(response.data); // assuming the API returns an array of events
+                setEvents(response.data.results); // assuming the API returns an array of events
             } catch (error) {
                 console.error("There was an error fetching the events!", error);
             } finally {

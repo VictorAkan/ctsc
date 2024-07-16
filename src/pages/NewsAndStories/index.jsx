@@ -13,16 +13,16 @@ const getStories = async () => {
     try {
         const response = await axios.get(API_URL);
         console.log(response.data);
-        return response.data;
+        return response.data.results;
     } catch (error) {
         console.error("Error fetching stories:", error);
         throw error;
     }
 };
 
-const postComment = async (storyId, comment) => {
+const postComment = async (storyId, comment_body) => {
     try {
-        const response = await axios.post(`${API_URL}${storyId}/comment/`, { comment });
+        const response = await axios.post(`${API_URL}${storyId}/comment/`, { comment_body });
         return response.data;
     } catch (error) {
         console.error("Error posting comment:", error);
@@ -135,5 +135,3 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
-
-

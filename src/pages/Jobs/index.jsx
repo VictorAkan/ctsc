@@ -13,7 +13,7 @@ const JobsPage = () => {
         const fetchJobs = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/');
-                setJobs(response.data);
+                setJobs(response.data.results);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching job opportunities:', error);

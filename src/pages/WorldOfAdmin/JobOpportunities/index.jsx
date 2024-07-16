@@ -12,7 +12,7 @@ const JobOpportunities = () => {
         const fetchJobOpportunities = async () => {
             try {
                 const response = await axios.get('https://crackingthestylecode.pythonanywhere.com/api/v1/job/');
-                setJobOpportunities(response.data);
+                setJobOpportunities(response.data.results);
             } catch (error) {
                 console.error('Error fetching job opportunities:', error);
             }
